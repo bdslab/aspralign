@@ -1,0 +1,16 @@
+# File ASE_00002.dp
+# RNA SSTRAND database, RNase P RNA, Acidianus brierleyi, strain DSM 1651
+# External source: RNase P Database, file name: A.brierleyi.ct2
+
+gaggaaagucccgccUCCUGGCCUAAAGGAGUCUCUAUAGAGACAAGGGC
+AACACCCUUGGCAACUAUACAGAAACAAGUACCUUGAAAGCUACAUGUGA
+AAAUGAUUGUGCCCCUUCCUCUGGUAACGGAGGAAGAAACAUGAGAGUAG
+CUUUCAAGGAUGAAAAGAUAGACCUCCUAGGAGCAAGUAGAGGGAAAGAU
+GAGACUAGGCCCGAUUUCCCUCUAGGACGCAUAGCCAAAUCCCCCAACCA
+UUacaaaagcgggcuua
+.....(((.(((((((((.[[[[[.((((((((((....)))))(((((.
+....)))))((...((((.............(((((((((((........
+.......((.....(((((((((....)))))))))...)).......))
+)))))))))........)))).)))))))))))...((.((((((((...
+(((...]]]]])))))))))))....))......................
+........)))))))).

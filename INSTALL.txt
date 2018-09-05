@@ -1,0 +1,20 @@
+***************************************************************************
+ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment - version 0.9
+
+INSTALLATION
+***************************************************************************
+
+Download the executable jar file ASPRAlign.jar from the folder 
+"executable-jar": click on the folder and then on the file; select 
+"View Raw" and give permission to download the .jar file (if any). Once 
+obtained the jar file, it can be run from a terminal window with the command
+
+java -jar ASPRAlign.jar 
+
+The executable jar runs on every Linux, Windows and Mac OS platform
+in which a Java SE Runtime Environment 8 is installed. 
+
+For information and installing the Java Runtime Environment see
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+See README.txt for usage information

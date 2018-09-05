@@ -1,0 +1,24 @@
+# File ASE_00102.dp
+# RNA SSTRAND database, RNase P RNA, Deinococcus radiodurans, strain 298
+# External source: RNase P Database, file name: D.radiodurans.ct2
+
+GGAACGCGGGGAAACUCCUGGUCGCGCCUGAGCCGCUUUUUUGGUGGACA
+GGUGAGGAAAGUCCGGGCACCGCAGGGCAAGGAUGCCAGCUAACGGCUGG
+UCGGCGAGUCGAGCGCCCGCCUGAGCGCCGAGGGCAGGCGGAAAGCGGCG
+AAGCCGAAGGACAGUGCCACAGAAACCAGACCGCCACCCCACACAGGCCC
+CGGCGCGGGUGCGGGUGGUCAGGGUGAAACGGUGCGGUAAGAGCGCACCA
+GGUUCCCGGGAGACCGGGAGCGUCUGGUCAACCCCAUCCGGUGCAAGACC
+CGACCGUGCGGCGAGGGCGGCCCGCCCGUUUGAGCCGCCAGGAUGGUCGC
+UCGAGGCGUCCUGGCAACAGGCGUCCCAGACAGAUGAUCAGGCUGCCCUG
+GGGGAGACCCCGGAGCAGACAGAACCCGGCUUACCGUUUCCCCGUGCCAG
+CCACUGCCGCCCCCCGCGCCCGCCGCUGGGGGCGGU
+.....((((((((((({{{{{{{.((((((.((((((.....))))))))
+))))....(((.(((((((((...[[[[..((((((((((.....)))))
+((((((((((((.((((((((((...........))))))))))))))))
+.))))).)((...(((((............((((((((((((((((((..
+..))))))))).)))))))..)).......((((((.......))))))(
+(((((((((....))))))))..)))))..)))))))))))))...((((
+.......(((((((((((.]]]]))))....)))))))......))))..
+....(((((.(((....))))))))..........}}}}}}}((((((((
+(((....)))))))))))......)))))))).).)))))))))).....
+.....(((((((((((((.....)))))))))))))

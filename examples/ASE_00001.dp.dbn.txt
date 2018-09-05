@@ -1,0 +1,16 @@
+# File ASE_00001.dp
+# RNA SSTRAND database, RNase P RNA, Acidianus ambivalens, strain DSM 3772
+# External source: RNase P Database, file name: A.ambivalens.ct2
+
+gaggaaagucccgccUCCAGAUCAAGGGAAGUCCCGCGAGGGACAAGGGU
+AGUACCCUUGGCAACUGCACAGAAAACUUACCCCUAAAUAUUCAAUGAGG
+AUUUGAUUCGACUCUUACCUUGGCGACAAGGUAAGAUAGAUGAAGAGAAU
+AUUUAGGGGUUGAAACGCAGUCCUUCCCGGAGCAAGUAGGGGGGUCAAUG
+AGAAUGAUCUGAAGACCUCCCUUGACGCAUAGUCGAAUCCCCCAAAUaca
+gaagcgggcuua
+.....(((.(((((((((.[[[[[.((((((((((....)))))(((((.
+....)))))((...((((............(((((((((((.........
+.......((...((((((((((....))))))))))..))........))
+))))))))).......)))).)))))))))))...((.((((((((..((
+((..]]]]]))))))))))))...))........................
+...)))))))).

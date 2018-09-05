@@ -1,0 +1,8 @@
+ASPRAlign Current Scores:
+
+Score for Operator Insertion or Deletion = 100.0
+Score for Operator Replacement with Operator = 100.0
+Score for Hairpin Insertion or Deletion = 100.0
+Score for Hairpin Replacement with Hairpin = 0.0
+Score for Hairpin Replacement with Operator = Infinity
+Score for One Crossing Mismatch (Local Score) = 1.0
