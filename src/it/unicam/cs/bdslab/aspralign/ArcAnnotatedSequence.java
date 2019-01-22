@@ -108,10 +108,16 @@ public class ArcAnnotatedSequence {
 	 */
 	private void convertBounds(String bounds, boolean basePairsCheck) {
 		this.bounds = new ArrayList<WeakBond>();
-		// regular expression for matching (n,n);(n,n); ... ;(n,n) possibly with white
-		// spaces anywhere inside
-		String regexp = "\\s*\\(\\s*\\d+\\s*\\,\\s*\\d+\\s*\\)\\s*(\\s*;\\s*\\(\\s*\\d+\\s*\\,\\s*\\d+\\s*\\))*";
+		// regular expression for matching (n,n);(n,n); ... ;(n,n)
+		// NOTE THAT white spaces are NOT admitted
+		// The following is the regexp that permits white spaces, but for long strings
+		// to match it produces a stack overflow
+		// String regexp =
+		// "\\s*\\(\\s*\\d+\\s*\\,\\s*\\d+\\s*\\)\\s*(\\s*;\\s*\\(\\s*\\d+\\s*\\,\\s*\\d+\\s*\\))*";
+		// The following is the regexp that does not admit spaces
+		String regexp = "\\(\\d+\\,\\d+\\)(;\\(\\d+\\,\\d+\\))*";
 		// format check
+		bounds = bounds.trim(); // delete possible spaces befor and after
 		if (!bounds.matches(regexp))
 			throw new IllegalArgumentException(
 					"INPUT ERROR: list of weak bounds does not respect format (n,n);(n,n); ... ;(n,n)");

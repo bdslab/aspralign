@@ -33,7 +33,7 @@ import java.util.Set;
 import java.util.Stack;
 
 /**
- * Functions for parsing dot bracket notation and arc annotates sequence text
+ * Functions for parsing dot bracket notation and arc annotated sequence text
  * input files. They are both transformed into an ArcAnnotatedSequence object.
  * 
  * @author Luca Tesei
@@ -41,7 +41,9 @@ import java.util.Stack;
  */
 public class RNASecondaryStructureInputFileParser {
 	// IUPAC nucleotide codes
-	private static String nucleotidesRegexp = "(A|C|G|U|a|c|g|u|T|t|R|r|Y|y|s|S|W|w|K|k|M|m|B|b|D|d|H|h|V|v|N|n|\\.|\\-)+";
+	private static String standardNucleotidesCodes = "A|C|G|U|a|c|g|u|T|t|R|r|Y|y|s|S|W|w|K|k|M|m|B|b|D|d|H|h|V|v|N|n|\\.|\\-";
+	private static String nonStandardNucleotidesCodes = "\\\"|\\?|\\]|\\~|\\[|\\_|\\+|\\=|\\/|\\4|\\7";
+	private static String nucleotidesRegexp = "(" + standardNucleotidesCodes + "|" + nonStandardNucleotidesCodes + ")+";
 	private static String dotNotationRegexp = "(\\(|\\)|\\.|\\[|\\]|\\{|\\}|\\<|\\>|[a-zA-Z])+";
 
 	public static ArcAnnotatedSequence readAasFile(String inputFile, boolean basePairsCheck)
