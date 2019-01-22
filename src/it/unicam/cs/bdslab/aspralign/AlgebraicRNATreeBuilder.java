@@ -470,7 +470,7 @@ public class AlgebraicRNATreeBuilder {
 		// create a copy of the list of weak bounds, ordered by the right index (default
 		// ordering of WeakBond)
 		List<ArcAnnotatedSequence.WeakBond> bounds = new ArrayList<>();
-		bounds.addAll(this.aas.getBounds());
+		bounds.addAll(this.aas.getBonds());
 		Collections.sort(bounds);
 
 		// create the root node of the structural RNA tree

@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * 
  * Representation of an RNA secondary structure with any kind of pseudoknot. It
- * consists of the nucleotide primary sequence and of a list of weak bounds
+ * consists of the nucleotide primary sequence and of a list of weak bonds
  * given as pairs of positions in the primary sequence. Positions start at 1 and
  * end at the length of the primary sequence.
  * 
@@ -39,17 +39,17 @@ import java.util.List;
 public class ArcAnnotatedSequence {
 
 	private String nucleotides; // primary structure
-	private List<WeakBond> bounds; // weak bounds
+	private List<WeakBond> bonds; // weak bonds
 
-	// array of pointers of the weak bounds; 0 value means null pointer; meaningful
+	// array of pointers of the weak bonds; 0 value means null pointer; meaningful
 	// indexes of the array start at 1, position 0 is not used; if p[i] = j and i <
-	// j then there is a weak bound (i,j), otherwise it is (j,i); i must be not
+	// j then there is a weak bond (i,j), otherwise it is (j,i); i must be not
 	// equal to j in both cases; no more than one pointer is allowed in RNA
 	// secondary structures, so one array is sufficient to represent all weak
-	// bounds.
+	// bonds.
 	protected int[] p;
 
-	public ArcAnnotatedSequence(String nucleotides, String bounds, boolean basePairsCheck)
+	public ArcAnnotatedSequence(String nucleotides, String bonds, boolean basePairsCheck)
 			throws IllegalArgumentException {
 		// convert to upper case and trim for convenience
 		this.nucleotides = nucleotides.toUpperCase().trim();
@@ -79,22 +79,22 @@ public class ArcAnnotatedSequence {
 				throw new IllegalArgumentException(
 						"INPUT ERROR: primary structure contains an unkwnown nucleotide code at position " + (i + 1));
 			}
-		// parse bounds and convert them into WeakBond objects, check indexes and base
+		// parse bonds and convert them into WeakBond objects, check indexes and base
 		// pairs constraints
-		convertBounds(bounds, basePairsCheck);
-		if (this.bounds.isEmpty())
+		convertBonds(bonds, basePairsCheck);
+		if (this.bonds.isEmpty())
 			throw new IllegalArgumentException(
-					"INPUT ERROR: Arc Annotated Sequence contains no weak bounds, ther is no RNA secondary structure");
+					"INPUT ERROR: Arc Annotated Sequence contains no weak bonds, ther is no RNA secondary structure");
 		// initialize array p and checks that each nucleotide is involved in not more
-		// than one weak bound
+		// than one weak bond
 		this.p = new int[this.nucleotides.length() + 1]; // position 0 is not used
-		for (WeakBond b : this.bounds) {
+		for (WeakBond b : this.bonds) {
 			if (p[b.left] != 0)
-				throw new IllegalArgumentException("INPUT ERROR: Weak Bound (" + b.left + "," + b.right
-						+ ") has left nucleotide involved in more than one weak bound");
+				throw new IllegalArgumentException("INPUT ERROR: Weak Bond (" + b.left + "," + b.right
+						+ ") has left nucleotide involved in more than one weak bond");
 			if (p[b.right] != 0)
-				throw new IllegalArgumentException("INPUT ERROR: Weak Bound (" + b.left + "," + b.right
-						+ ") has right nucleotide involved in more than one weak bound");
+				throw new IllegalArgumentException("INPUT ERROR: Weak Bond (" + b.left + "," + b.right
+						+ ") has right nucleotide involved in more than one weak bond");
 			p[b.left] = b.right;
 			p[b.right] = b.left;
 		}
@@ -102,12 +102,12 @@ public class ArcAnnotatedSequence {
 	}
 
 	/*
-	 * Parse the input string containing the pairs of weak bounds and transform them
+	 * Parse the input string containing the pairs of weak bonds and transform them
 	 * into an ordered list of objects of the class WeakBond, checking that all
-	 * indexes are positive integers. Put the list in this.bounds.
+	 * indexes are positive integers. Put the list in this.bonds.
 	 */
-	private void convertBounds(String bounds, boolean basePairsCheck) {
-		this.bounds = new ArrayList<WeakBond>();
+	private void convertBonds(String bonds, boolean basePairsCheck) {
+		this.bonds = new ArrayList<WeakBond>();
 		// regular expression for matching (n,n);(n,n); ... ;(n,n)
 		// NOTE THAT white spaces are NOT admitted
 		// The following is the regexp that permits white spaces, but for long strings
@@ -117,13 +117,13 @@ public class ArcAnnotatedSequence {
 		// The following is the regexp that does not admit spaces
 		String regexp = "\\(\\d+\\,\\d+\\)(;\\(\\d+\\,\\d+\\))*";
 		// format check
-		bounds = bounds.trim(); // delete possible spaces befor and after
-		if (!bounds.matches(regexp))
+		bonds = bonds.trim(); // delete possible spaces befor and after
+		if (!bonds.matches(regexp))
 			throw new IllegalArgumentException(
-					"INPUT ERROR: list of weak bounds does not respect format (n,n);(n,n); ... ;(n,n)");
+					"INPUT ERROR: list of weak bonds does not respect format (n,n);(n,n); ... ;(n,n)");
 		// split of the pairs
-		String[] pairs = bounds.split(";");
-		// check and creation of WeakBounds
+		String[] pairs = bonds.split(";");
+		// check and creation of WeakBonds
 		for (int i = 0; i < pairs.length; i++) {
 			int left, right;
 			String pair = pairs[i].trim();
@@ -137,22 +137,22 @@ public class ArcAnnotatedSequence {
 					throw new NumberFormatException();
 			} catch (NumberFormatException e) {
 				throw new IllegalArgumentException(
-						"INPUT ERROR: an index of the " + (i + 1) + "-th weak bound is not a positive integer");
+						"INPUT ERROR: an index of the " + (i + 1) + "-th weak bond is not a positive integer");
 			}
-			// create the bound
+			// create the bond
 			WeakBond b = null;
 			try {
 				b = new WeakBond(this, left, right, basePairsCheck);
 			} catch (IllegalArgumentException e) {
 				throw new IllegalArgumentException(
-						"INPUT ERROR: at weak bound (" + left + "," + right + "): " + e.getMessage());
+						"INPUT ERROR: at weak bond (" + left + "," + right + "): " + e.getMessage());
 			}
-			// add the weak bound to the list
-			this.bounds.add(b);
+			// add the weak bond to the list
+			this.bonds.add(b);
 
 		}
-		// order weak bounds
-		Collections.sort(this.bounds);
+		// order weak bonds
+		Collections.sort(this.bonds);
 	}
 
 	/**
@@ -165,8 +165,8 @@ public class ArcAnnotatedSequence {
 	/**
 	 * @return the list of weak bonds in the secondary structure
 	 */
-	public List<WeakBond> getBounds() {
-		return bounds;
+	public List<WeakBond> getBonds() {
+		return bonds;
 	}
 
 	/*
@@ -176,7 +176,7 @@ public class ArcAnnotatedSequence {
 	 */
 	@Override
 	public String toString() {
-		return "ArcAnnotatedSequence [nucleotides=" + nucleotides + ", bounds=" + bounds + "]";
+		return "ArcAnnotatedSequence [nucleotides=" + nucleotides + ", bonds=" + bonds + "]";
 	}
 
 	/*
@@ -188,13 +188,13 @@ public class ArcAnnotatedSequence {
 	 * 
 	 */
 	protected class WeakBond implements Comparable<WeakBond> {
-		private final int left; // first member of the bound
-		private final int right; // second member of the bound
+		private final int left; // first member of the bond
+		private final int right; // second member of the bond
 
 		/*
 		 * Construct a pair.
 		 * 
-		 * @param aas reference to the arc annotated sequence to which this weak bound
+		 * @param aas reference to the arc annotated sequence to which this weak bond
 		 * belongs
 		 * 
 		 * @param left left index (starting with 1)
@@ -205,9 +205,9 @@ public class ArcAnnotatedSequence {
 			// perform all the checks
 			// index checks
 			if (left < 1 || left > aas.nucleotides.length())
-				throw new IllegalArgumentException("left index out of bounds.");
+				throw new IllegalArgumentException("left index out of bonds.");
 			if (right < 1 || right > aas.nucleotides.length())
-				throw new IllegalArgumentException("right index out of bounds.");
+				throw new IllegalArgumentException("right index out of bonds.");
 			if (left >= right)
 				throw new IllegalArgumentException("left index greater than or equal to right one.");
 			if (right == left + 1)
