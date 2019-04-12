@@ -1,0 +1,19 @@
+# File ASE_00004.dp
+# RNA SSTRAND database, RNase P RNA, Aeromicrobium fastidiosum, strain KCTC 9576
+# External source: RNase P Database, file name: A.erythreum.ct2
+
+CACAGAGCACGGUGGUGGCCAACAGCCACCCACGGCGACGUGCGGGACAG
+UGCCACAGAGAACAGACCGCCAGCGGCCCCGCGGCCUUCGGGCCACGGGG
+UGCGGGCAAGGGUGAAACGGUGAGGUAAGAGCUCACCAGCGACGUCGGCG
+ACGGCGUCGGCUCGGUAAACCCCACCGGGAGCAAGACCAAGAGGGCGCUC
+CGGCGCCUGCGCUGACGGGCUGCUCGUCCGACGUCAGCGGGUAGGUCGCU
+CGAGGCACGCAGCAAUGCGUGACCCAGAUGGAUGGUCGCCCCCCAGCCCU
+CGGGCCGGGG
+(...[[[[.((((((((((.....)))))(((((....)))).)((...(
+((((............(((((..(((((((((((((....))))))))))
+).)))))..)).......((((((.......))))))((((((((((...
+.)))))))).)).)))..))))))))))......((((....((((((..
+..))))))..((((((((((.]]]])))))...))))).....))))...
+...((((((((....)))))))).................((((((((..
+..))))))))
+

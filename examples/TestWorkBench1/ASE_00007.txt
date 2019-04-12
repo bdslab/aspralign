@@ -1,0 +1,19 @@
+# File ASE_00007.dp
+# RNA SSTRAND database, RNase P RNA, Acidothiobacillus ferrooxidans, strain ATCC 23270
+# External source: RNase P Database, file name: A.ferrooxidans-g.ct2
+
+GGAGUGGGCCAGACGACCGCCGCGGAGCAAUCCGGGGAGGAAAGUCCGGG
+CUCCACAGGGCAAGGCGCCGGCUAACGGCCGGGAGGCGUGAGCCUACGGA
+AAGUGCCACAGAAAAUAUACCGCCAAAGCGCGUAAGCGCCGGUAAGGGUG
+AAAAGGUGCGGUAAGAGCGCACCGCAUUUCCGGCGACGGGAAUGGCAGGG
+AAAACCCCGCCUGGAGCAAGACCAAAUAGGCGUGCGAUACCGUGGCCCGC
+GGUGCAUGCGGGUAGGUUGCUGGAGCCUGCGCGUAAGUUCAGGCCUAGAG
+GAAUGGUCGUCCACGACAGAACCCGGCUUAUCGGCCCACUCCAAUU
+((((((((((({{{{{{{.(((((((....)))))))....(((.(((((
+((((...[[[[.((((((((((.....)))))(((((....)))).)((.
+..(((((............(((((...((((....))).))))..))...
+....((((((.......))))))(((((((((....)))))))).)..))
+)..)))))))))))))...((((......((((((...(((((.]]]]))
+))))))))).....))))......((((((((....))))))))......
+....}}}}}}}..........)))))))).).))))))))))....
+

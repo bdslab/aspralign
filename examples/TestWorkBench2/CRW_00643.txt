@@ -1,0 +1,25 @@
+# File CRW_00643.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.C.luteoviridis.B.C1.SSU.1052.bpseq, ID: X73998
+
+AUUGAAAGCUCUUUCUUGAUUCUGUGGGUGGUGGUCGAGAAACUUCGGUU
+GUGUGCCACGCUGCGAGCCUGCGAGAUCUACUGUUAAACUCCGUGCCGCC
+CAGCACGCGAGGGGUCUCGACAACGGSUGCGCUAGUCCAUCUGCUAUGUG
+AGCAGGGUGGGCGACACCGUCAAAUUGCGGGGAUCUCCUAUAGCUCAUCG
+UACCCGCUCAGCGCUCGAAAGGGCGCUGUGCUCAAGGUAACAAUCGGUGA
+GAUGCGACAAUGGACAAUCCGCAGCCGGGUCCUAAGCUCUUCGCCGGGUA
+UGGAUCAUCGGUUCACAGACUAGAUGUCGGUGGGUCAUUAUCGAAAAUGG
+CUUAAGGUAUAGUCGGACCACAUGGGAGACCAUGAUGUGGUGAAUAAGGA
+GAUACCAUCUCCCCGAGCGCCACGGUGCGCUCAGUCGAGCGGGCACGGGU
+CGGUCGGCAUGGCCGUUCUUAGUUGGUGGGUUGCCUUGUCAGGUUGA
+..........................(((((((...(((......((((.
+........(((.........)))......)))).....)))..)))))))
+.((((((....................)))))).((((((((........
+....))))))))..(((((((....((((((....(((.....(((((((
+((((..((((((((((....)))))))))).....)))....).))))))
+).((...))..)))...))))))(((..((((...((((......)))).
+.))))....)))...[.[[[[[...)))))))(((((((......)))))
+)).......]]]]]]((...(((((....))))).(((((((.....(((
+(((...)))))).....)))))))((((((((....))))..))))....
+...))..........................................
+

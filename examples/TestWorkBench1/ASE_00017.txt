@@ -1,0 +1,19 @@
+# File ASE_00017.dp
+# RNA SSTRAND database, RNase P RNA, Ascaphus truei
+# External source: RNase P Database, file name: A.truei.ct2
+
+gcggaaggaagcucacuguagaggCUACUUGCUGGGUGCUGUUGUUACUC
+UAUCAACCAGCCUUGGGGAAGGUCUGAGAUAAGAGCCACUUGUUGCCUUC
+ACAAGGCAUUGCUUGGUGUAAGCAAGUGAGUUCCCAUCAAAGAUGGCUCA
+GUUGCAAGCUUAAUGCAAGAGACAUAGCAAAGAAGCCCAAUAUACUUCUG
+AUAUGGAUGCAAUGCCCAACAGACUGGAAAUGACUCACGGCUGGCAUGUU
+CAAGCUCAAUGACUGAGGGGAAGCAAGUGAUGGCUUCCUaacccaauuca
+gaccacucuccggaauuccg
+((((((((...[[[[.((..((((.........(((((.......)))))
+..........))))))...(((.(((((.....((((......(((((..
+...)))))(((((((...)))))))(((((((...........(((....
+..................................................
+.....................))).......)))))))))))........
+.............]]]](((((((........)))))))........)))
+)))))....))))))))...
+

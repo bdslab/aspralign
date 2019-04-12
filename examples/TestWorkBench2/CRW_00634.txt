@@ -1,0 +1,21 @@
+# File CRW_00634.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.B.ciliata.JCM6865.C1.SSU.943.bpseq, ID: D38233
+
+accaggaguUAACAAACAGGCUCUGCUCCAAACAGUAGCUCGAAUAGAGU
+ACGGUGGUCGCUGUCGUUUAAAUACUAGUCUGUUUAUAACAGGCAAGAUC
+UUCAAAUUGCGGGGAAGUACUGGGGCUCUAAUCUACCAAGUCAUUGUCUG
+AAAAGGCAUGAUGGCCUGAGGUAAUAACUCAGGAUAUGGUUACAACGAUU
+AGAGAUGUUACAAUGUAUGAUUCGCAGCCCAAUCCCUCAAUAUGGGAUCA
+GGUUCAGAGACUAAACGGAGAUCGAUCUAGGCAUUGAACUAGGUUUAAGA
+UAUAGUCCAUUAUUCUGCUUAACAGCAAUUGAAUGUAUUAAUUGggagcc
+ugcggcuuaa
+.....(((((.((.....................)))))))....((...
+.(((...)))))(((((.((.(.((......)).).)))).)))..((((
+(((....((((((....(((.....((((((((((((..((((.(((((.
+...)))))))))..((((((.......))))))....)))....).))))
+)))).((...))..)))...))))))(((..(((((.......)))))..
+)))...[.[[[[[...)))))))(((((((........))))))).....
+..]]]]]]...((((((.....))).))).....................
+..........
+

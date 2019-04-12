@@ -1,0 +1,21 @@
+# File CRW_00654.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.D.parva.C1.SSU.943.bpseq, ID: M62998
+
+ACCAGGCGUUAAAAAGCAGACUCAGCGCCUAAGAGUCAGUGGGAAACCAU
+UGGCUAGUGCUUGGGUUUCAUUACUCAAGUGCAACACUGAUCAAAUUGCG
+GGAAAGCCCUAAAGCUUUGCUAACCAAGCUAAGUGUGAAAGCACUCAGUG
+GCCGGGUUAAAGACCUCGGGUAUGGUAAAAUCAGCAAAGAUGCAACAAUG
+GGCAAUCCGCAGCCAAGCUCCUGAAGCCUUAUAGGCAAUGGAGAAGGUUC
+AGAGACUAAAUGGCAGUGGGCCAACUUGUUGGCUUAAGAUAUAGUCCGUC
+CCAGCUGAAAGGCUGUCUGCUAGAGGAAGACCUUUCUAGGUCUGAGAGCU
+AGUAGAGGGUAGGAGAAGUCUCUCCUACCUGGAGGAAACGGGAGCC
+...(((((((.............)))))))...(((((((((....))))
+))))).((((((((((......))))))))))..(((((.((....((((
+((....(((.....(((((((((((..(((((((((....))))))))).
+.(((.(((...)))..)))....)))....).))))))).((...))..)
+))...))))))(((...((((....((((...))))...))))..)))..
+.[.[[[[[...)))))))((((((....)))))).......]]]]]]((.
+.(((((....)))))((((((((....((((((....)))))).....))
+))))))((((((((((....)))))))))).......)).......
+

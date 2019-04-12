@@ -1,0 +1,25 @@
+# File CRW_00650.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.C.saccatum.C1.SSU.1512.bpseq, ID: M84319
+
+AAGUCGUAACAAGGUUUCCGUUAACACACCUAGCGGAUAAAAGGGGCUGU
+UAAAAGCAGCUAACCCCUAGUGGCCUCAGUCGAUAGGGCUGAGAGACUGC
+GACACUGUCAAAUUGCCGGGAACUCCUGCUAAGCUGUUGAUACCGCUGAC
+UCAGGGAAACCUUAGCUCAGCACCGAGGGGAAACUCACGGGUAUGGUAAG
+AACUCAACAGAUAGGGAUAAUCGGCAGCCAAGCGCUAAGGACUAGCAAUA
+GUCUAUGCGUGCAGUUCACAGACUAAAUGGCAGUGGGUUCGGCUCAGAGA
+GUCCGAGCUUAAGAUAUAGUCGGUCCCUACCGAAAGGUAGACUGUGGGAG
+GAAGCUCGUUCGGUGAGCGGAGAGCCCACAGUGGUCGAGUUAAUACCACU
+UCUCGCAAGGGAAGCGGCGGUCUUAGUCUGUUAAGGGCUUCAAGACUCGU
+CUCGCACUGGAGUAAACGAGAGGUGA
+................(((((((.......)))))))....(((((((((
+.....))))....))))).((((((((((((.....))))..))))))))
+..(((((((....((((((....(((.......(((((((((((.(((((
+(((((....)))))).))))..(((((((....)))))))....)))...
+.).)))))))....)))...))))))(((..((((...((((((....))
+))))..))))..)))...[.[[[[[...)))))))((((((((((...))
+).))))))).......]]]]]]((..(((((....)))))((((((((..
+...(((((.....)))))......))))))))(((((((((((((((.((
+((((....))))))....))))))))........................
+)))).))).......)).........
+

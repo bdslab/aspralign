@@ -1,0 +1,23 @@
+# File CRW_00693.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.Staurastrum.sp.M752.C1.SSU.1506.bpseq, ID: X74752
+
+AACAAGGUUCCGUUUAUGAUCCUUCUCGCCCCGUUAUGGGUUCGAGUCGC
+ACGGAAGCCUUAGCACUAUGUGCAUUGUAUUUUAAUACGCUGCACCCGUG
+CUAGUGCCAAUGAUGAUGUCAUUGGUGCGACGUCAUCAAACUGCGGGAAA
+GCUCCUAUAUGGCAUGGGAUACCAAGCACGGCAUCACACAUUGUGUGUGA
+UGAGUGUGGCUGAGUUAAUGCACUCGGGUAAGGUAACAACCCCCAUGUCA
+AGAGGACCGACCUGCAGCCAAGCCUUUGGUUAUACCAAGGGUGCUGUUCA
+CAGACUAAAUGAUGACGGGUUGCUAAUCACAAAGCGUGAUUGCAGCUCAA
+GAUAUAGUCGGACUCACUCUAGAGUGAGACAACACGUAAUACCUUCCCGC
+ACGUGAAUUCACCGUUCCGUAGG
+...((((((...............((((.((((...))))..))))....
+.....))))))(((((...((((..................))))..)))
+)).(((((((((((...)))))))))))..(((((((....((((((...
+..(((......((((((((((((..((((..(((((..((.....)))))
+)).))))..((((((......))))))....)))....).))))))))..
+...)))....))))))(((..(((((((((...)))))))))..)))...
+[.[[[[[...)))))))((((((.((((((.....))))))))))))...
+....]]]]]]((((((((....))))))....(((((.............
+)))))......))..........
+

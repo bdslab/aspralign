@@ -1,0 +1,21 @@
+# File CRW_00658.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.G.spirotaenia.C1.SSU.1506.bpseq, ID: X74753
+
+AACAAGGUUUUGCCUUGAGCAGACGCUUGCGGAAGCCUUAGCAGCCCACA
+AGGGUUCCCCUCGCGACUAUAUUUAAAGGAAGGGGAUUGAAUGCUAGUGC
+CUGAGCUGCCAACUUGGGUGCGACAUCGCCAAAUUGCGGAGAACUCCACA
+UUUGCCUCGAUUACCAAGCGGACCGCCGAAAGGACCCCGUGGCCGGGCUA
+AUUGCUUUGGGUAUGGUCAAAACAUCGAGGAAAAGGAUGAUCCGCAGCGA
+AACCCUCUUGUUGUACAAAAGUGGGUGGCGUUCACAGACUAAACGGCGAU
+GGGUUCCAGAAAUUCGAAACCUGGGCUUAAGAUGUAGUCGGUUUGUCUUC
+GAAAGUGGCAGAUUGCAGAGUUUCACCGUUCCGUAGG
+...((((((((....................))))))))((((((((...
+.)))))(((((...................))))).......))).((((
+(((((.......)))))))))..(((((((....((((((....(((...
+....(((((((((((..((((....((....))...))))..((((((..
+...)))).))....)))....).)))))))....)))...))))))(((.
+.((((((((.........))))))))..)))...[.[[[[[...))))))
+)(((((.((...........))))))).......]]]]]]((..((((((
+(....))).))))............))..........
+

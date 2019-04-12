@@ -1,0 +1,23 @@
+# File CRW_00676.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.P.macrosporus.C1.SSU.1506.bpseq, ID: D85143
+
+cuuggucauuuagaggaaguaaaagucguaacaagguUUUGUUCUCGAGU
+AACGAGGAUGGAUUGGACUCCCUUCCGCGGUGACACUCACAGAAGCCUUU
+GCAGCCUCGCAAGAGGUCUGGCGCGACAGUAAAGAAUGCCUGAUGCAAGU
+CAGUUCGCUGGCAACACUUUCGAAUUGCGGGGACGUCCUGAGAGCUCGGU
+UCUACCAACCAGCAGAGAAAUCUAGCCGGGGCUGAUGUUAACAGCAUCGG
+AGGGUAAGAAUGAAUCGAGAUUGGAUGAUCCGCAGCCAACCCCUAAGGCU
+UGCUGCUAUGGGAGAGGUUCACAGACUAAGUGGAAGUGGGUGGUAUGCUC
+UAGCGUACUGCUUAAGAUAUAGUCGGUCUCUGCUGGAAACAGCGGAGAAG
+UCACUGCACAUGAAACGuuccguaggugaaccu
+................................((((((((......((((
+..((.(((((((......).)))))).)).....))))...))))))))(
+((((((((....)))))..((((.............))))...)))).((
+(((....)))))..(((((((....((((((....(((......((((((
+((((((..((.(((((....))).)).))..((((((.......))))))
+..)))....).))))))))...)))...))))))(((...(((...(((.
+....)))..)))...)))...[.[[[[[...)))))))((((((((((..
+..)))))))))).......]]]]]]((((((((((....))))))))...
+..............)).................
+

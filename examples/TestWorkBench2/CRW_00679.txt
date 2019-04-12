@@ -1,0 +1,21 @@
+# File CRW_00679.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.P.pachydermus.C1.SSU.943.bpseq, ID: D85142
+
+uugacggaagggcaccaccaggaguAAACGUUUAUGUCGCAGUUAACUCU
+GCUCCGAAAAGCCACUCGAAAGAGUGUGGUGUCCUUAGAGGCUAGUCAGU
+CCGCUGGCAACACAAUCAAAUUGCGGGAAACUCCUUAGAGCUCAAGCUAC
+CGCUGCUGCCCAGAGAUGGGCUGUGGCACCAGGUUAACGACCUCGGGUAU
+GGUAACAACGCCUGAGAUUGGACAAUCCGCAGCCAAGCUCCCUCAUGGGA
+AGAAGGUUCAGAGACUAGAUGGUUGUGGGUUGAACACGUUUAUCUGAAGU
+AUUUGAACGGUUCGGCUUAAGAUAUAGUCCAAUCCAAUGUGGAAACGCAC
+UGGUCUGAAAGAUAGAAAAUGggagccugcgcuuaauuugac
+....................((((((.......................)
+)))))....((((((((....)))))(((.....)))...))).(((((.
+...)))))..(((((((....((((((....(((......((((((((((
+(.((((((((((....))))))))))..((((((.....)))).))....
+)))....).)))))))...)))...))))))(((...((((((...))))
+))..)))...[.[[[[[...)))))))((((((((.((((((........
+...)))))))))))))).......]]]]]].((((((((((....)))))
+))).(((.....)))...))......................
+

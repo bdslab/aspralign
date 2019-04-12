@@ -1,0 +1,17 @@
+# File ASE_00015.dp
+# RNA SSTRAND database, RNase P RNA, Azotobacter salinestris, strain 184
+# External source: RNase P Database, file name: A.salinestris-184.ct2
+
+gaggaaaguccgggcUCCAUAGGGCAGAGUGCCAGGUAACGCCUGGGAGG
+CGCGAGCCUACGGAAAGUGCCACAGAAAACAACCGCCUAAGCGCGCAAGC
+GCCGGUAAGGGUGAAAAGGUGCGGUAAGAGCGCACCGCGCGGCUGGUAAC
+AGUUCGUGGCUAGGUAAACCCCACUCGGAGCAAGACCAAAUAGGGAUCCG
+UUGGCGUGGCCCGCGCUGGAUCCGGGUAGGUUGCUAGAGGCGGCCAGUGA
+UGGUCGUCGUAGAGGAAUGACUGUCCUCGacagaacccggcuua
+.....(((.(((((((((...[[[[.((((((((((.....)))))((((
+(....)))).)((...(((((...........(((((...((((....))
+)).)))..)).......((((((.......))))))(((((((((....)
+)).))))).)..)))..)))))))))))))...((((......((((((.
+..(((((.]]]]))))))))))).....))))......((((((((....
+))))))))...........................)))))))).
+

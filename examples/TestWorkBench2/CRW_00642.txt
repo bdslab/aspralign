@@ -1,0 +1,19 @@
+# File CRW_00642.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.C.grayi.UNK.SSU.1516.bpseq, ID: Z14026
+
+cauuuagaggaaguaaaagucguaacaagguuuccguagguGAAGGUUUG
+CCUACCAAAGCCCUUAGCCAGCGACUCUAAAGAAAUCAGCUAUCAGUCGC
+CCCUUCGGGGGCUGGCGACGCCAUCAAUCUGUGUCUGGGAGUACGCCCCG
+CCAAGGGGGCUACCACCAGCAGCUCGUUGCACUUCGAGUUCACAGGUCAA
+ACGAUAGCGGCCACUUCGGUGGUUGAGAUAUGAUCGGCCUCCAGCGCCAC
+CUAGCUGGGGAAUUUUGCGgaaccugcggaaggaucauuaaugaguucgg
+gggccuag
+...................................((((((((....)))
+)))))...........((((((..(((.((....................
+...)).))).))))))...[[[[[[......((.((((..(((.(((((.
+.....))))))))..))))))(((((........)))))...(.(((((.
+..]]]]]]((((((....))))))......))))))(((((((((.....
+...)))))))......))................................
+........
+

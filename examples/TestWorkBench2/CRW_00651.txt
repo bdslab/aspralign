@@ -1,0 +1,23 @@
+# File CRW_00651.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.C.saxonicum.C1.SSU.1506.bpseq, ID: X79497
+
+AACAAGGUUUUCCGAUGGUCCUUCUCGCCCGAAGGUUCGAGUCGCACGGA
+AGCCUAAGUGACCAGGGGCGAUUGAAAAAAGACCCUGCGUUGCUAGUGCC
+GAGCGAGAAAUGCUCGCGACGUUGCCAAAUUGCGGGGAAGACCUCUUUAU
+UGCGCGGGUUACCAAGCACGGCGGCCGUGCGUCCGUUUUUUAGGAUAAAG
+CACGCGCCGAGUGUGGCCAGGCCGUAUGAGCCUGGGUGUGGUAAUAACAU
+CCGACGCUCAUUCCAUUUUCUGGAAAAAAGGUGGACCCGCAGCCAAACCC
+GUUUCGGCGGGUGCUGUCCACAGACUAAAUGGCAACGGGCCCGUCCCAAU
+UAAAUGGCGACGGCUCAAGAUAUAGUCGGGCCUGCAGGUGCAUAAUCUGC
+AGGAAAUUGGAAAAAGCCUUCUCGCAAGUGAAUUCACCGUUCCGUAGG
+....(((((((........(((((......))))).............))
+))))).(((((((((((...............))))).)))))).(((..
+.((((.....)))))))..(((((((....((((((....(((.......
+..(((((((((((..((((..(((((((((((((........))))...)
+)))).)))).))))..((((((.......))))))....)))....).))
+))).))....(((((.....)))))....)))...))))))(((..((((
+((....))))))..)))...[.[[[[[...)))))))((((.((((((..
+....))).))))))).......]]]]]](((((((((((.....))))))
+))).................................))..........
+

@@ -1,0 +1,19 @@
+# File CRW_00721.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.m.S.pombe.B1.OX1.bpseq, ID: M15669
+
+guggugacccuguacuuuaccaacauuuauucugguucuuugguCAACGG
+AUGGCCCAAAAUAAAGAUUGCAAUGUGCUAUAAGCUGGAAAUCUAUGUAU
+UCAAUUUUAAAUACUUCCACGUAAAAAUUUUAAAUAUUGGUAGAUAAUCA
+GCUGGUAACCAAUUAUCCUUUUAAAUAAUAUUAUCCUUUUAAUAUGGAAU
+AUUUUAUUAUGGAUUUAGUAGGAACCUCAGAGACUAUAUGCACAUCACUU
+UAUUUUUAAAGUGAAGAGAUAGUCCAAAAAUAUUUACAUUUUUAAAUAUU
+UGcauccagaggucaauuuuauaggccucuuaacguugcuaua
+.........................................(((((....
+.)))))(((........)))..[[[[[[....((((((..((((((....
+.(((((((((((((......)))......))))))))))))))))..)))
+)))(((........((((................................
+..........)))).........)))...(.(((((...]]]]]](((((
+((....)))))))......))))))..(((((((((......))))))))
+)..........................................
+

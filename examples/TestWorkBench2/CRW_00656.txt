@@ -1,0 +1,23 @@
+# File CRW_00656.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.E.dermatitidis.C1.SSU.943.bpseq, ID: Z75304
+
+AAACUGUUCACAGUUUCUACGAAAGCCGUAGUUAACUCUGCGCCAUAAAG
+CAGCCCGAUAAGGGUGUGGUGAGUGCGGCCUUAAAUGCUAGUCCGCUGGA
+GUGGGCUCCCUUCGGGGGGUUUUCCUCUGGCGGGCGACACCCUCAAACUG
+UUCGGGGAAGCCCUAAAGCUCUGUCUUACCAAGCUACGCGUUGAUAAGAC
+CGUAGUGGCCCGGUUAAUGACCAGGGGUAUGGUAACAACGGAAAGAGAUG
+UCACAAUGGGUGAUCCGCAGCCAAACACCCGACUUCGGAAGAAGAGGGUG
+CAGGUUCAGAGACUAAAUGGGGGUGGGUUUGGAAAACGGACCUUCUAUUU
+CCCAAGCCUAAGAUAUAGUCCAAUCCCCUAGGGAAACUUAGGGGCUACUA
+CCUCUUCAAGUAGGAUCCUUCAAAUG
+(....(((.((..((((...))))......)).)))..).........((
+((((((.....))))(((((.......)))))...)))).((((((((((
+(.((((((((....))))))))..)))))))))))..(((((((....((
+..((((....(((.....((((.(((((((..((((((.(((.....)))
+))))))..((((((.....))).)))....)))....).))).)))).((
+...))..)))...))))))(((...(((((...(((....)))..)))))
+..)))...[.[[[[[...)))))))(((..((((((.(((...))).)))
+)))..))).......]]]]]](..((((((((....))))))))(((((.
+........)))))...........).
+

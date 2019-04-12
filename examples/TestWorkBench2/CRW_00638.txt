@@ -1,0 +1,25 @@
+# File CRW_00638.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.C.ellipsoidea.211-1a.C1.SSU.1506.bpseq, ID: X63520
+
+UAACAAGGUUUCCAAUUGGUACGCUGACAAAGAUGGUCCUUCCGUCAAGU
+UCACGUACUGAAGCCUUAGCCGCCUCGCAAGACGACUCGCCGCGACUUCC
+UCUUAUCGAGAGGUAAACAAGGAGCGAGUUUAAAGGCUAGUCAGCUCAGC
+UGGCAACACCGUCAAAUUGCGGGAACAUCCUAAGAGCUAUCGACCACCAA
+GCAGGCUGCUGAAAGGCGUCUGUGGCCGGAUUAACGACUCCGGGUAAGGU
+AACAGCGUCGGUAGAUGAAGCUUCCCUGACCGGAGGCUGAAAUGGAUCAU
+CCGCAGCCAAGUCCCUCCUCAGACGCUUUCAAGGUGUCUGGCGGGAUGCU
+GUUCACAGACUAAAUGAUGGUGGGUCCGCUCAUGGCGAGUGGGCUUAAGA
+UAUAGUCGGGUCGCUCUGGAAACAGGGCAGCGAAUCGCAGUACUUCACCG
+UUCCGUAGGUGAACCUGCAGAAGGAUCAA
+....((((((((.....((((((........(((((.....)))))....
+...))))))))))))))((((.((((....))))((((((..........
+..(((((....))))).......)))))).....)))).(((((.....)
+))))..(((((((....((((((....(((......((((((((((((..
+((((((.(((....)))))))))..(((((((....)))))))....)))
+....).)))))))).((((((((((......))))))))))..)))...)
+)))))(((..((((....((((((((((...))))))))))..))))..)
+))...[.[[[[[...)))))))(((((((((.....))))))))).....
+..]]]]]]((..((((((....))))))...................)).
+.............................
+

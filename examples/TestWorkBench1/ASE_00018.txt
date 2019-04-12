@@ -1,0 +1,23 @@
+# File ASE_00018.dp
+# RNA SSTRAND database, RNase P RNA, Agrobacterium tumefaciens, strain A348
+# External source: RNase P Database, file name: A.tumefaciens.ct2
+
+CCAGUUGGCCGGGCAGCCGCGCCUUACCAAUGUCGAAAGACGGUAAGGUG
+AGGAAAGUCCGGGCUCCACGGAAAUACGGUGCCGGAUAACGUCCGGCGGG
+GGCGACCCCAGGGAAAGUGCCACAGAGAGCAAACCGCCAUGCCUUGCAUG
+GUAAGGGUGAAAGGGUGGGGUAAGAGCCCACCGCGCCGCUGGUGACAGUG
+GUGGCAAGGUAAACCCCACCGGGAGCAAGACCGAAUAGGGAUGACACGGG
+GCGGGCGAAAGCCUGUUCACAGCCGGUUUCCGGGCCCGUCAUCCGGGUGG
+GUUGCGAGAGGCGGCAUGCAAAUGCCGUCCCAGAUGAAUGGCUGCCACGU
+UCCGGGUCAAACCGGGGCCAUACAGAACCCGGCUUACAGGCCAACUGGCG
+AA
+((((((((((({{{{{{{.(((((((((...(((....))))))))))))
+....(((.(((((((((.[[[[[[[.((((((((((.....)))))((((
+(....)))).)((...(((((............(((((((((...)))))
+))..)).......((((((.......))))))(((((((((....)))))
+))).)..)))..)))))))))))))...((((......(((((((...((
+((((((....))))))))...(((.]]]]]]])))..))))))).....)
+)))......((((((((....))))))))..........}}}}}}}((((
+(((((......))))))).))......)))))))).).))))))))))..
+..
+

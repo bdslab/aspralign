@@ -1,0 +1,19 @@
+# File CRW_00618.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.c.G.prostrata.C3.tLEU.bpseq, ID: X78050
+
+AAUUGGAUUGAGCCUUGGUAUGGAAACCUACUAAGUGAUAAUUUUCAAAU
+UCAGAGAAACCUUGGAAUUAAUAAAAAGGGCAAUCCUGAGCCAAAUCCUA
+UUUUUUUGAAAAAAUAAAAAAAAAAAUAAAGAUAGGUGCAGAGGUGCAGA
+GACUCAAUGGAACGCUGUUCUCAAAUGGAGUUGGUGAAGAGGGGUAUAUA
+CAGAGUGUAUCAAACGAUUCACCCACAGCGUGUAGAUUUUUUCACGAACG
+AAUUAUUAUUCAUCAUCGGAUUAGAAUAAAGAGAGAGUCCCGUUCUGCAU
+GUCAAUGCCGACAACAAUGAAAUUUAUAGGAAGAGG
+(((...)))....(((((((.(....).)))))))......[[[[[....
+((((((...(((...............)))...))))))(((..((.(((
+(((((......................)))))))))).....)))...(.
+(((((...]]]].].((((((.............................
+..................................................
+......................))))))......))))))..((.(.(.(
+(((......))))(.((......)).).).).))..
+

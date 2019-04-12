@@ -1,0 +1,25 @@
+# File CRW_00636.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.B.yamatoana.JCM2896.C1.SSU.943.bpseq, ID: D38239
+
+ggcaccaccagguguAAACUUUUAAGUCGCAGUUACUCUGCACUGAAUAG
+CAGCCCUAACGGGUGAGGUGGUUGCGCUUAUCAAACAAAUGUAAAUGCUA
+GUGAGAUUAUAAUCCUAGUCUUGUUAUACGAGACUGCUUUAUGGUCUUGC
+GAGACCCUCAAACUGCGGGAAAGUCUUAAAAACACGCUACACUAAGCUAU
+GUUUCGAAAGAUCAUAGUGGCCGGGGUAAUGACCUAGGGUAUAGUAAAAG
+CGAGCGUGUUUGUGCCAAUAGAUUAUCCGCAUCCAAGUCCCUAAAGUAUG
+GCAUGCUCCGGCAUGGCAUUACAAUGGGAAAGGUUCAGAGACUAGAUGGG
+GGUCGGUUCUUUCCGGAUGGGAAGGGUUUAAGGUAUAGUCCGUUACAAAC
+UGCAGUACAUUUUAGAUGUACGUCUGCUUGGUCUGCUUAUAGCUUUAUCU
+CACUGAGAUAAAGGUAAAGggagccugcgg
+..........((((((......................))))))....((
+..((((....))))((.((((((.(((((((...((....))..)))..)
+))).))))))..)))).((...((((((.(((....)))))))))...))
+..(((((((....((((((....(((......(((((((((((..(((((
+(..((....)).))))))..(((((((....)))))))....)))....)
+.)))))))..((...))..)))...))))))(((...((((....(((((
+.(((((....))))).)).)))...))))..)))...[.[[[[[...)))
+))))((((((((((....)))))))))).......]]]]]].((.(((.(
+.(..(((((((...)))))))..).).)))..(((....)))((((((((
+(...)))))))))...))............
+

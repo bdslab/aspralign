@@ -1,8 +1,0 @@
-# File SPR_00110.dp
-# RNA SSTRAND database
-# External source: Sprinzl tRNA database, ID: RG1140
-
-GCAGGUGNAGUUUAAUGGDAGAACUUCAGCCUUCC=AGCUGAUUGUGAGG
-GUPCGAUUCCCUUCACCUGCUCCA
-(((((((..((((.......)))).(((((.......)))))....((((
-(.......))))))))))))....

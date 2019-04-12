@@ -1,0 +1,19 @@
+# File ASE_00006.dp
+# RNA SSTRAND database, RNase P RNA, Aeromicrobium erythreum, strain NRRL B-3381
+# External source: RNase P Database, file name: A.fastidiosum.ct2
+
+CACAGAGCAACGGUGGUGGCUAACGGCCACCCACGGCGACGUGCGGGACA
+GUGCCACAGAAAUCAGACCGCCAGCGGCCGCCGCUCCUCGGAGCAGCGGU
+GCGGGUAAGGGUGAAACGGUGAGGUAAGAGCUCACCAGCGCUCCGGGUGA
+CCGGGGCGGCUAGGUAAACCCCACCGGGAGCAAGACCAAGAGAGUCGCGU
+GGCGCUUCGGCGGUGCACGGCUUGCGCUGACGGGCUGCUCGUCCGAUGUC
+AGCGGGUAGGUUGCACGAGGCGUCCAGCAAUGGGCGUCCCAGAUGGAUGG
+UCGCCCACG
+(...[[[[..((((((((((.....)))))(((((....)))).)((...
+(((((............(((((..((((((((((((....))))))))))
+.)))))..)).......((((((.......))))))((((((((((....
+)))))))).)).)))..))))))))))......((((....((((..(((
+(.(((....)))...))))))))..((((((((((.]]]])))))...))
+))).....))))......((((((((....))))))))............
+.........
+

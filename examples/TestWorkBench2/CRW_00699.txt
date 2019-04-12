@@ -1,0 +1,23 @@
+# File CRW_00699.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.U.maydis.C1.SSU.943.bpseq, ID: X62396
+
+ACCAGGAGUAAACUUUCACAGCUAGCCGCAGUGUCUCUGCUCCAAAAAGC
+CGCCUGAAAGGGUCGGUGCGUGUUCCUAUUUGAAAUAAUGGCUAGUCUGA
+UGCGAAUCAGGCGACACAUCCAAAUUGCGGGAAACUCCUUAGAGCUCUAG
+CUACCGCGGCCCCAUCGUGAGAUUAGGGUGCAGCACCAGGUUAAUGGCCU
+CGGGUAUGGUAAAAACGCUAGAGAUUGGACAAUCCGCAGCCAAGCCUCUU
+CGCAAGAAGUGGAAGGUUCAGAGACUAAAUGGUUGUGGGUGGCAGACGGU
+UUCGCGAAUGUAUGAAUCAAUCAUAAACACGUGAAGGAAGUCUGCUGCUU
+AAGAUAUAGUCCGAGCCACAGGGAAACCUUGGGAAUUUUGGCAACAAACC
+GAAACAGAUAAAUAACAUCGGGAGCCUGC
+....((((((......((((((.....))))))....))))))....(((
+(((((....))))(((.............))).......)))).((((((
+(....)))))))..(((((((....((((((....(((......((((((
+(((((.((((((((((....)))..))).))))..(((((((...)))))
+.))....)))....).)))))))...)))...))))))(((...((((((
+(....)))))))..)))...[.[[[[[...)))))))((((((((((..(
+((((((....(((((.....)))))....)))))))...)))))))))).
+......]]]]]]((.(((.(((....))))))...((((((.......))
+)))).............))..........
+

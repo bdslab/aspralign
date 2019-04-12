@@ -1,0 +1,17 @@
+# File CRW_00690.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.S.paniceum.UNK.SSU.1506.bpseq, ID: D49657
+
+aagucguaacaagguuUGAUUCUUCGCAGCCCGUUUCCUGCUGAAGCCUU
+GUACCCCAGUCUACCCGUGCGUCUUCACUGAUGCGGUAGGCAACACUGUC
+CAUGUGCUGAGAGGUCCCAAGAGACAAUCAGCAGCCGCCUCACCGCGGUC
+CACAGAUCAAACGACGGUGGCCCAAAGUCCAGCUCGCAGCUGAGUACUAC
+GGGUUAAAAUAUGACCGGUCCUGGUUAGAAAUCUCCAGGAAGACACGuuc
+cguagguga
+........(((((((((..........................)))))))
+))......((((((((((..((....))..))).)))))))...[[[[[[
+....((((((...((((...).)))..))))))(((((......))))).
+..(.(((((...]]]]]](((((...((((((((...)))))))).....
+)))))......))))))(((((((..(....)..))))).....))....
+.........
+

@@ -1,0 +1,17 @@
+# File CRW_00644.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.C.merochlorophea.UNK.SSU.1046.bpseq, ID: Z14025
+
+gagcucuuucuugauuuuguggguGUUUGCCAAUGCAGCAUUGCCCAGUA
+UAGCCUUUAGCUAGUCCGCCCCGGCGGGCCACAUCCUCCCUGUGCUGAAA
+GCCUUCCCCUGAGGGGCGGUAUCAGCAGCCAAAGAAUGCCAGUUCUUCGG
+UUCACAGACUAGGCGAGUGAUGGGCUGAGCCCUUAGGGGCCUCAGUUCGA
+GAUAUAGUCGAGCCCCAGGGCCUAAGCCCUGGGUGUUUGCGgguggugca
+uggccguucuuaguugg
+...................((((((..(((.......))).))))))...
+((((.....))))((((((....))))))...((((((....((((((..
+(((..((((...)))).))).))))))(((.((((((....)))))).))
+).....[[[[[...))).)))(((((((((((....))).))))))))..
+....]]]]]..((((((((((....)))))))).....))..........
+.................
+

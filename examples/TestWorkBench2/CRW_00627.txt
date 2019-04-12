@@ -1,0 +1,23 @@
+# File CRW_00627.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.A.brochopaga.C1.SSU.1506.bpseq, ID: U51950
+
+NNNNNNNNgucguaacaagguUUGAAGUAAGAUCGUUCCACAGGUGACGC
+UUAUGAGAAGCCUUUGUGGCCCUGCAAAGGGUACCUGCCGCGACUAUAAA
+CAAAGAAUGUGGGUAUUAAAUCGCAAGUCAGCUCUGGAGCUGGCCACACU
+UUCGAAUUGCGGGGACUCCCUAAAGCUCGAUUCUACCAACCAGCCGGGGA
+AACUUGUCUGGGGCCGAUGUUAACAGCAUUGGGUAUGGUAACAACGAAGA
+GAGAUAUGCUGGCUUGCCAGCGAAAUGGGUAAUCCGCAGCCAAGUCCCUA
+AAGCGUUGCUUCACGCCAUGGGAAAGGUCCACAGACUAAGUGGAAGUGGG
+UUGAACGAUCGUUCAGCUUAAGAUAUAGUCGGGCCCUGAUUGAAAGAUCU
+GGGGAGUCACUGuuccguaggugaaccugcggaaggaucauua
+................(((((((...........................
+.......)))))))(((((((((....))))...................
+....................))))).(((((((....)))))))..((((
+(((....((((((....(((....((((((((((((((((((((((((..
+..)))))))))))(((((((.....)))))))....)))....).)))))
+))))..((((((....))))))....)))...))))))(((...((((..
+.(((((......)))))..))))..)))...[.[[[[[...)))))))((
+((((((....)))))))).......]]]]]]((((((((((....)))).
+)))).....))................................
+

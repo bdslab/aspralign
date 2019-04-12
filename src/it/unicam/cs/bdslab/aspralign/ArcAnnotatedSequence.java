@@ -29,9 +29,9 @@ import java.util.List;
 /**
  * 
  * Representation of an RNA secondary structure with any kind of pseudoknot. It
- * consists of the nucleotide primary sequence and of a list of weak bonds
- * given as pairs of positions in the primary sequence. Positions start at 1 and
- * end at the length of the primary sequence.
+ * consists of the nucleotide primary sequence and of a list of weak bonds given
+ * as pairs of positions in the primary sequence. Positions start at 1 and end
+ * at the length of the primary sequence.
  * 
  * @author Luca Tesei
  *
@@ -169,6 +169,21 @@ public class ArcAnnotatedSequence {
 		return bonds;
 	}
 
+	/**
+	 * Determine if the secondary structure denoted by this arc annotated sequence
+	 * is pseudoknotted.
+	 * 
+	 * @return true, if there are at least two crossing WeakBonds in the structure
+	 *         denoted by this arc annotated sequence
+	 */
+	public boolean isPseudoknotted() {
+		for (int i = 0; i < this.bonds.size(); i++)
+			for (int j = i + 1; j < this.bonds.size(); j++)
+				if (this.bonds.get(i).crossesWith(this.bonds.get(j)))
+					return true;
+		return false;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -260,6 +275,27 @@ public class ArcAnnotatedSequence {
 		 */
 		protected int getRight() {
 			return right;
+		}
+
+		/**
+		 * Determine if this WeakBond crosses with a given other WeakBond.
+		 * 
+		 * @param wb the WeakBond to check for crossing with this WeakBond
+		 * @return true if this WeakBond crosses with the WeakBond {@code wb}
+		 * @throws NullPointerException     if the passed WeakBond is null
+		 * @throws IllegalArgumentException if the passed WeakBond is equal to this
+		 *                                  WeakBond
+		 */
+		protected boolean crossesWith(WeakBond wb) {
+			if (wb == null)
+				throw new NullPointerException("Passed WeakBond was null");
+			if (this.equals(wb))
+				throw new IllegalArgumentException("Passed WeakBond was equal to this one");
+			if (wb.left < this.left && this.left < wb.right)
+				return true;
+			if (this.left < wb.left && wb.left < this.right)
+				return true;
+			return false;
 		}
 
 		/*

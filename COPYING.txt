@@ -1,5 +1,5 @@
 ***************************************************************************
-ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment - version 0.9
+ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment - version 0.91
 
 COPYING and CREDITS
 ***************************************************************************

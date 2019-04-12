@@ -1,0 +1,17 @@
+# File CRW_00608.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.b.Dermocarpa.sp.ATCC29371.C3.tMET.bpseq, ID: U10480
+
+CUCAACAUGCAAGAUUAACUAAGUGCUUAGCAGUUAGUUUUGCUAUGGGC
+GGUACGUAAAGAAAUUUGCGUGCGUUUACCUGUCAAACUCGGGGAAGCCA
+UUAGCGCGGUAAUCCCGAACCAAGCUCUCGCAAGAGAGAAGGUGUAGAGA
+CUGGAAGGCAGGCAUCCUAACGUUAAGCCGAGGAUGAAGGGACAGUCCAG
+ACCACAAACUGGUUAACUAAAAGCUAGUUAAUUCAGGCAGUGAAAGCUGU
+AGAUGAUGGUAAGCAUAA
+(((.....((((((((((((...........))))))))))))...))).
+.(((((((((....))))))))).....[[[[[[....((((((...((.
+.......))...))))))((....(((((....)))))...))...(.((
+(((...]]]]]]((((((..((......))))))))......)))))).(
+(((((.....(((((((((.....)))))))))...(((((....)))))
+.....)))))).......
+

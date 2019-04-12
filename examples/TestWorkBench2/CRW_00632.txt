@@ -1,0 +1,23 @@
+# File CRW_00632.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.A.stipitatus.C1.SSU.1046.bpseq, ID: X56100
+
+AUGGGUGAAAGCACUAUUGCCCAUCAUAGCAGCUGUCCACAAAGCAGUCU
+GCUAGUCGUCGUUGCACCGCUUUGCAAGGCGCAACGCACGGCGAGACCGU
+CGAAUUGCGGGGACAUCCUUACAGCUCAAGCUACCAACUUGUCGCAGAAA
+UGCUGGCAAGGGCCGGGGUAAUGACCCAGGGUAUGGUAAAAACGCUUGAG
+AUUGGAUAAUCCGCAGCCAAGCACCUUACCCGGAUUCAACGUCCGGAAAG
+GUGAAGGUUCAGAGACUAGGUGGCGGUCGGUCACGAGACGUGGCUUAAGA
+UAGAGUCCGUUCGCGCUGAAAAGCGUUCGUCGGGAAGAAAGCCUUAGCAA
+GGCCGGAGCCAGACGAAGGGUAGCCAUUAUUGGCUGCCUCGAGGUACACG
+GGUGGUGC
+((((((((........))))))))...(((((((((.......)))).))
+))).((((((((((((((.........))))))))).)))))..((((((
+(....((((((....(((......(((((((((((..(((((((((....
+))).))))))..(((.(((....)))).))....)))....).)))))))
+...)))...))))))(((...((((....((((((.....))))))...)
+)))..)))...[.[[[[[...)))))))(((((((...))))))).....
+..]]]]]]((..(((((....)))))((((((((......(((((...))
+))).....)))))))).(((((((((....)))))))))........)).
+........
+

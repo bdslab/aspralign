@@ -1,0 +1,21 @@
+# File ASE_00012.dp
+# RNA SSTRAND database, RNase P RNA, Synechococcus sp., strain PCC 6301
+# External source: RNase P Database, file name: A.nidulans.ct2
+
+GCGGGGAAAGGAGGCGAGGCAGUUGCGGCUCAGGCUUCGGUUAUGGGCUG
+AGGAAAGUCCGGGCUCCCAAAAGACCAGACUUGCUGGGUAACGCCCAGUG
+CGGGUGACCGUGAGGAGAGUGCCACAGAAACAUACCGCCGAUGGCCUGCU
+UGCAGGCACAGGUAAGGGUGCAAGGGUGCGGUAAGAGCGCACCAGCAACA
+UCGAGAGGUGUUGGCUCGGUAAACCCCGGUUGGGAGCAAGGUGGAGGGAC
+AACGGUUGGUCUUUUACCUGUUCCGUUUAUGGACCGCUAGAGGUGGCUAG
+UAAUAGCCAUCCCAGAGAGAUAACAGCCCUCUGUCUUCGACAGAGAACAG
+AACCCGGCUUAUGUCCUGCUUUCCCUACUUUAUUU
+.....(((((((((.(({{{{{{{.((((((((((....))).)))))))
+....(((.((((((((((.[[[[[[[.(((.(((((((.....)))))((
+(((....)))).)((...(((((...........(((((..(((((((..
+..))))).)))))..)).......((((((.......))))))(((((((
+((....))))))).)).)))..))))))))))))))...(((....((((
+(..(((.]]]]]]].)))))))).........)))......((((((((.
+...))))))))..........}}}}}}}(((((((...))))))).....
+..)))))))).).))))))))))............
+

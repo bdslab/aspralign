@@ -1,0 +1,21 @@
+# File ASE_00020.dp
+# RNA SSTRAND database, RNase P RNA, Anabaena variabilis, strain ATCC 29413
+# External source: RNase P Database, file name: Anabaena-ATCC29413.ct2
+
+GGGGAGGAAAGUCCGGGCUCCCGAAAGACCAGACUUGCUGGAUAACUUCC
+AGUGCGAGCGAUCGUGAGGAUAGUGCCACAGAAAAAUACCGCCAAAACAA
+UUCAAAAUUCAAAAUUCAAAAUUCAAAAUGAAUAAUUUUGGAUUUUGAGU
+CUUAGUUAUGAAUUCAAUUUUGGUAAGGGUGCAAAGGUGCGGUAAGAGCG
+CACCAGCAGUAUCGAGAGGUACUGGCUCGGUAAACCCCGGUUGGGAGCAA
+GGCCGAAGGAACUAUGGUUGGUCUUUUACCAGUUCCGUUAUCAGAGAGCC
+GCUAGAGGCGUUUGGUAACAAACGUCCCAGAUAGAUAAUCGCCCUCGUGU
+AAAGCAAUUUACACAGAGAACAGAACCCGGCUUAC
+........(((.((((((((((.[[[[[[[.(((.(((((((.....)))
+))(((((....)))).)((...(((((...........((((((((((((
+.((((((((((((((((((((((((((((.....))))))))))))))))
+))))))))))))))..))))))))..)).......((((((.......))
+))))(((((((((....))))))).)).)))..))))))))))))))...
+(((.....(((((..(((.]]]]]]].))))))))............)))
+......((((((((....)))))))).................(((((((
+(((....))))))).))).......))))))))..
+

@@ -1,0 +1,25 @@
+# File CRW_00695.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.T.cosmopolitanis.C1.LSU.1925.bpseq, ID: X03107
+
+CGGGAGUAACUAUGACUCUCUAAAUUGCAAAAUUUACCUUUGGAGGGAAA
+AGUUAUCAGGCCUGCACCUGAUAGCUAGUCUUUAAACCAAUAGAUUGCAU
+CGGUUUAAUAGGCAAGACCGUCAAAUUGCGGGAAAAGGGUCAACAGCCGU
+UCAGUACCAAGUCUCAGGGGAAACUUUGAGAUGGCCUUGCAAAGGAUAUG
+GUAAUAAGCUGACGGACAGGGUCCUAACCACGCAGCCAAGUCCUAAGUCA
+ACAUUUCGGUGUUGAUAUGGAUGCAGUUCACAGACUAAAUGUCGGUCGGG
+GAAGAAUAGGUAUUCUUCUCAUAAGAUAUAGUCGGACCUCUCCUUAAUGG
+GAGCUGGCGGAUGAAGUGGUGCAACACUAGAGCCGCCGGGAACUAAUAAU
+AAACAUAAUAUUAGUUUUGGACUAAUCGUAAGGUAGCCAAAUGCCUCGUC
+A
+...............(((((((((..............)))))))))...
+((((((((((......)))))))))).((((((((((((((.......))
+)))))))).))))..(((((((....((((((....(((.......(((.
+((((((((..(((((((((....)))))))))..(((.....)))....)
+))....).)))))))......)))...)).))))(((..((((...((((
+((((....))))))))..))))..)))...[.[[[[[...)))))))(((
+(((((((....)))))))))).......]]]]]]((...(((((....))
+)))(((((((....((((......))))....))))))).((((((((((
+(....))))))))))).........)).......................
+.
+

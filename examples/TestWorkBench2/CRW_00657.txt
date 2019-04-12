@@ -1,0 +1,25 @@
+# File CRW_00657.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.G.planctonica.C1.SSU.943.bpseq, ID: Z28970
+
+AGGGCACCACCAGGCGUAAAACCAAGCCGUUUGGCUCUGCGCCAGUCGGG
+UGUGAGGAGGGCCUCAAACAAGCUCCUCACACGAGAAACCCGGCUAGUCC
+UGGUGCGGCUUGCAUCGCGCCGCCGCACCUGGGCAACAUCAUCGAAUUGC
+UGGAAACCCCUAAAGCUCUUGGUACCAACCUGCAUGGGAAAUCGUGCGGG
+GGCCCACUCCGGGGAGGUUAUAAUCCAAGAGAUGCAACAAUGGGCAAUCA
+GCAGCGAAGACCCUGUCGGUUGGGACUUGCGUCCCGGCCCAUGGGUAACG
+UUCAGAGACUAAGUGGUGAUGGGCCCCGAUGCCACCCGGCCUCGGGGCUU
+AAGAUAUAGUCCGGCCCCGGCGAAAGCCGAUGUCGAGAUGAGGGGGUGCG
+ACCCCAGAGCUCGGCAGUAGGGAUCAGAGUUCCUGCUCUAAUGUGGGCAC
+GUGCGGCUUAA
+............((((((...................))))))(((((((
+(((((((((.............)))))))).......)))))))).((((
+(((((((((............)))))))))))))..(((((((....(((
+(((...(((......(((((((((((..(((((((((....)))))))))
+..(((.....)))..)))....).))))))).((...))..)))...)))
+)))(((...((((....(((((((((....)))))))))...))))..))
+)...[.[[[[[...)))))))((((((((((((....)))))))))))).
+......]]]]]].((..((((....)))).(((((((.....(((((...
+)))))....)))))))((((((((....))))))))......))......
+...........
+

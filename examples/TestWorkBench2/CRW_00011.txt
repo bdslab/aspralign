@@ -1,0 +1,25 @@
+# File CRW_00011.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: b.I1.e.C.sorokiniana.C1.SSU.1046.bpseq, ID: X73993
+
+nnnnnnnnnnnucuauggguGAAAAGUAUUGCACUUACUGCCCAUGAAAG
+CAGCCCGUCCCGUCGUCACGGGGCAGAGCGGGCUGCUAGUCACCGCCGCA
+CCGCUAUCUGCGAGGUGCGGCGGCUGGCGAGACCGUCGAAUUGCGGGGAC
+ACCCUUAGAGCCUGUGUCACCAACCCGGCGUGGAAACACAGCCGGGGGCC
+GGGGUAAUUACCUAGGGUAUGGUAAAAGCACACAGGAUUGGGCUAUCCGC
+AGCCAAGCUCCUAAGGGCCGAGCGAUCGGCCUAGGGAGAAGGUUCAGAGA
+CUAGGUGGCGGUCGGUUCCCAAAGUAUCGCUUGGGGGCUUAAGAUAGAGU
+CCGACACAGCAGAAAUGCUGCCUCGGGACGAAUGUUUCGAGCAGAAACGG
+GAGUCCGGGGGAGGGGGAACGCACAGUUGCUCCCCCUUUGAGUAGUCGgg
+uggugcauggccguucuuaguuggugggUugccuugu
+..............(((((((.................)))))))...((
+(((((((((((((....))))).....)))))))))).((((((((((((
+((...........)))))))))).))))..(((((((....((((((...
+.(((......((((((((((((((((((((((....))).))))))))((
+(((((....)))))))....)))....).)))))))...)))...)))))
+)(((...((((...(((((((....)))))))..))))..)))...[.[[
+[[[...)))))))(((((((((........))))))))).......]]]]
+]]((..(((((....))))).((((((.....((((((.....)))))).
+...))))))(((((((((............)))))))))......))...
+.....................................
+

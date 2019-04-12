@@ -1,0 +1,23 @@
+# File CRW_00629.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.A.capsulatus.FLs1.C1.SSU.bpseq, ID: U57101
+
+AAACACUUGCAUGUUUUGCCGCAGCAACUCUGCGCCGAAAAGCAGCCCGA
+AAGGGUGAUGUGGUGCCCUUGGACAAAAAUAUUAAAUGCUAGUCCGGCCU
+UCUCACAGGCUGGGCGACACACUCAAACUGCGGGAAACCCCUAAAGCCUU
+CACUACCAAGCUUGUGUUUCGAAAGGACAUGGUGGCCAGGUUAAUUGCCU
+CGGGUACGGUCACAACGUGAAGGAUGUUCCAAUGGGCAAUCCGCAGCCAA
+GCCCCUACGUGUAGUGUCUGUAAUACUACAGACAUUUCAUAUGGGGAAGG
+UUCAGAGACUAAAUGGGUGUGGGUGCGUUACUCUUGAAGUGACAAGCUUA
+AGAUAUAGUCCGGCUUCAGUAGAAAUGCUGGAGAUCAGGUUCCACCUGUG
+AUUAAAACGGgagccugcggcuuaauuu
+(.....((((.(((......)))))))...).........((((((((..
+..))))(((((.................)))))...)))).(((((((((
+......)))))))))..(((((((....((((((....(((.....((((
+(((((((..(((.(((.(((....)))))))))..((((((.....))))
+.))....)))....).))))))).((...))..)))...))))))(((..
+.((((...(((.(((((((((......))))))))).)))..))))..))
+)...[.[[[[[...)))))))(((..((((((.....))))))..)))..
+.....]]]]]].(((((((((....))))))))..(((((...)))))..
+.......)....................
+

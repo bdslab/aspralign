@@ -1,0 +1,23 @@
+# File CRW_00655.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.D.salina.C1.SSU.943.bpseq, ID: M84320
+
+CGGAAGGGCACCACCAGGCGUUAACUUAGCAGCAAGCUCAGCGCCUCAAA
+GUCGAAGGGAAACCUUUGGCUAGUAUCUGGGUGUAGAUUUCACCUAAGUG
+CAACACUGUUCAAAUUGCGGGAAAGCCCUAAAGCUUUGCUAACCAAGCUG
+UCCUAGAAAUGGGAUGGUGGCCAGGUGAAAGACCUUGGGUACGGUAAAAU
+CAGCAAAGAUGCAACAAUGGGCAAUCCGCAGCCAAGCUCCUACGGGCUGU
+CAAAGCCUAUGGAGAAGGUUCAGAGACUAAAUGGCAGUGGGCAAGCAUGG
+CAAUGCUUGCUUAAGAUAUAGUCCGUCCCAGCUGAGAAGCUGCCUAUGAG
+AGGAAUGCCGUAAGGCAGGAGAGCUAAUAGGAAGUAAGUGUCUUUAAUCA
+ACUUACUUGGAUUCCACGGGAGC
+...............(((((((.................)))))))...(
+((((((((....))))))))).(((((((((((.......))))))))))
+)..(((((.((....((((((....(((.....(((((((((((..((((
+(((((....)))))))))..(((.((.....))..)))....)))....)
+.))))))).((...))..)))...))))))(((...((((...(((((..
+...)))))..))))..)))...[.[[[[[...)))))))(((((((((..
+..))))))))).......]]]]]]((..(((((....)))))((((((((
+.....((((....))))......))))))))((((((((...........
+)))))))).......))......
+

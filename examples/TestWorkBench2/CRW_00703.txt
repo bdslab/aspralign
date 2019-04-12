@@ -1,0 +1,17 @@
+# File CRW_00703.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.m.M.grisea.B2.ND1.bpseq, ID: X96412
+
+uagccgaggcuAACCUGCUAAUCUGGUUUGGUCUGGUUAUAUGUCACAAA
+UUGCUAGGAAACCUUUUUAUUUUAAAAACAAAAGACAAUUAGCAGGAAAC
+UUAAUUUAACCUAAUUAAAAAUAUUAGAUAAUUAAACUCUUAUAGACUAA
+ACGUGACAAUUUAAUAUAUAUAUAUAUUUAUUUAUAUAUAUGAUUAAAUA
+AGAUAUAGUCAAUCAUCGGUGUGAAUCGACUUAAAAAAAAAAGCACAUGG
+GUUAAACCCAUCCCCCCUUAUUAGGGgaaucagaa
+......(((((((..............))))))).......[[[[[[...
+.((((((....((((((............))))))...))))))((....
+.(((((.......................)))))...))...(.(((((.
+..]]]]]]((((((((((((((((........))))))))).))))))).
+.....)))))).(..(((((....))))).................((((
+((...))))))............)...........
+

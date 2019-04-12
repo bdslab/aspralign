@@ -1,0 +1,17 @@
+# File ASE_00011.dp
+# RNA SSTRAND database, RNase P RNA, Azomonas macrocytogenes, strain 123
+# External source: RNase P Database, file name: A.macrocytogenes123.ct2
+
+gaggaaaguccgggcUCCAUAGGGCAAAGUGCCAGGUAACGCCUGGGAGG
+CGUGAGCCUACGGAAAGUGCCACAGAAAAUAACCGCCUAAGCGCUUCGGC
+GCCGGUAAGGGUGAAAAGGUGCGGUAAGAGCGCACCGCACGGCUGGCAAC
+AGUUCGUGGCUAGGUAAACCCCACUUGGAGCAAGACCAAAUAGGGAUCCA
+UCGGCGUGGCCCGCGCUGGAUCCGGGUAGGUUGCUAGAGGCGGUCAGCGA
+UGGCCGUCGUAGAGGAAUGGCUGUCCUCGacagaacccggcuua
+.....(((.(((((((((...[[[[.((((((((((.....)))))((((
+(....)))).)((...(((((...........(((((...((((....))
+)).)))..)).......((((((.......))))))(((((((((....)
+)).))))).)..)))..)))))))))))))...((((......((((((.
+..(((((.]]]]))))))))))).....))))......((((((((....
+))))))))...........................)))))))).
+

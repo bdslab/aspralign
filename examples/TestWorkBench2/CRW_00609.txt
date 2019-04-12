@@ -1,0 +1,21 @@
+# File CRW_00609.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.b.P.hollandica.1.C3.trnL.bpseq, ID: U29955
+
+GUCAACCCGUAGACCAUCAGGGGGGCGUGGCGGAAUGGUAGACGCUGCGG
+ACUUAGAUAAACUGGGCCUUGGUGGAGAAAUCCGCGAAGUGUAAGCUCUC
+AAAUUCAGGGAAACCUAAGGCCAAGGGCUAGGGCAAUCCUGAGCCAAGCU
+GAGGGAUCAACCACCCCUAGGGGCGUUGACCUUCGGAAGGUGCAGAGACU
+CGACGGGAGCUACCCUAACAGGCCGUCUGCCAAGGCAGGCGAUCGCUGAG
+GGUAAAGGGAGAGUCCAAUUCUCAAAACCUCUGGCACCACGUCAGGGGCA
+ACAGUGAAAGCUGUGGGAGAAUGAAAAUCCGUUGACCGUGAGGUUCGUGA
+GGGUUCAAGUCCCUCCGCCNNNN
+..................................................
+.(((((.....))))).(((((((((....))))))))).....[[[[[[
+....((((((...(((..((((...)))).)))...))))))(((...((
+(((((.(((((..(((....))).))))))))))))..)))...(.((((
+(...]]]]]]((((((..(((..(((((((....)))))))....)))))
+))))......)))))).(((((((...((((((((.....))))))))..
+(((((....))))).)))))))............................
+.......................
+

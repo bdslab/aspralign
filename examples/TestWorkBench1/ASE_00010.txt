@@ -1,0 +1,19 @@
+# File ASE_00010.dp
+# RNA SSTRAND database, RNase P RNA, Acholeplasma laidlawii, strain JA-1
+# External source: RNase P Database, file name: A.laidlawii.ct2
+
+gaggaaaguccgggcUAGCACACACCUUAUGGGUGUGUAGUGUUUGUGCU
+AAGGGAAAUCAUAACCUUAGGUAUGUUGUAUAAACAUAACGGCAAACUAG
+UUAUAGCUAAGGUGUUUCACUACGUUAUAACUUAAAUUAAAGUGCCACAG
+AGACGAAUCUAUUUAGAAAUAAAUAGAGUGAAACGCGGUAAACCCCUCAA
+GCUAGCAACCCAAAUUAGGUAGGGGCACAUGAUGUGUAGCAAUACAACAU
+CAUGCAAGAUUUGAAUCUUGAGAUUAAUAGUCACAAAAGAAGAAAUUCUU
+Uacagaacgcggcuua
+.....(((.((((((((((((((((.......)))))).....(((((((
+((((..........))))))(((((((.....)))))).)((......((
+((........((((...)))).......)))).........(((((....
+.......((((((((....)))))))).........)))..)))))))))
+)))))...(((..........)))...(((((((.............)))
+))))((((((....))))))...............((((((....)))))
+)......)))))))).
+

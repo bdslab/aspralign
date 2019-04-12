@@ -1,0 +1,25 @@
+# File CRW_00013.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: b.I1.e.M.anisopliae.2.C1.LSU.1921.bpseq, ID: AF197122
+
+aacuaugacuCAACGUUCUGAGGGAUGUAUAUUUCACAGCGGGGUUUGGC
+AACUAAACUUCGAGAGGGUCAAGUAACGUAAAAGGCGUUGCUAGUGGGCA
+GUGCUGACCUCUGGACCGGCGAUCCGCGACGAGAGACGCCCCCGCGACAU
+CAUCAAAUUGCGGGGACUCCCUAAAGCUGUGUGCUACUAAGCAGGUGCCG
+AAACGACCUGUGGCCGGGGUAAUGACCUGGGGUAUAGUAAAAACGCACCA
+GAUGCCACAAUGGGUGAUCCGCAGCCAAGUCCUAAGGCAACAGGCCUCUU
+CCCGCCCGUGGGGGAGAGUGUCCCGCGCUAUGGAUGCAGUUCAACGACUA
+AACGGUGAUGGGCUAGCGUAAUGAAUGCGUUCUGCACACUCUUACGCCGG
+CUUAAGAUAUAGUCUACUCCCACUCCGAAAGGAGGGGUACUAAAAGcucu
+uaaggu
+.....((((((.......................................
+...............))))))((((((((.....)))))))).(((((..
+........................................)))))..(((
+((((....((((((....(((.....(((.((((((((((((((((.((.
+...))))))))))(((((((....)))))))....)))....).))))))
+).((...))..)))...))))))(((..((((...(((.......(((((
+(((.......))))))))........)))..))))..)))...[.[[[[[
+...)))))))(((((((((((.((((((((...)))))))))))))))))
+)).......]]]]]]((...(.((((....)))))........)).....
+......
+

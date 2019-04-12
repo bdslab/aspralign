@@ -1,0 +1,15 @@
+# ASPRAlign configuration file
+#
+# Cost for inserting an operator: concatenation, nesting or crossing
+INSERT_OPERATOR_COST=1
+# Cost for deleting an operator: concatenation, nesting or crossing
+DELETE_OPERATOR_COST=1
+# Cost for replacing an operator with another one: concatenation, nesting or crossing
+REPLACE_OPERATOR_COST=1
+# Cost for inserting an hairpin
+INSERT_HAIRPIN_COST=1
+# Cost for deleting an hairpin
+DELETE_HAIRPIN_COST=1
+# Cost for one mismatch in the number of crossing arcs in case of crossing operator
+CROSSING_MISMATCH_COST=0.01
+

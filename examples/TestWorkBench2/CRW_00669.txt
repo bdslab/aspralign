@@ -1,0 +1,23 @@
+# File CRW_00669.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.P.carinii.C1.SSU.1506.bpseq, ID: X12708 X13687
+
+AAGUAAAAGUCGUAACAAGGUUUUUUAUUGGUUCUUCUGCAGUGCGCCAA
+AGGAAGCCUUAGCAGCCUGAAAGGGUGUAUCUCCGCGACUAUAAAUAAAA
+AGGGGAUUUUAAAUGCUAGUCUGAUAAAAAAAGGCGACAUUGCCAAAUUG
+CGGGAAGUCCCUAAAGAUUCAACUACUAAGCAGCUUGUGGAAACACAGUU
+GUGGCCGAGUUAAUAGCCCUGGGUAUAGUAACAAUGUUGAAUAUGACUCU
+UAAUUGAGGAAAUGGGUGAUCCGCAGCCAAAUCCUAAGGACAUUUUAUUG
+UCUAUGGAUGCAGUUCACAGGCCAGAUGGCAAUGGGUAUCCUAGUGGGAU
+AUAUAUAUAUGGAUGCUUAAGAUAUGGUCGAGCUUCUCUCGAAAGAGAGG
+AGGUAGCACUGUUCCGUAGGUGAACCUGCGGAAGGAUCAUUA
+................(((((((....(((((.............)))))
+...)))))))((((((((....))))((((((..................
+.))))))......)))).((((.........))))..(((((((....((
+((((....(((.....(((((((((((..((((((.(((....)))))))
+))..(((((((...))))).))....)))....).))))))).((((((.
+.....))))))..)))...))))))(((..((((...(((((......))
+)))..))))..)))...[.[[[[[...)))))))((((((((((((....
+...))).)).))))))).......]]]]]]((((((((((....))))))
+))......))................................
+

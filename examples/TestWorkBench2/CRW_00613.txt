@@ -1,0 +1,17 @@
+# File CRW_00613.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.b.Synechococcus.sp2.C3.tLEU.bpseq, ID: D42186
+
+acgcagcggacuuAGAAAACUGGGCCUCGAUCGCGAAAGGGAUCGAGUGG
+CAGCUCUCAAACUCAGGGAAACCUAAAACUUUAAACAUUAAAGUCAUGGC
+AAUCCUGAGCCAAGCUAAAGCUAAACAACUAACAGCUUUAGAAGGUGCAG
+AGACUAGACGGGAGCUACCCUAACGGAUUCAGCCGAGGGUAAAGGGAUAG
+UCCAAUUCUCAACAUCGCGAUUGUUGAUGGCAGCGAAAGUUGCAGAGAGA
+AUGaaaauccgcuga
+..........(((((....))))).(((((((((....)))))))))...
+..[[[[[[....((((((...(((...(((((((...)))))))..))).
+..))))))(((...((((((((...........))))))))..)))...(
+.(((((...]]]]]]((((((..(((......)))))))))......)))
+))).((((((...(((((....)).))).(((((....)))))...))))
+)).............
+

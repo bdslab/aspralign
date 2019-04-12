@@ -1,0 +1,25 @@
+# File CRW_00667.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.M.fructicola.C1.SSU.943.bpseq, ID: Y14211
+
+NNNNNNNNNaccaccaggcguUAACUGCAGUAACUCUGCGCCAAAAAGCA
+GCCCGUAAGGGUGAGGUGGUUCGCCUUCAACUUAAAUGCUAGUCUAUUAU
+AAGGCUACAUUCCCAAAUUGCGGGAACACCCUAAUGCUCUCACUUCCAAG
+CUGACAUUUGAAAGAAUGCAGUGGCCAGGCUAAUCACCUGGGUAUGGACA
+UAACGUCGAGAGAUGAUACAAUGGGCUAUCCGCAUCCUUUCCCUUCAUAC
+GCAUAGUAUAUGGAAAAGGUUCAGAGACUAAAUGGGAAUGGCUAGUUUAU
+UAAAUUCAACGUUUUAGAUGCGUACUGAAGUUAAUGAUACUAGUUAAGAU
+AUAGUCCGUCGGUAGGUGAAAACUUACGGUUCAAAGCUUGAAGCUUGACC
+CUUGGAAGCAACUCAAUGCUUUCGAGUGAAUAUAAAACGggagccugcgg
+cuuaauNNNNNN
+................((((((..............))))))....((((
+((((....))))........................)))).(((((....
+)))))..(((((((....((((((....(((....(((((((((((((((
+(((.(((((....)))))))))))(((((.......)))))....)))..
+..).)).)))))).........)))...))))))(((.((((....((((
+.....))))..))))..)))...[.[[[[[...)))))))((((((((((
+((((((((((((.......))))..)))))))))))).))))))......
+.]]]]]]((((((((((....))))))))....(((((...)))))....
+((((((((((......))))))))))..........))............
+............
+

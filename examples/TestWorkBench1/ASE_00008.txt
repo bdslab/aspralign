@@ -1,0 +1,19 @@
+# File ASE_00008.dp
+# RNA SSTRAND database, RNase P RNA, Acidothiobacillus ferrooxidans
+# External source: RNase P Database, file name: A.ferrooxidans.ct2
+
+GGAGUGGGCCAGGCGACCGCCGCGGAGCAAUCCGGGGAGGAAAGUCCGGG
+CUCCAUAGGGCAAGGCGCCGGUUAACGGCCGGGGGGCGUGAGCCUACGGA
+AAGUGCCACAGAAAAUAUACCGCCAAGCGCGUAAGCGCGGUAAGGGUGAA
+AAGGUGCGGUAAGAGCGCACCGCAUUUCCGGUAACGGAAAUGGCAGGGAA
+AACCCCGCCUGGAGCAAGACCAAAUAGGCGUGCGAUACCGUGGCCCGCGG
+UGCACGCGGGUAGGUUGCUGGAGCCUGUGCGUAAGUGCAGGCCUAGAGGA
+AUGGUCGUCCACGACAGAACCCGGCUUAUCGGCCCACUCCAAUU
+((((((((((({{{{{{{.(((((((....)))))))....(((.(((((
+((((...[[[[.((((((((((.....)))))(((((....)))).)((.
+..(((((............(((((..((((....)))))))..)).....
+..((((((.......))))))(((((((((....)))))))).)..))).
+.)))))))))))))...((((......((((((...(((((.]]]]))))
+))))))).....))))......((((((((....))))))))........
+..}}}}}}}..........)))))))).).))))))))))....
+

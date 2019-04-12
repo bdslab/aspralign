@@ -1,0 +1,21 @@
+# File CRW_00675.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.P.inouyei.C1.SSU.943.bpseq, ID: D11377
+
+ACCAGGAGUAAACGUUUAUGUCGCAGUUAACUCUGCUCCGAAAAGCCACU
+CGAAAGAGUGUGGUGUCCUUAGAGGCUAGUCAGUACGCUGGCAACACAAU
+CAAAUUGCGGGAAACUCCUUAGAGCUCAAGCUACCGCUGCUGCCCAGAGA
+UGGGUUGUGGCACCAGGUUAACGACCUCGGGUAUGGUAACAACGCUUGAG
+AUUGGACAAUCCGCAGCCAAGCUCCCUCAUGGGAAGAAGGUUCAGAGACU
+AGAUGGUUGUGGGUUGAACACACGUUUAAUUGAAACAGUUCAGCUUAAGA
+UAUAGUCCAAUCCAGUGUGGAAACGCACUGGUCUAAAAGAUAGAAAAUGG
+GAGCCUGCGGCUUAAUUUGACUCAACACGGGGAAACUCAC
+....((((((.......................))))))....(((((((
+(....)))))(((.....)))...))).(((((....)))))..((((((
+(....((((((....(((......(((((((((((.((((((((((....
+))))))))))..(((((((...))))).))....)))....).)))))))
+...)))...))))))(((...((((((...))))))..)))...[.[[[[
+[...)))))))((((((((....((((.....)))).)))))))).....
+..]]]]]].((((((((((....)))))))).(((.....)))...))..
+........................................
+

@@ -1,0 +1,19 @@
+# File ASE_00014.dp
+# RNA SSTRAND database, RNase P RNA, Aeropyrum pernix, strain K1
+# External source: RNase P Database, file name: A.pernix.ct2
+
+GGCGGCGCCGGCCGGCGGCCCACGGCCCCCCAGCCAGGGGGGCUGAGGAA
+ACUCCGCCCUCCCCGCGGCGGCCGGGCCCCGCAAGGGGCACGGGUGAAAC
+CCGUGGCAACGGCACAGAAACGACACGGCCCCGGGGCGUGUCGAGGACGC
+GGCUAGGCCGCCCUGGCAACAGGGCGGCAGCAAACCGCAGAGGAACCCCG
+GGGAUGCGGUGAAACGGCCGCCCCCGGCGGAGCAAGGCCCCCGGGCGGUG
+AGGGCCGCGCGAAGCCCGGGGGGAGACCGCUUAGCCCAAUGCCGCCGAAG
+UACAGAAGGCGGGUUAUGGCCGGCGCCGCC
+((((((((((((({{{{{{...(((((((((.....)))))))))....(
+((.(((((((((.[[[[[[.((((((((((....)))))((((((...))
+))))((...((((............(((((((((((............((
+((.....((((((((....)))))))).......)))).......)))))
+))))..))........)))).)))))))))))...(((((((((((..((
+((.]]]]]])))))))))))))....))............}}}}}}....
+.......))))))))..)))))))))))))
+

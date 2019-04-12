@@ -1,0 +1,25 @@
+# File CRW_00681.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.P.sarcinoidea.C1.SSU.943.bpseq, ID: Z47998
+
+AGGGCACCACCAGGCGUAAACCUAGCCGUUUGGCUCUGCGCCAGUCGGGU
+GUGAGAAGGGCCUAGUUCACUAUGGUGGUAAACAAGCUUCUCACGCAUGA
+GCAACCCGGCUAGUCCGCCACACCAGCAGUCGCACAGUGUGGCAGGGCAA
+CAUCAUCGAAUUGCUGGGAAGCCCUAAAGCUCUUGGUACCAACCUGCAGC
+GGAAACGCUCGGGGGGCCCCGCUCAGGGGGAGGUGAUAAUCCAAGCAGAU
+GCAACAAUGGGUGAUCAGCAGCGAAGUCCCUGUAGGCCGCCAGCCCACGG
+GAAACGUUCAGAGACUAUGUGGUGAUGGGCUUUGACCUCUGCGGUCUGAG
+CUUAAGAUAUAGUCCGACCCCGGCGAGAGCCGAUGUCGAGAGGAGAGGGG
+UGCGACCCCGGAGCUCGGCAGUAGGGAGACACACAGUAUGUUCCUGAUCU
+GAAGUAUACGGGAGCGUGCGGCUUAA
+............((((((..................))))))((((((((
+((((((((............................))))))))......
+...)))))))).(((((((((((.............))))))).))))..
+(((((((....((((((....(((.....(((((((((((..((((((((
+(....)))))))))..((((.....))))..)))....).))))).))..
+.......)))....))))))((....((((....(((.....)))...))
+))...))...[.[[[[[...))))))).(((((((((.....))))))))
+)........]]]]]]((...((((....))))..((((............
+..))))...(((((.........................)))))......
+.......)).................
+

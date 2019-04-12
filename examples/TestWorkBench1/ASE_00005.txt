@@ -1,0 +1,19 @@
+# File ASE_00005.dp
+# RNA SSTRAND database, RNase P RNA, Ralstonia eutrophus, strain DSM 531
+# External source: RNase P Database, file name: A.eutrophus.ct2
+
+AAAGCAGGCCAGGCAACCGCUGCCUGCACCGCAAGGUGCAGGGGGAGGAA
+AGUCCGGACUCCACAGGGCAGGGUGUUGGCUAACAGCCAUCCACGGCAAC
+GUGCGGAAUAGGGCCACAGAGACGAGUCUUGCCGCCGGGUUCGCCCGGCG
+GGAAGGGUGAAACGCGGUAACCUCCACCUGGAGCAAUCCCAAAUAGGCAG
+GCGAUGAAGCGGCCCGCUGAGUCUGCGGGUAGGGAGCUGGAGCCGGCUGG
+UAACAGCCGGCCUAGAGGAAUGGUUGUCACGCACCGUUUGCCGCAAGGCG
+GGCGGGGCGCACAGAAUCCGGCUUAUCGGCCUGCUUUGCUU
+((((((((((({{{{{{{.(((((((((((....)))))))))))....(
+((.(((((((((...[[[[.((((((((((.....)))))(((((....)
+))).)((...(((((...........(((((((((((((....)))))))
+)))))).........)))..)))))))))))))...((((......((((
+((...(((((.]]]]))))))))))).....))))......((((((((.
+...))))))))..........}}}}}}}((((((((((((((....))))
+))))))))))......)))))))).).))))))))))....
+

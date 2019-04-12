@@ -1,0 +1,25 @@
+# File CRW_00614.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.c.A.cherimola.C3.tLEU.bpseq, ID: X99381
+
+GAUUGGAUUGAGCCUUGGUAUGGAAACCUACUAAGUGAGAACUUCCAAAC
+UCAGAGAAACCCCGGAAUAAAAAAUGGGCAAUCCUGAGCCAAAUCCUGUG
+UUCAGAAAACAAGGUUCAGAAAGCGGGAAUCAAAAAAAGGAUAGGUGCAG
+AGACUCAAUGGAAGCUGUUCUAACAAAUAGAGUUGACUGCAUCGGUAAGG
+GAAUUCUUUCCUUUUAUCCAAACGACAGAAAGGAUGACCUUGUAUACGUA
+CGUAUACAUACUGAAACAUCAAACGAUUAAUCACGACUCGAAUCGGUUUU
+UUUUUCUGAAAAAUUUCAGAAUAGAAGGAUUGUGAAUUGAUUCCAAGUUG
+AAGGAAGAAUCGAAUAUUCAGAGAUCAAAUCAUCCAUUCCCGAGUCUAAU
+AGAUCUUUUGAAGAACCGAUGAAUCGGACGAGAAUAAAGAUAGAGUCCCG
+UUCUACAUGUCAAUACAGACAACAAUGAAAUUGAUAGUAAGAGG
+(((...)))....(((((((.(....).)))))))......[[[[[....
+.(((((...(((.............)))...))))).(((...((((...
+.....................................))))..)))...(
+.(((((...]]]]].((((((.............................
+..................................................
+..................................................
+..................................................
+..................................................
+..............................))))))......))))))..
+((((((.((((......)))).((((...))))...))))))..
+

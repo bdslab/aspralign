@@ -1,0 +1,21 @@
+# File CRW_00715.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.m.S.luteus.A1.LSU.2504.bpseq, ID: L47586
+
+cgauAGUUUAAAUGUCGCUUAAAUUAGAAAUAAUUUAUUAUGAAAAAUUG
+GGUUAAUUUUAAGAAAGUCUCUAAAAUUAUAAUUAUUUAUAAACUAUUUA
+AAAAAUAUUUUUAUUAUUUAUUUAAUUAUAAUAGAGAAAACUUGAAGCGA
+AGCUAGUUUAGGCAUAAAAUAAAUUAAACUAGAACGUUCAACGACUAGUA
+GGUGAGUGCAAAAUGUCCACAAUAAUCCUACCACGAAAGCCCAACAACUA
+CAAAUUAAAAAUAAAAAUAUAAAAUUUAGUUGAUGACAUAGUCUGAUCCU
+AUUUGUGAAAAUAGGAAGCUUAUAAUAAAGAAUUUAAGCUAAUAACAUAA
+UGgucgacuuauccuauccuccg
+(((((.......)))))..(((((((....)))))))..........(((
+((((...((((((....((((((...(((((((((...(((((.((..((
+((((...)))))).))))))).)))))))))))))))...))))))(((.
+..((((((((..............))))))))..)))...[.[[[[[(((
+((...((...........))......)))))......)))))))((((((
+..((((................))))))))))......]]]]]].(((((
+((((....)))))))..(((((.(((.....))))))))..........)
+)......................
+

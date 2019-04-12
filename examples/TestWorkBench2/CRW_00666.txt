@@ -1,0 +1,23 @@
+# File CRW_00666.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.M.caldariorum.C1.SSU.1506.bpseq, ID: X75763
+
+AACAAGGUUUGGCUCGAUCGUGGAUCCUUUCGCGGUUGAAACUACCGAAG
+CCUUAGCUGCCCGAAAGGGUGACCUCCGCGACUCGCAAAACAAGGAGAGG
+UCUCAAAAGCUAGUGGCUCCUAGCUGCUGCUCGUGCAGUGAGUGCGACAU
+CACCAAAUUGCGGGAAAUCCCUAAAGCUUUGACUACCAAGUGCGGCGCCG
+AAAGGCUCGCAUGGCCAGGGUAAUGACCUCGGGUAUGGUAACAACGUCAA
+AGAUGCAACAAUGGGCUAUCCGCAGCCAAGUCCUCGCCGCUUCGCAGCGG
+UUGGAUGCUGUUCACAGACUAGAUGGUGGUGGGUUCUCGGAUGCGUCCCG
+GGGCUUAAGAUAUAGUCGGGCCUGCUUGGAAACAGCGGGAAAUCGCAGAU
+GCAUUCACCGUUCCGUAGGUGAACCUGCAGAAGGAUCAA
+...(((((((...(((((((((((....)))))))))))........)))
+))))((((((((....)))))(((((....................))))
+).......))).(((.(((((.((..........)))).))))))..(((
+((((....((((((....(((.....(((((((((((..((((((.(((.
+...)))))))))..(((.(((....)))).))....)))....).)))))
+)).((...))..)))...))))))(((..((((...(((((....)))))
+..))))..)))...[.[[[[[...)))))))((((((((((....)))))
+))))).......]]]]]]((..((.(((....)))))((((((....)))
+)))....))..............................
+

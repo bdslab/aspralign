@@ -1,0 +1,15 @@
+# File CRW_00665.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.L.dispersa.UNK.SSU.789.bpseq, ID: L37734
+
+aguuaggggaucgaagacgauuGACCAGGGGUAUUUGUCGUCCACAGGUG
+CUGCAACCGACCUAGCCGGGAGCCAUCCGUCGCGCACAUCACCACUGCUG
+GCUCCUUCGGGUACCACAGCCAAGCUCCUCGCCGAGGCCGUCUACAAGAC
+UCAACGUUAGAUGGCGCGCGACGUUUCUAAUAGAGUCGAGUCCCGCUCGU
+CACGgguaccgucguagu
+...............(((((((((.........)))))))))...((((.
+.........)))).((((((.....))))..))....((((((..(((((
+(...(((..............)))....))))))(((...)))....[[[
+[[...))).)))((((.....)))).......]]]]]..((.........
+.))...............
+

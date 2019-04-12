@@ -1,0 +1,25 @@
+# File CRW_00006.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: b.I1.e.A.lagunensis.C1.SSU.516.bpseq, ID: U40258
+
+CAGUGGAGGGCAAGUCUGGUGAACCGCUUUUANUAGCACCAAAGCCCGCC
+GUAAAAAAAAANCAUAGCCAGAUGUCGGAAACNGGCAACGUCAUGGAAAA
+AUUUCUCGAGCACCAUGAUACACUUGUAAAUUGCGGGAAACUCUUGAUAA
+GCCUCACAUACCCGSGUCCCGCCGGAGAGGUUAGAUUUAGUAAUAGAUCA
+GGAUGCAGCAGUGGGUGUAAUGGCCCACGGAUGGUAAAAACUGUGAGGAU
+AGAGACAAUCCGCAGCCAAGCGUCACCUUUGAAAGGAGAUGGAGGUUCAG
+AGACUAUAAUCAGGUGGGCGCAAGCUUAAGGUAUAGUCCAGUCCACCCNG
+GAAGGGGGUCCAAUGAAGUACGGGGAAAUUCAGCUCAUCCCCUAGGGCAU
+UGGAGGGAAGUGCACUACAAGAAAAGUGCCCUCGGUAGAAACGGCCAGCA
+GCCGCGGUAAUUCCAGCU
+..............(((((((.............................
+...............)))))))(((((....).))))...((((((....
+............))))))..(((((((....((((((....((((.....
+.(((((((((((.((((((.(((.....)))..((((((....)))))).
+))))))....((((((......))))))....)))....).)))))))..
+.))))...))))))(((...((((.(((.....))).))))..)))...[
+.[[[[[...)))))))(((....))).......]]]]]].((.(.((((.
+...)))))(((((((......(((((...........))))).....)))
+)))).((((((((............)))))))).......))........
+..................
+

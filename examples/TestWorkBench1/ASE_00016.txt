@@ -1,0 +1,21 @@
+# File ASE_00016.dp
+# RNA SSTRAND database, RNase P RNA, Arxiozyma telluris, strain NRRL YB-4302
+# External source: RNase P Database, file name: A.telluris.ct2
+
+AAACGCAGAGGACCAGAACUUUGGGACGGGAGGCGGGGGUUUUGUUCGCA
+GGCUCCUUCUUCCCGCUCCUGGUUCUACGCGGCGUGCGCUGUACCACCAU
+CGGUGGUUAUGGCGCUUACCCCGUGAGGGGGGCUUGGGGAACCGAGUCUA
+GCGUUGUUAUAAGAAAUCAAUCUUUUGGAUCCAGCCAGGGUCCUCUAGCA
+GAAAAGGGGGAUGGGGCUCUCUUGGGCUCUCCCCUCCACGCCUGCGGGAU
+UCUGAUGGGAAUGACAACGGUCGGUCCAUUUGACUUUAUCAUUACGAUGG
+UUCUAGUCGUGUUAUGGUAAAGGUCUGUUGAGUGCAAUUGUAGAGCAAAU
+UGAUUCAAUUUGAA
+........((((((....................................
+..................................................
+..................((((....))))(((((((....)))))))..
+.(((((((..........................................
+......((((..(((((((....))))))).))))...............
+............)))))))...))))))...((((((((((((((.((((
+(....)))))))))))))))).)))....................(((((
+((...)))))))..
+

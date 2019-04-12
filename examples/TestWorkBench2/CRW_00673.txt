@@ -1,0 +1,23 @@
+# File CRW_00673.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.e.P.clavariiformis.C1.SSU.943.bpseq, ID: AB003945
+
+ucgcaaggcugaaacuuaaagaaauugacggaagggcaccacaaggcguA
+AACUUUUACCGCUAGCCGCAGUAACUCUGCGCCGAACAGCAGCCCGAAAG
+GGUGAUGUGGUGACCCUCUAAACAGUAAAUGCUAGUCCAGCACGGCUGGG
+CGACACGCUCAAAUUGCGGGAAACCCCUUAGAGCCUCUAGCUACCAAGCC
+GCCGGUCGAAAGACGGCGGUGGCCAGGUUAAUUCCCUCGGGUACGGUGAU
+AACGCUAGAGGAUUGGGCAAUCCGCAGCCAAGCCCCUACGUUCCGCAGGG
+AAUACGGGGAAGGUUCAGAGACUAAAUGGGUGUGGGUUGGGUCCUCCGGG
+GGAGGACACCAGCUUAAGAUAUAGUCCGGCGCCAGGGGAAACCAUGGCGG
+UUCAGGUAUACCUGUCUUAACGGgagccugcggcuuaauuugacucaa
+............................................((((((
+...........................))))))....(((.((((....)
+)))...........................))).(((((((...))))))
+)..(((((((....((((((....(((.....((((((((((((((((((
+(((.(((....)))))))))))(((((.......))).))....)))...
+.).)))))))))..)))...))))))(((...((((...(((((....))
+)))..))))..)))...[.[[[[[...)))))))(((((((((((((...
+))))))).)))))).......]]]]]]((.(((((((....)))))))..
+....................))..........................
+

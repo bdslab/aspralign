@@ -1,0 +1,17 @@
+# File CRW_00610.dp
+# RNA SSTRAND database
+# External source: Gutell Lab CRW, file name: a.I1.b.Phormidium.sp.N182.C3.tLEU.bpseq, ID: M61163
+
+AGAAAACUGAGCCUUAGUGGAGAAAUCCGCUAAGUGGAAGCUCUCAAACU
+CAGGGAAACCUAAGUCAGCCUCAAUCAGAUACCCCAGGGUUAUGGUUGAG
+GAGAUAUGGCAAUCCUGAGCCAAGCCGUUUGAUAGCAAUGGCUAUCUGGU
+UCUUCAAGCGGAAGGUGCAGAGGCCCGACGGAGCUACCCUAACGUCAAGU
+CGAGGGUAAAGGGAGGGUCCAAUCCUCAAAGCCCGCUGAGGCUCGGAGCA
+GCGAAAGUUGUGGGAGGGUG
+((....))....(((((((((....))))))))).....[[[.[[....(
+(((((...((...(((..(((((((((...(((....)))..))))))))
+).)))..))...))))))(((...((((((((.(((..(((....)))))
+)..))))))))..)))...(.(((((...]]]]]((((((..((......
+))))))))......)))))).((((((....................(((
+((....)))))..)))))).
+

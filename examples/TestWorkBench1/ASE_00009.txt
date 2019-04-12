@@ -1,0 +1,15 @@
+# File ASE_00009.dp
+# RNA SSTRAND database, RNase P RNA, Archaeoglobus fulgidus, strain DSM 4304
+# External source: RNase P Database, file name: A.fulgidus.ct2
+
+CGGCGGUGGGCGGCUGACCGAAAGGAGGAAAGUCCCCCCACCCGCUGUGG
+CGGAAGGCCCCUGAGAAGGGGCGGAGGAGGAACAGAAACGAGACCGGUGC
+GGGGAAAUGCGAUGAUUCCGCAAGGAUGAGGUCACCCGCUCCGGAUGAAA
+CGGCCUCCUCCCCGCCGGGUGCAACGCGUAAGCGGCUCAGUCUAAUGCCG
+CCGGAACAGAAGGGGGCUUACUACCGCCA
+(((((((([[[[[[...((....))....(((.((((((((((.....((
+(((...((((((....))))))(((((((((............(((((((
+(((((...........(((....))).....)).))))))))))......
+..)))))))))))))))))))...(((....)))............]]]]
+]].........))))))))..))))))))
+
