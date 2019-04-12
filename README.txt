@@ -7,8 +7,7 @@ or calculate ASPRA Distance by aligning Structural RNA Trees of RNA secondary
 structures with arbitrary pseudoknots.
 
 Default input file format is Extended Dot-Bracket Notation. 
-See https://www.tbi.univie.ac.at/RNA/ViennaRNA/doc/html/
-rna_structure_notations.html
+See https://www.tbi.univie.ac.at/RNA/ViennaRNA/doc/html/rna_structure_notations.html
 
 An alternative input file format is Arc Annotated Sequence, similar to 
 the Extended Dot-Bracket Notation format in which the weak bonds are 
@@ -61,9 +60,9 @@ option -n. The default configuration file must reside in the same folder in
 which the command is launched, while the file specified with option -n 
 can reside in any folder.
 
-*** ASPRAlignWorkbenchComparator.jar usage examples: ***
+*** ASPRAlignWorkbench.jar usage examples: ***
 
->java -jar ASPRAlignWorkbenchComparator.jar -f TestWorkBench1
+>java -jar ASPRAlignWorkbench.jar -f TestWorkBench1
 
 Processes all the files in folder "TestWorkBench1". Each file is read as
 an RNA secondary structure with arbitrary pseudoknots in Extended
@@ -74,7 +73,7 @@ description of all the structures that were found and correctly processed.
 The latter contains, for each pair of processed structures, the ASPRA
 Distance between the two structures and execution time information.
 
-java -jar ASPRAlignWorkbenchComparator.jar -f TestWorkBench1 -o stucts.csv
+java -jar ASPRAlignWorkbench.jar -f TestWorkBench1 -o stucts.csv
 cmpr.csv -n my-config.txt
 
 Processes all the files in folder "TestWorkBench1" as above but produce
