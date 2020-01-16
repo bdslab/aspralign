@@ -1,0 +1,8 @@
+# Extended Dot-Bracket Notation File
+# Larger example than running example 1 of: Michela Quadrini, Luca Tesei, 
+# Emanuela Merelli "An Algebraic Language for RNA Pseudoknots Comparison"
+
+AAGAGCUAUUUCCCUUAAGGGGGCACUAUUGAACUCCAUGAAACCGGAUU
+UGGCCCCGCGG
+.(((..)..[..).)..].(((.).).[[.{.]}][....{..)..]..}
+..A.B...a.b

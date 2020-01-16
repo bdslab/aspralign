@@ -1,0 +1,12 @@
+# Arc Annotated Sequence File
+# Running example 1 to show the effect of local alignment scores when aligning 
+# two crossing operators - Paper: Michela Quadrini, Luca Tesei, Emanuela Merelli
+# "An Algebraic Language for RNA Pseudoknots Comparison" 
+
+#UGGACGUGCACGUUAGUGG
+
+(2,9);
+(4,13);
+(11,18)
+
+# Example without sequence
