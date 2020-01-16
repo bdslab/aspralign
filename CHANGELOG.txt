@@ -5,8 +5,13 @@ All notable changes to this project will be documented in this file.
 ## [0.92] - 2020-01-17
 ### Added
 - Input file parser through ANTLR 4 grammar and parsing facilities.
+- JUnit 5 tests for input file parsing.
 
 ### Changed
+- Auto-detection of input file format: extended dot-bracket notation or arc
+  annotated sequences.
+- Optional sequence of nucleotides when computing alignment or structural RNA 
+  tree.
 - Some minor bug fixes.
 
 ### Removed
