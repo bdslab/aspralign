@@ -1,7 +1,7 @@
 /**
  * ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment
  * 
- * Copyright (C) 2018 Luca Tesei, Michela Quadrini, Emanuela Merelli - 
+ * Copyright (C) 2020 Luca Tesei, Michela Quadrini, Emanuela Merelli - 
  * BioShape and Data Science Lab at the University of Camerino, Italy - 
  * http://www.emanuelamerelli.eu/bigdata/
  *  

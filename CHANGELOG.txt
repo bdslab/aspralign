@@ -1,0 +1,19 @@
+# ASPRAlign Changelog
+All notable changes to this project will be documented in this file.
+
+
+## [0.92] - 2020-01-17
+### Added
+- Input file parser through ANTLR 4 grammar and parsing facilities.
+
+### Changed
+- Some minor bug fixes.
+
+### Removed
+- Previous classes for input file parsing.
+
+## [0.91] - 2019-04-12
+### Added
+- ASPRAlign Main comparator.
+- ASPRAlign Workbench comparator.
+- ASPRAlign Basic algorithms for algebraic RNA trees and structural RNA trees.

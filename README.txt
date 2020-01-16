@@ -1,29 +1,33 @@
 ***************************************************************************
-ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment - version 0.91
+ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment - version 0.92
 ***************************************************************************
 
-ASPRAling version 0.91 builds Algebraic RNA Trees and Structural RNA Trees
+ASPRAling version 0.92 builds Algebraic RNA Trees and Structural RNA Trees
 or calculate ASPRA Distance by aligning Structural RNA Trees of RNA secondary 
 structures with arbitrary pseudoknots.
 
-Default input file format is Extended Dot-Bracket Notation. 
-See https://www.tbi.univie.ac.at/RNA/ViennaRNA/doc/html/rna_structure_notations.html
+Input file formats are: 
 
-An alternative input file format is Arc Annotated Sequence, similar to 
-the Extended Dot-Bracket Notation format in which the weak bonds are 
-expressed as a list 
+- Extended Dot-Bracket Notation. See 
+https://www.tbi.univie.ac.at/RNA/ViennaRNA/doc/html/rna_structure_notations.html
+
+- Arc Annotated Sequence, similar to the Extended Dot-Bracket Notation format 
+in which the weak bonds are expressed as a list 
 
 (i_1,j_1);(i_2,j_2); ... ;(i_m,j_m) 
 
 where each index i_k, j_k belongs to the interval [1,n] (n is the length
 of the primary sequence) and i_k < j_k + 1 for all k.
 
+In both file formats the sequence of nucleotides is optional. It is required 
+only for creating the algebraic RNA tree.
+
 ASPRAlign is distributed with two executable jar files: ASPRAlign.jar (basic 
 comparator and tree builder) and ASPRAlignWorkbench.jar (workbench comparator)
 
 *** ASPRAlign.jar usage examples: ***
 
->java -jar ASPRAlign.jar -r -g aas1.txt -l -o aas1.tex
+>java -jar ASPRAlign.jar -g aas1.txt -l -o aas1.tex
 
 Produce file aas1.tex containing the LaTeX code to draw the algebraic RNA
 tree corresponding to the RNA secondary structure given in the Arc
@@ -38,8 +42,9 @@ rna2.dbn.txt
 
 See folder "examples" for some sample input files in both notations
 coming from public databases or from the paper: Michela Quadrini, Luca 
-Tesei, Emanuela Merelli "An Algebraic Language for RNA Pseudoknots 
-Comparison", BMC Bioinformatics 2019 (To Appear).  
+Tesei, Emanuela Merelli "An algebraic language for RNA pseudoknots 
+comparison", BMC Bioinformatics 20, Article number: 161 (2019).
+https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2689-5
 
 Default output format is a linearised tree description of the form 
 
@@ -65,9 +70,8 @@ can reside in any folder.
 >java -jar ASPRAlignWorkbench.jar -f TestWorkBench1
 
 Processes all the files in folder "TestWorkBench1". Each file is read as
-an RNA secondary structure with arbitrary pseudoknots in Extended
-Dot-Bracket Notation. Comma-separated values files
-"ASPRAlignProcessedStructures.csv" and "ASPRAlignComparisonResults.csv"
+an RNA secondary structure with arbitrary pseudoknots. Comma-separated values 
+files "ASPRAlignProcessedStructures.csv" and "ASPRAlignComparisonResults.csv"
 are created in the folder "TestWorkBench1". The former contains the
 description of all the structures that were found and correctly processed.
 The latter contains, for each pair of processed structures, the ASPRA
@@ -106,7 +110,8 @@ ASPRAlign-<VersionNumber> is created containing the following files:
 - INSTALL.txt --- information on ASPRAlign installation
 - README.txt --- ASPRAlign description and usage information
 - COPYING.txt --- copyright information
-- LICENSE --- full GNU GPL Version 3 License 
+- LICENSE --- full GNU GPL Version 3 License
+- CHANGELOG.txt --- information about the evolution of ASPRAlign versions
 
 The executable jar files runs on every Linux, Windows and Mac OS platform
 in which a Java SE Runtime Environment 8 is installed. 
@@ -150,9 +155,6 @@ The following <options> can be used:
                                         file instead of the default one
  -o,--out <output-file>                 Output result on the given file
                                         instead of standard output
- -r,--aasinput                          Input Arc Annotated Sequence
-                                        file(s) instead of Extended
-                                        Dot-Bracket Notation file(s)
  -s,--struct <input-file>               Produce the structural RNA tree
                                         corresponding to the given
                                         structure
@@ -182,15 +184,12 @@ The following <options> can be used:
  -o,--output <file-1 file-2>    Output structure descriptions on file-1
                                 and comparison results on file-2 instead
                                 of generating the default ouput files
- -r,--aasinput                  Input Arc Annotated Sequence file(s)
-                                instead of Extended Dot-Bracket Notation
-                                file(s)
 
 ***************************************************************************
 COPYRIGHT and LICENSE
 ***************************************************************************
 
-ASPRAling Copyright (C) 2018 Michela Quadrini, Luca Tesei, Emanuela
+ASPRAling Copyright (C) 2020 Michela Quadrini, Luca Tesei, Emanuela
 Merelli - BioShape and Data Science Lab at the University of Camerino,
 Italy - http://www.emanuelamerelli.eu/bigdata/
 

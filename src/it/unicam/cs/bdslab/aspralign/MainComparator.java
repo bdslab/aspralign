@@ -1,7 +1,7 @@
 /**
  * ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment
  * 
- * Copyright (C) 2018 Luca Tesei, Michela Quadrini, Emanuela Merelli - 
+ * Copyright (C) 2020 Luca Tesei, Michela Quadrini, Emanuela Merelli - 
  * BioShape and Data Science Lab at the University of Camerino, Italy - 
  * http://www.emanuelamerelli.eu/bigdata/
  *  
@@ -64,10 +64,6 @@ public class MainComparator {
 		options.addOption(o6);
 		Option o7 = Option.builder("h").desc("Show usage information").longOpt("help").build();
 		options.addOption(o7);
-		Option o8 = Option.builder("r")
-				.desc("Input Arc Annotated Sequence file(s) instead of Extended Dot-Bracket Notation file(s)")
-				.longOpt("aasinput").build();
-		options.addOption(o8);
 		Option o9 = Option.builder("c")
 				.desc("Check the presence of only standard Watson-Crick and wobble base pairing (disabled by default)")
 				.longOpt("chkpair").build();
@@ -84,10 +80,10 @@ public class MainComparator {
 
 		// Parse command line
 		HelpFormatter formatter = new HelpFormatter();
-		CommandLineParser parser = new DefaultParser();
+		CommandLineParser commandLineParser = new DefaultParser();
 		CommandLine cmd = null;
 		try {
-			cmd = parser.parse(options, args);
+			cmd = commandLineParser.parse(options, args);
 		} catch (ParseException e) {
 			// oops, something went wrong
 			System.err.println("ERROR: Command Line parsing failed.  Reason: " + e.getMessage() + "\n");
@@ -145,41 +141,40 @@ public class MainComparator {
 		// Manage options g and s
 		if (cmd.hasOption("g") || cmd.hasOption("s")) {
 			boolean algebraic = cmd.hasOption("g");
-			// read input file
+			// Determine input file
 			String inputFile;
 			if (algebraic) {
 				inputFile = cmd.getOptionValue("g");
 			} else
 				inputFile = cmd.getOptionValue("s");
-
-			// Read the arc annotated sequence from the input file
-			ArcAnnotatedSequence aas = null;
+			// Parse the input file for the secondary structure
+			RNASecondaryStructure secondaryStructure = null;
 			try {
-				// Manage option r
-				if (cmd.hasOption("r"))
-					aas = InputFileParser.readAasFile(inputFile, basePairsCheck);
-				else
-					aas = InputFileParser.readDotBracketNotationFile(inputFile, basePairsCheck);
-			} catch (InputFileParserException e) {
-				System.err.println("ERROR: " + e.getMessage());
+				secondaryStructure = RNASecondaryStructureFileReader.readStructure(inputFile, basePairsCheck);
+			} catch (IOException e) {
+				System.err.println("Input File " + inputFile + " ERROR:" + e.getMessage());
+				System.exit(3);
+			} catch (RNAInputFileParserException e) {
+				System.err.println("Input File " + inputFile + " ERROR: " + e.getMessage());
 				System.exit(2);
 			}
-
-			// Construct the result tree
+			// Construct the ASPRATtree
 			Tree<String> t;
-
-			// Construct Algebraic RNA tree
-			ASPRATree a = new ASPRATree(aas);
-
+			ASPRATree a = new ASPRATree(secondaryStructure);
 			// Check if algebraic or structural
-			if (algebraic)
+			if (algebraic) {
+				// Check if the sequence was given in the input file
+				if (secondaryStructure.sequence == null) {
+					System.err.println("Input File " + inputFile
+							+ " ERROR: to create the algebraic RNA tree the sequence of nucleotides is needed. The input file did not contain the primary sequence.");
+					System.exit(2);
+				}
 				// get the algebraic RNA tree
 				t = a.getAlgebraicRNATree();
-			else {
+			} else {
 				// get the structural RNA tree
 				t = a.getStructuralRNATree();
 			}
-
 			// Produce Output
 			String output;
 			if (cmd.hasOption("l"))
@@ -208,46 +203,43 @@ public class MainComparator {
 
 		// Manage Option a
 		if (cmd.hasOption("a")) {
+			// Get input file names
 			String[] inputFiles = cmd.getOptionValues("a");
-
 			// variables for structural RNA trees
 			Tree<String> t1 = null;
 			Tree<String> t2 = null;
 
-			// Read the arc annotated sequence from the input file 1
-			ArcAnnotatedSequence aas = null;
+			// Parse the first input file for the secondary structure
+			RNASecondaryStructure secondaryStructure1 = null;
 			try {
-				// Manage option r
-				if (cmd.hasOption("r"))
-					aas = InputFileParser.readAasFile(inputFiles[0], basePairsCheck);
-				else
-					aas = InputFileParser.readDotBracketNotationFile(inputFiles[0], basePairsCheck);
-			} catch (InputFileParserException e) {
-				System.err.println("ERROR: " + e.getMessage());
+				secondaryStructure1 = RNASecondaryStructureFileReader.readStructure(inputFiles[0], basePairsCheck);
+			} catch (IOException e) {
+				System.err.println("Input File " + inputFiles[0] + " ERROR:" + e.getMessage());
+				System.exit(3);
+			} catch (RNAInputFileParserException e) {
+				System.err.println("Input File " + inputFiles[0] + " ERROR: " + e.getMessage());
 				System.exit(2);
 			}
-
 			// Construct structural RNA tree 1
-			ASPRATree a1 = new ASPRATree(aas);
+			ASPRATree a1 = new ASPRATree(secondaryStructure1);
 			t1 = a1.getStructuralRNATree();
 
-			// Read the arc annotated sequence from the input file 2
+			// Parse the second input file for the secondary structure
+			RNASecondaryStructure secondaryStructure2 = null;
 			try {
-				// Manage option r
-				if (cmd.hasOption("r"))
-					aas = InputFileParser.readAasFile(inputFiles[1], basePairsCheck);
-				else
-					aas = InputFileParser.readDotBracketNotationFile(inputFiles[1], basePairsCheck);
-			} catch (InputFileParserException e) {
-				System.err.println("ERROR: " + e.getMessage());
+				secondaryStructure2 = RNASecondaryStructureFileReader.readStructure(inputFiles[1], basePairsCheck);
+			} catch (IOException e) {
+				System.err.println("Input File " + inputFiles[1] + " ERROR:" + e.getMessage());
+				System.exit(3);
+			} catch (RNAInputFileParserException e) {
+				System.err.println("Input File " + inputFiles[1] + " ERROR: " + e.getMessage());
 				System.exit(2);
 			}
-
-			// Construct structural RNA tree
-			ASPRATree a2 = new ASPRATree(aas);
+			// Construct structural RNA tree 2
+			ASPRATree a2 = new ASPRATree(secondaryStructure2);
 			t2 = a2.getStructuralRNATree();
 
-			// t1 and t2 contain the two structural RNA trees to align
+			// Align t1 and t2, which contain two structural RNA trees
 			ASPRAlignResult r = null;
 			ScoringFunction f = new ScoringFunction(configurationFileName);
 			try {
@@ -267,7 +259,6 @@ public class MainComparator {
 				else
 					// produce linearised tree
 					output = ASPRATreeOutputter.treeToStringAligned(t);
-
 				// Write Output on proper file or on standard output
 				if (cmd.hasOption("o")) {
 					String outputFile = cmd.getOptionValue("o");

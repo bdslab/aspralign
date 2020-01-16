@@ -1,7 +1,7 @@
 /**
  * ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment
  * 
- * Copyright (C) 2018 Luca Tesei, Michela Quadrini, Emanuela Merelli - 
+ * Copyright (C) 2020 Luca Tesei, Michela Quadrini, Emanuela Merelli - 
  * BioShape and Data Science Lab at the University of Camerino, Italy - 
  * http://www.emanuelamerelli.eu/bigdata/
  *  
@@ -24,6 +24,7 @@ package it.unicam.cs.bdslab.aspralign;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -70,7 +71,7 @@ public class WorkbenchComparator {
 
 		// define command line options
 		Option o1 = Option.builder("f").desc("Process the files in the given folder").longOpt("input").hasArg()
-				.argName("input-folder").required().build();
+				.argName("input-folder").build();
 		options.addOption(o1);
 		Option o2 = Option.builder("o").desc(
 				"Output structure descriptions on file-1 and comparison results on file-2 instead of generating the default ouput files")
@@ -80,10 +81,6 @@ public class WorkbenchComparator {
 		options.addOption(o3);
 		Option o4 = Option.builder("h").desc("Show usage information").longOpt("help").build();
 		options.addOption(o4);
-		Option o5 = Option.builder("r")
-				.desc("Input Arc Annotated Sequence file(s) instead of Extended Dot-Bracket Notation file(s)")
-				.longOpt("aasinput").build();
-		options.addOption(o5);
 		Option o6 = Option.builder("c")
 				.desc("Check the presence of only standard Watson-Crick and wobble base pairing (disabled by default)")
 				.longOpt("chkpair").build();
@@ -97,10 +94,10 @@ public class WorkbenchComparator {
 
 		// Parse command line
 		HelpFormatter formatter = new HelpFormatter();
-		CommandLineParser parser = new DefaultParser();
+		CommandLineParser commandLineParser = new DefaultParser();
 		CommandLine cmd = null;
 		try {
-			cmd = parser.parse(options, args);
+			cmd = commandLineParser.parse(options, args);
 		} catch (ParseException e) {
 			// oops, something went wrong
 			System.err.println("ERROR: Command Line parsing failed.  Reason: " + e.getMessage() + "\n");
@@ -158,8 +155,7 @@ public class WorkbenchComparator {
 		// Manage option f
 		if (cmd.hasOption("f")) {
 			// Process a folder
-
-			// File from command line
+			// Get folder file from command line
 			File inputDirectory = new File(cmd.getOptionValue("f"));
 			// Variables for counting execution time
 			long startTimeNano = 0;
@@ -181,10 +177,13 @@ public class WorkbenchComparator {
 			// Filter only files and put them in the list
 			for (int i = 0; i < fs.length; i++)
 				if (!fs[i].isDirectory())
-					structuresList.add(fs[i]);
+					if (!fs[i].isHidden())
+						structuresList.add(fs[i]);
+					else
+						System.err.println("WARNING: Skipping hidden file " + fs[i].getName() + " ...");
 				else
 					System.err.println("WARNING: Skipping subfolder " + fs[i].getName() + " ...");
-			
+
 			// Order files to be processed
 			Collections.sort(structuresList);
 
@@ -229,28 +228,30 @@ public class WorkbenchComparator {
 				if (skippedFiles.contains(f1))
 					// skip this file
 					continue;
-				// Read the arc annotated sequence from the input file 1
-				ArcAnnotatedSequence aas1 = null;
-				try {
-					// Manage option r
-					if (cmd.hasOption("r"))
-						aas1 = InputFileParser.readAasFile(f1.getPath(), basePairsCheck);
-					else
-						aas1 = InputFileParser.readDotBracketNotationFile(f1.getPath(), basePairsCheck);
-				} catch (InputFileParserException e) {
-					System.err.println("WARNING: Skipping file " + f1.getName() + " ... " + e.getMessage());
-					// skip this structure
-					skippedFiles.add(f1);
-					continue;
-				}
 
 				// Retrieve the Structural RNA Tree for the structure 1
 				ASPRATree art1 = null;
 				Tree<String> t1 = null;
 				// Check if this structure has already been processed
 				if (!structures.containsKey(f1)) {
+					// Parse the input file f1 for the secondary structure
+					RNASecondaryStructure secondaryStructure1 = null;
+					try {
+						secondaryStructure1 = RNASecondaryStructureFileReader.readStructure(f1.getPath(),
+								basePairsCheck);
+					} catch (IOException e) {
+						System.err.println("WARNING: Skipping file " + f1.getName() + " ... " + e.getMessage());
+						// skip this structure
+						skippedFiles.add(f1);
+						continue;
+					} catch (RNAInputFileParserException e) {
+						System.err.println("WARNING: Skipping file " + f1.getName() + " ... " + e.getMessage());
+						// skip this structure
+						skippedFiles.add(f1);
+						continue;
+					}
 					// Create the Structural RNA Tree and put the object into the map
-					art1 = new ASPRATree(aas1);
+					art1 = new ASPRATree(secondaryStructure1);
 					// Build Structural RNA Tree and measure building time
 					startTimeNano = System.nanoTime();
 					t1 = art1.getStructuralRNATree();
@@ -259,15 +260,16 @@ public class WorkbenchComparator {
 					structures.put(f1, art1);
 					// Output values in the structures output file
 					structuresStream.println(numStructures + "," + "\"" + f1.getName() + "\","
-							+ art1.getAas().getNucleotides().length() + "," + art1.getAas().getBonds().size() + ","
-							+ (art1.getAas().isPseudoknotted() ? "Yes" : "No") + "," + elapsedTimeNano);
+							+ art1.getSecondaryStructure().getSize() + ","
+							+ art1.getSecondaryStructure().getBonds().size() + ","
+							+ (art1.getSecondaryStructure().isPseudoknotted() ? "Yes" : "No") + "," + elapsedTimeNano);
 					numStructures++;
 				} else {
 					art1 = structures.get(f1);
 					t1 = art1.getStructuralRNATree();
 				}
 
-				// Interior Loop - Compare structure 1 with all the subsequent ones
+				// Internal Loop - Compare structure 1 with all the subsequent ones
 				ListIterator<File> intIt = structuresList.listIterator(currentExtIndex + 1);
 				while (intIt.hasNext()) {
 					// Process File 2
@@ -276,28 +278,30 @@ public class WorkbenchComparator {
 					if (skippedFiles.contains(f2))
 						// skip this file
 						continue;
-					// Read the arc annotated sequence from the input file 2
-					ArcAnnotatedSequence aas2 = null;
-					try {
-						// Manage option r
-						if (cmd.hasOption("r"))
-							aas2 = InputFileParser.readAasFile(f2.getPath(), basePairsCheck);
-						else
-							aas2 = InputFileParser.readDotBracketNotationFile(f2.getPath(), basePairsCheck);
-					} catch (InputFileParserException e) {
-						System.err.println("WARNING: Skipping file " + f2.getName() + " ... " + e.getMessage());
-						// skip this structure
-						skippedFiles.add(f2);
-						continue;
-					}
 
 					// Retrieve the Structural RNA Tree for the structure 2
 					ASPRATree art2 = null;
 					Tree<String> t2 = null;
 					// Check if this structure has already been processed
 					if (!structures.containsKey(f2)) {
+						// Parse the input file f2 for the secondary structure
+						RNASecondaryStructure secondaryStructure2 = null;
+						try {
+							secondaryStructure2 = RNASecondaryStructureFileReader.readStructure(f2.getPath(),
+									basePairsCheck);
+						} catch (IOException e) {
+							System.err.println("WARNING: Skipping file " + f2.getName() + " ... " + e.getMessage());
+							// skip this structure
+							skippedFiles.add(f2);
+							continue;
+						} catch (RNAInputFileParserException e) {
+							System.err.println("WARNING: Skipping file " + f2.getName() + " ... " + e.getMessage());
+							// skip this structure
+							skippedFiles.add(f2);
+							continue;
+						}
 						// Create the Structural RNA Tree and put the object into the map
-						art2 = new ASPRATree(aas2);
+						art2 = new ASPRATree(secondaryStructure2);
 						// Build Structural RNA Tree and measure building time
 						startTimeNano = System.nanoTime();
 						t2 = art2.getStructuralRNATree();
@@ -306,15 +310,18 @@ public class WorkbenchComparator {
 						structures.put(f2, art2);
 						// Output values in the structures output file
 						structuresStream.println(numStructures + "," + "\"" + f2.getName() + "\","
-								+ art2.getAas().getNucleotides().length() + "," + art2.getAas().getBonds().size() + ","
-								+ (art2.getAas().isPseudoknotted() ? "Yes" : "No") + "," + elapsedTimeNano);
+								+ art2.getSecondaryStructure().getSize() + ","
+								+ art2.getSecondaryStructure().getBonds().size() + ","
+								+ (art2.getSecondaryStructure().isPseudoknotted() ? "Yes" : "No") + ","
+								+ elapsedTimeNano);
 						numStructures++;
 					} else {
 						art2 = structures.get(f2);
 						t2 = art2.getStructuralRNATree();
 					}
-					// Compare the two structural RNA Trees and determine the distance
-					// t1 and t2 contain the two structural RNA trees to align
+
+					// Compare the two structural RNA Trees t1 and t2 to determine the distance
+					System.out.println("Processing files: " + f1.getName() + " and " + f2.getName());
 					ASPRAlignResult r = null;
 					try {
 						startTimeNano = System.nanoTime();
@@ -329,7 +336,7 @@ public class WorkbenchComparator {
 					// Write the output file
 					outputStream.println("\"" + f1.getName() + "\"," + "\"" + f2.getName() + "\"," + r.getDistance()
 							+ "," + elapsedTimeNano);
-					// End of Interior Loop
+					// End of Internal Loop
 				}
 				// End of External Loop
 			}

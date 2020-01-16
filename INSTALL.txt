@@ -1,5 +1,5 @@
 ***************************************************************************
-ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment - version 0.91
+ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment - version 0.92
 
 INSTALLATION
 ***************************************************************************
@@ -21,7 +21,8 @@ ASPRAlign-<VersionNumber> is created containing the following files:
 - INSTALL.txt --- information on ASPRAlign installation
 - README.txt --- ASPRAlign description and usage information
 - COPYING.txt --- copyright information
-- LICENSE --- full GNU GPL Version 3 License 
+- LICENSE --- full GNU GPL Version 3 License
+- CHANGELOG.txt --- information about the evolution of ASPRAlign versions
 
 The executable jar files runs on every Linux, Windows and Mac OS platform
 in which a Java SE Runtime Environment 8 is installed. 

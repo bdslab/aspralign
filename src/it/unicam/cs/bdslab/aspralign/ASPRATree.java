@@ -1,7 +1,7 @@
 /**
  * ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment
  * 
- * Copyright (C) 2018 Luca Tesei, Michela Quadrini, Emanuela Merelli - 
+ * Copyright (C) 2020 Luca Tesei, Michela Quadrini, Emanuela Merelli - 
  * BioShape and Data Science Lab at the University of Camerino, Italy - 
  * http://www.emanuelamerelli.eu/bigdata/
  *  
@@ -23,15 +23,13 @@
 package it.unicam.cs.bdslab.aspralign;
 
 import fr.orsay.lri.varna.models.treealign.*;
-import it.unicam.cs.bdslab.aspralign.ArcAnnotatedSequence.WeakBond;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 /**
- * Builder for an algebraic RNA tree and a structural RNA tree corresponding to a
- * given arc annotated sequence.
+ * Builder for an algebraic RNA tree and a structural RNA tree corresponding to
+ * a given RNA secondary structure.
  * 
  * An algebraic RNA tree is the derived tree of a tree grammar whose operators
  * are defined among hairpin loops of an RNA secondary structure. The crossing
@@ -46,35 +44,39 @@ import java.util.List;
  *
  */
 public class ASPRATree {
-	// original Arc Annotated Sequence
-	private final ArcAnnotatedSequence aas;
+	// original RNA secondary structure
+	private final RNASecondaryStructure secondaryStructure;
 	// algebraic RNA tree
 	private Tree<String> algebraicTree;
 	// structural RNA tree
 	private Tree<String> structuralTree;
 
 	/**
-	 * Construct an algebraic RNA tree builder starting from an arc annotated
-	 * sequence.
+	 * Construct an algebraic RNA tree builder starting from an RNA secondary
+	 * structure.
 	 * 
-	 * @param aas an arc annotated sequence
+	 * @param secondaryStructure an RNA secondary structure
 	 */
-	public ASPRATree(ArcAnnotatedSequence aas) {
-		assert aas != null : "Null Arc Annotated Sequence at Algebraic RNA Tree construction";
-		this.aas = aas;
+	public ASPRATree(RNASecondaryStructure secondaryStructure) {
+		this.secondaryStructure = secondaryStructure;
 	}
 
 	/**
-	 * @return the original arc annotated sequence
+	 * @return the original RNA secondary structure
 	 */
-	public ArcAnnotatedSequence getAas() {
-		return this.aas;
+	public RNASecondaryStructure getSecondaryStructure() {
+		return this.secondaryStructure;
 	}
 
 	/**
-	 * @return the algebraic RNA tree built form the arc annotated sequence
+	 * @return the algebraic RNA tree built form the secondary structure
+	 * @throws RNAInputFileParserException if the secondary structure has no
+	 *                                     sequence
 	 */
-	public Tree<String> getAlgebraicRNATree() {
+	public Tree<String> getAlgebraicRNATree() throws RNAInputFileParserException {
+		if (this.secondaryStructure.sequence == null)
+			throw new RNAInputFileParserException(
+					"Cannot construct the algebraic RNA tree from a secondary structure without sequence");
 		if (this.algebraicTree == null) {
 			this.algebraicTree = new Tree<String>();
 			this.algebraicTree.setValue(Operators.ALGEBRAIC_TREE_ROOT_LABEL);
@@ -84,21 +86,22 @@ public class ASPRATree {
 	}
 
 	/*
-	 * MainComparator building method. It constructs the algebraic RNA tree root childs and
-	 * finds the outermost pseudoloop. Then the recursive builder is started on this
-	 * pseudoloop to construct the full algebraic RNA tree recursively.
+	 * Construct the algebraic RNA tree root childs and finds the outermost
+	 * pseudoloop. Then the recursive builder is started on this pseudoloop to
+	 * construct the full algebraic RNA tree recursively.
+	 * 
 	 */
 	private void buildAlgebraic() {
 		// create array for counting openings and closings of loops, by default it is
 		// initialized to zeroes, starts at 1, position 0 not used
-		int[] c = new int[this.aas.getNucleotides().length() + 1];
+		int[] c = new int[this.secondaryStructure.size + 1];
 
 		// initialize the counting array
 		init(c);
 
 		// init indexes for later recursion call
 		int l = 1; // left index, starts at 1, position 0 not used
-		int r = this.aas.getNucleotides().length(); // right index
+		int r = this.secondaryStructure.size; // right index
 
 		// determine the head of the structure
 		String head;
@@ -108,7 +111,7 @@ public class ASPRATree {
 			// empty head
 			head = "";
 		else
-			head = this.aas.getNucleotides().substring(0, l - 1);
+			head = this.secondaryStructure.sequence.substring(0, l - 1);
 
 		// determine the tail of the structure
 		String tail;
@@ -116,10 +119,10 @@ public class ASPRATree {
 			r--;
 		r++; // last closing loop has 0 count, but belongs to the loop, so it's not part of
 				// the tail
-		if (r == this.aas.getNucleotides().length())
+		if (r == this.secondaryStructure.size)
 			tail = "";
 		else
-			tail = this.aas.getNucleotides().substring(r, this.aas.getNucleotides().length());
+			tail = this.secondaryStructure.sequence.substring(r, this.secondaryStructure.size);
 
 		// create the children of the root
 		ArrayList<Tree<String>> rootChilds = new ArrayList<Tree<String>>();
@@ -152,7 +155,7 @@ public class ASPRATree {
 		// decompose pseudoloop [l,r]
 
 		// determine if the pseudoloop is a nesting
-		if (this.aas.p[r] == l) {
+		if (this.secondaryStructure.p[r] == l) {
 			// nesting case
 			ct.setValue(Operators.NESTING_LABEL);
 
@@ -177,8 +180,9 @@ public class ASPRATree {
 				ct.setValue(Operators.HAIRPIN_LABEL);
 				ArrayList<Tree<String>> child = new ArrayList<Tree<String>>();
 				Tree<String> q = new Tree<String>();
-				String label = this.aas.getNucleotides().charAt(l - 1) + "*"
-						+ this.aas.getNucleotides().substring(l, r - 1) + this.aas.getNucleotides().charAt(r - 1) + "*";
+				String label = this.secondaryStructure.sequence.charAt(l - 1) + "*"
+						+ this.secondaryStructure.sequence.substring(l, r - 1)
+						+ this.secondaryStructure.sequence.charAt(r - 1) + "*";
 				q.setValue(label);
 				// use the following line to obtain the string without the "*"s
 				// q.setValue(this.aas.getNucleotides().substring(l - 1, r));
@@ -230,7 +234,7 @@ public class ASPRATree {
 				ct.setValue(Operators.CROSSING_LABEL);
 
 				// left end of the rightmost crossing hairpin
-				int lpp = this.aas.p[r];
+				int lpp = this.secondaryStructure.p[r];
 				// index for the right end of the new pseudoloop
 				int rp = r;
 				// value of k for this crossing
@@ -302,7 +306,7 @@ public class ASPRATree {
 					seq.setValue("(" + Operators.CONCATENATION_LABEL + ",)");
 				else
 					seq.setValue("(" + Operators.CONCATENATION_LABEL + ","
-							+ this.aas.getNucleotides().substring(lr, rl - 1) + ")");
+							+ this.secondaryStructure.sequence.substring(lr, rl - 1) + ")");
 
 				// create node for building the right part
 				Tree<String> right = new Tree<String>();
@@ -340,7 +344,7 @@ public class ASPRATree {
 	 */
 	private void init(int[] c) {
 		int count = 0;
-		for (int i = 1; i <= this.aas.getNucleotides().length(); i++) {
+		for (int i = 1; i <= this.secondaryStructure.size; i++) {
 			if (loop_start(i)) {
 				// a loop has just started in the arc annotated sequence, so count is
 				// incremented
@@ -363,7 +367,7 @@ public class ASPRATree {
 	 * secondary structure represented by the original arc annotated sequence.
 	 */
 	private boolean loop_start(int i) {
-		return this.aas.p[i] != 0 && this.aas.p[i] > i;
+		return this.secondaryStructure.p[i] != 0 && this.secondaryStructure.p[i] > i;
 	}
 
 	/*
@@ -371,7 +375,7 @@ public class ASPRATree {
 	 * secondary structure represented by the original arc annotated sequence.
 	 */
 	private boolean loop_stop(int i) {
-		return this.aas.p[i] != 0 && this.aas.p[i] < i;
+		return this.secondaryStructure.p[i] != 0 && this.secondaryStructure.p[i] < i;
 	}
 
 	/*
@@ -416,8 +420,9 @@ public class ASPRATree {
 		t.setValue(Operators.HAIRPIN_LABEL);
 		ArrayList<Tree<String>> c = new ArrayList<Tree<String>>();
 		Tree<String> h = new Tree<String>();
-		String label = this.aas.getNucleotides().charAt(l - 1) + "*" + this.aas.getNucleotides().substring(l, r - 1)
-				+ this.aas.getNucleotides().charAt(r - 1) + "*";
+		String label = this.secondaryStructure.sequence.charAt(l - 1) + "*"
+				+ this.secondaryStructure.sequence.substring(l, r - 1) + this.secondaryStructure.sequence.charAt(r - 1)
+				+ "*";
 		h.setValue(label);
 		// use the following line to obtain the string without the "*"s
 		// h.setValue(this.aas.getNucleotides().substring(l - 1, r));
@@ -439,14 +444,14 @@ public class ASPRATree {
 	private void buildStructural() {
 		// create array for counting openings and closings of loops, by default it is
 		// initialized to zeroes, starts at 1, position 0 not used
-		int[] c = new int[this.aas.getNucleotides().length() + 1];
+		int[] c = new int[this.secondaryStructure.size + 1];
 
 		// initialize the counting array
 		init(c);
 
 		// init indexes for later recursion call
 		int l = 1; // left index, starts at 1, position 0 not used
-		int r = this.aas.getNucleotides().length(); // right index
+		int r = this.secondaryStructure.size; // right index
 
 		// move l to the start of the structure
 		while (c[l] == 0)
@@ -467,36 +472,36 @@ public class ASPRATree {
 		// find zero intervals in the outermost pseudoloop, if any
 		detectZeroIntervals(c, zi, l, r);
 
-		// create a copy of the list of weak bounds, ordered by the right index (default
-		// ordering of WeakBond)
-		List<ArcAnnotatedSequence.WeakBond> bounds = new ArrayList<>();
-		bounds.addAll(this.aas.getBonds());
-		Collections.sort(bounds);
+		// create a copy of the list of weak bonds of the structure, ensuring that the
+		// copied list conserves ordering
+		List<WeakBond> bonds = new ArrayList<WeakBond>();
+		bonds.addAll(this.secondaryStructure.getBonds());
+		Collections.sort(bonds);
 
 		// create the root node of the structural RNA tree
 		Tree<String> t = new Tree<String>();
 
 		// start the recursive construction of the algebraic RNA Tree on the node ct
-		recBuildStructural(t, bounds, c, zi, l, r);
+		recBuildStructural(t, bonds, c, zi, l, r);
 
 		// assign to the root of this tree
 		this.structuralTree = t;
 	}
 
-	private void recBuildStructural(Tree<String> ct, List<WeakBond> bounds, int[] c, ArrayList<Interval> zi, int l,
+	private void recBuildStructural(Tree<String> ct, List<WeakBond> bonds, int[] c, ArrayList<Interval> zi, int l,
 			int r) {
 		// checks
 		assert c[l] == 1 && c[r] == 0 : "Pseudoloop bounds error while parsing at [" + l + "," + r
 				+ "]\nCounting array: " + c;
-		WeakBond lastBound = bounds.get(bounds.size() - 1);
-		assert lastBound.getRight() == r : "Mismatch among indexes of arc annotated sequence and of "
-				+ "determined loop in WeakBond: (" + l + "," + r + ") vs (" + lastBound.getLeft() + ","
-				+ lastBound.getRight() + ")";
+		WeakBond lastBond = bonds.get(bonds.size() - 1);
+		assert lastBond.getRight() == r : "Mismatch among indexes of secondary structure and of "
+				+ "determined loop in WeakBond: (" + l + "," + r + ") vs (" + lastBond.getLeft() + ","
+				+ lastBond.getRight() + ")";
 
-		// decompose pseudoloop [l,r]
+		// decompose pseudoloop [l,r]:
 
 		// determine if the pseudoloop is a nesting
-		if (this.aas.p[r] == l) {
+		if (this.secondaryStructure.p[r] == l) {
 			// nesting case
 
 			ct.setValue(Operators.NESTING_LABEL);
@@ -514,11 +519,11 @@ public class ASPRATree {
 				lp++;
 			if (lp == rp) {
 				// no subloops of this nesting, there will be no more complex subtrees
-				assert bounds.size() == 1 : "Mismatch in base case of building structural RNA "
-						+ "tree: size of list of bounds different from one";
+				assert bonds.size() == 1 : "Mismatch in base case of building structural RNA "
+						+ "tree: size of list of bonds different from one";
 
 				// revert to just a single hairpin
-				ct.setValue(Operators.HAIRPIN_LABEL + "(" + lastBound.getLeft() + "," + lastBound.getRight() + ")");
+				ct.setValue(Operators.HAIRPIN_LABEL + "(" + lastBond.getLeft() + "," + lastBond.getRight() + ")");
 
 				// end recursion
 				return;
@@ -538,7 +543,7 @@ public class ASPRATree {
 
 			// create hairpin subtree
 			Tree<String> h = new Tree<String>();
-			h.setValue(Operators.HAIRPIN_LABEL + "(" + lastBound.getLeft() + "," + lastBound.getRight() + ")");
+			h.setValue(Operators.HAIRPIN_LABEL + "(" + lastBond.getLeft() + "," + lastBond.getRight() + ")");
 
 			// update tree
 			ArrayList<Tree<String>> nestChilds = new ArrayList<Tree<String>>();
@@ -553,21 +558,21 @@ public class ASPRATree {
 			detectZeroIntervals(c, zip, lp, rp);
 
 			// remove last bound from the list of bounds
-			bounds.remove(bounds.size() - 1);
+			bonds.remove(bonds.size() - 1);
 
 			// recursive construction of the structural RNA subTree on the node rest
-			recBuildStructural(rest, bounds, c, zip, lp, rp);
+			recBuildStructural(rest, bonds, c, zip, lp, rp);
 		} else {
 			// not nesting case
 			if (zi.isEmpty()) {
 				// crossing case
 
 				// determine number of crossings and set label
-				int numberOfCrossings = determineNumberOfCrossings(bounds);
+				int numberOfCrossings = determineNumberOfCrossings(bonds);
 				ct.setValue("(" + Operators.CROSSING_LABEL + "," + numberOfCrossings + ")");
 
 				// left end of the rightmost crossing hairpin
-				int lpp = this.aas.p[r];
+				int lpp = this.secondaryStructure.p[r];
 				// index for the right end of the new pseudoloop
 				int rp = r;
 
@@ -589,7 +594,7 @@ public class ASPRATree {
 
 				// create hairpin subtree
 				Tree<String> h = new Tree<String>();
-				h.setValue(Operators.HAIRPIN_LABEL + "(" + lastBound.getLeft() + "," + lastBound.getRight() + ")");
+				h.setValue(Operators.HAIRPIN_LABEL + "(" + lastBond.getLeft() + "," + lastBond.getRight() + ")");
 
 				// update tree
 				ArrayList<Tree<String>> crossChilds = new ArrayList<Tree<String>>();
@@ -604,10 +609,10 @@ public class ASPRATree {
 				detectZeroIntervals(c, zip, l, rp);
 
 				// remove last bound from the list of bounds
-				bounds.remove(bounds.size() - 1);
+				bonds.remove(bonds.size() - 1);
 
 				// recursive construction of the algebraic RNA subTree on the node rest
-				recBuildStructural(rest, bounds, c, zip, l, rp);
+				recBuildStructural(rest, bonds, c, zip, l, rp);
 
 			} else {
 				// concatenation
@@ -646,42 +651,42 @@ public class ASPRATree {
 				// find zero intervals in the right pseudoloop, if any
 				detectZeroIntervals(c, zir, rl, rr);
 
-				List<WeakBond> lbounds = new ArrayList<>();
-				List<WeakBond> rbounds = new ArrayList<>();
+				List<WeakBond> lbonds = new ArrayList<WeakBond>();
+				List<WeakBond> rbonds = new ArrayList<WeakBond>();
 
-				splitBounds(bounds, ll, lr, rl, rr, lbounds, rbounds);
+				splitBonds(bonds, ll, lr, rl, rr, lbonds, rbonds);
 
 				// recursive construction of the algebraic RNA subTree on the right
-				recBuildStructural(right, rbounds, c, zir, rl, rr);
+				recBuildStructural(right, rbonds, c, zir, rl, rr);
 
 				// recursive construction of the algebraic RNA subTree on the left
-				recBuildStructural(left, lbounds, c, zi, ll, lr);
+				recBuildStructural(left, lbonds, c, zi, ll, lr);
 			}
 		}
 	}
 
-	private void splitBounds(List<WeakBond> bounds, int ll, int lr, int rl, int rr, List<WeakBond> lbounds,
-			List<WeakBond> rbounds) {
-		for (WeakBond b : bounds) {
+	private void splitBonds(List<WeakBond> bonds, int ll, int lr, int rl, int rr, List<WeakBond> lbonds,
+			List<WeakBond> rbonds) {
+		for (WeakBond b : bonds) {
 			if (ll <= b.getLeft() && b.getRight() <= lr)
-				lbounds.add(b);
+				lbonds.add(b);
 			else if (rl <= b.getLeft() && b.getRight() <= rr)
-				rbounds.add(b);
+				rbonds.add(b);
 			else
-				assert false : "Error in splitting bounds weak bound (" + b.getLeft() + "," + b.getRight()
+				assert false : "Error in splitting bonds: weak bond (" + b.getLeft() + "," + b.getRight()
 						+ ") not in range [" + ll + "," + lr + "] and not in range [" + rl + "," + rr + "]";
 		}
-		assert lbounds.size() > 0 : "Error in splitting bounds: left bounds list empty";
-		assert rbounds.size() > 0 : "Error in splitting bounds: right bounds list empty";
+		assert lbonds.size() > 0 : "Error in splitting bonds: left bonds list empty";
+		assert rbonds.size() > 0 : "Error in splitting bonds: right bonds list empty";
 
 	}
 
-	private int determineNumberOfCrossings(List<WeakBond> bounds) {
+	private int determineNumberOfCrossings(List<WeakBond> bonds) {
 		int n = 0;
-		int lastBoundLeftIndex = bounds.get(bounds.size() - 1).getLeft();
-		for (int i = bounds.size() - 2; i >= 0; i--) {
-			WeakBond b = bounds.get(i);
-			if (b.getLeft() < lastBoundLeftIndex && lastBoundLeftIndex < b.getRight())
+		int lastBondLeftIndex = bonds.get(bonds.size() - 1).getLeft();
+		for (int i = bonds.size() - 2; i >= 0; i--) {
+			WeakBond b = bonds.get(i);
+			if (b.getLeft() < lastBondLeftIndex && lastBondLeftIndex < b.getRight())
 				n++;
 		}
 		assert n > 0 : "Crossing number equal to zero!";
