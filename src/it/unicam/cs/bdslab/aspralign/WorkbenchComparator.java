@@ -160,8 +160,10 @@ public class WorkbenchComparator {
 			// Variables for counting execution time
 			long startTimeNano = 0;
 			long elapsedTimeNano = 0;
-			// Map for holding all the structures to be processed
+			// Maps for holding all the structures to be processed and their associated
+			// processing time
 			Map<File, ASPRATree> structures = new HashMap<File, ASPRATree>();
+			Map<File, Long> structuresProcessingTime = new HashMap<File, Long>();
 			// List for holding all the structures files
 			List<File> structuresList = new ArrayList<File>();
 			// Set of skipped files
@@ -212,7 +214,10 @@ public class WorkbenchComparator {
 			// Write column names on the csv output files
 			structuresStream.println("Num,FileName,NumberOfNucleotides,NumberOfWeakBonds,"
 					+ "IsPseudoknotted,TimeToGenerateStructuralRNATree[ns]");
-			outputStream.println("FileName1,FileName2,ASPRADistance,TimeToCalculateDistance[ns]");
+			outputStream.println(
+					"FileName1,NumberOfNucleotides1,NumberOfWeakBonds1,IsPseudoknotted1,TimeToGenerateStructuralRNATree1[ns],"
+							+ "FileName2,NumberOfNucleotides2,NumberOfWeakBonds2,IsPseudoknotted2,TimeToGenerateStructuralRNATree2[ns],"
+							+ "MaxNumberOfNucleotides1-2,ASPRADistance,TimeToCalculateASPRADistance[ns]");
 
 			// Load configuration file for costs
 			ScoringFunction f = new ScoringFunction(configurationFileName);
@@ -256,8 +261,9 @@ public class WorkbenchComparator {
 					startTimeNano = System.nanoTime();
 					t1 = art1.getStructuralRNATree();
 					elapsedTimeNano = System.nanoTime() - startTimeNano;
-					// Insert Object in map
+					// Insert Object in maps
 					structures.put(f1, art1);
+					structuresProcessingTime.put(f1, elapsedTimeNano);
 					// Output values in the structures output file
 					structuresStream.println(numStructures + "," + "\"" + f1.getName() + "\","
 							+ art1.getSecondaryStructure().getSize() + ","
@@ -306,8 +312,9 @@ public class WorkbenchComparator {
 						startTimeNano = System.nanoTime();
 						t2 = art2.getStructuralRNATree();
 						elapsedTimeNano = System.nanoTime() - startTimeNano;
-						// Insert Object in map
+						// Insert Object in maps
 						structures.put(f2, art2);
+						structuresProcessingTime.put(f2, elapsedTimeNano);
 						// Output values in the structures output file
 						structuresStream.println(numStructures + "," + "\"" + f2.getName() + "\","
 								+ art2.getSecondaryStructure().getSize() + ","
@@ -334,8 +341,18 @@ public class WorkbenchComparator {
 						continue;
 					}
 					// Write the output file
-					outputStream.println("\"" + f1.getName() + "\"," + "\"" + f2.getName() + "\"," + r.getDistance()
-							+ "," + elapsedTimeNano);
+					outputStream.println("\"" + f1.getName() + "\"," + art1.getSecondaryStructure().getSize() + ","
+							+ art1.getSecondaryStructure().getBonds().size() + ","
+							+ (art1.getSecondaryStructure().isPseudoknotted() ? "Yes" : "No") + ","
+							+ structuresProcessingTime.get(f1).longValue() + "," + "\"" + f2.getName() + "\","
+							+ art2.getSecondaryStructure().getSize() + ","
+							+ art2.getSecondaryStructure().getBonds().size() + ","
+							+ (art2.getSecondaryStructure().isPseudoknotted() ? "Yes" : "No") + ","
+							+ structuresProcessingTime.get(f2).longValue() + ","
+							+ (art1.getSecondaryStructure().getSize() > art2.getSecondaryStructure().getSize()
+									? art1.getSecondaryStructure().getSize()
+									: art2.getSecondaryStructure().getSize())
+							+ "," + r.getDistance() + "," + elapsedTimeNano);
 					// End of Internal Loop
 				}
 				// End of External Loop
