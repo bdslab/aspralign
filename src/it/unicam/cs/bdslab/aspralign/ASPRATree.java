@@ -50,6 +50,8 @@ public class ASPRATree {
 	private Tree<String> algebraicTree;
 	// structural RNA tree
 	private Tree<String> structuralTree;
+	// structural context RNA tree
+	private Tree<String> contextTree;
 
 	/**
 	 * Construct an algebraic RNA tree builder starting from an RNA secondary
@@ -150,8 +152,8 @@ public class ASPRATree {
 	}
 
 	private void recBuildAlgebraic(Tree<String> ct, int[] c, ArrayList<Interval> zi, int l, int r) {
-		assert c[l] == 1 && c[r] == 0 : "Pseudoloop bounds error while parsing at [" + l + "," + r
-				+ "]\nCounting array: " + c;
+		assert c[l] == 1 && c[r] == 0
+				: "Pseudoloop bounds error while parsing at [" + l + "," + r + "]\nCounting array: " + c;
 		// decompose pseudoloop [l,r]
 
 		// determine if the pseudoloop is a nesting
@@ -199,8 +201,8 @@ public class ASPRATree {
 			rp++; // last closing loop has 0 count, but belongs to the loop
 
 			// the new pseudoloop to consider has bounds [lp,rp]
-			assert c[lp] == 1 && c[rp] == 0 : "Determined wrong pseudoloop at [" + lp + "," + rp + "]\nCounting array: "
-					+ c;
+			assert c[lp] == 1 && c[rp] == 0
+					: "Determined wrong pseudoloop at [" + lp + "," + rp + "]\nCounting array: " + c;
 
 			// create the empty node for building the rest of the tree on the left
 			Tree<String> rest = new Tree<String>();
@@ -250,8 +252,8 @@ public class ASPRATree {
 				rp++; // last closing loop has 0 count, but belongs to the loop
 
 				// the new pseudoloop to consider has bounds [l,rp]
-				assert c[l] == 1 && c[rp] == 0 : "Determined wrong pseudoloop at [" + l + "," + rp
-						+ "]\nCounting array: " + c;
+				assert c[l] == 1 && c[rp] == 0
+						: "Determined wrong pseudoloop at [" + l + "," + rp + "]\nCounting array: " + c;
 
 				// create the empty node for building the rest of the tree on the left
 				Tree<String> rest = new Tree<String>();
@@ -294,8 +296,8 @@ public class ASPRATree {
 				int rr = r;
 
 				// the new right pseudoloop to consider has bounds [rl,rr]
-				assert c[rl] == 1 && c[rr] == 0 : "Determined wrong pseudoloop at [" + rl + "," + rr
-						+ "]\nCounting array: " + c;
+				assert c[rl] == 1 && c[rr] == 0
+						: "Determined wrong pseudoloop at [" + rl + "," + rr + "]\nCounting array: " + c;
 
 				// create the node for building the left part
 				Tree<String> left = new Tree<String>();
@@ -358,8 +360,8 @@ public class ASPRATree {
 			} else // no star/stop of a loop, the value of count is kept
 				c[i] = count;
 		}
-		assert count == 0 : "Value of count after initialization of counting array: " + count + "\nCounting array: "
-				+ c;
+		assert count == 0
+				: "Value of count after initialization of counting array: " + count + "\nCounting array: " + c;
 	}
 
 	/*
@@ -441,6 +443,21 @@ public class ASPRATree {
 
 	}
 
+	/**
+	 * @return the structural context RNA tree built from the arc annotated sequence
+	 */
+	public Tree<String> getStructuralContextRNATree() {
+		if (this.contextTree == null)
+			buildContext();
+		return this.contextTree;
+
+	}
+
+	private void buildContext() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	private void buildStructural() {
 		// create array for counting openings and closings of loops, by default it is
 		// initialized to zeroes, starts at 1, position 0 not used
@@ -491,12 +508,12 @@ public class ASPRATree {
 	private void recBuildStructural(Tree<String> ct, List<WeakBond> bonds, int[] c, ArrayList<Interval> zi, int l,
 			int r) {
 		// checks
-		assert c[l] == 1 && c[r] == 0 : "Pseudoloop bounds error while parsing at [" + l + "," + r
-				+ "]\nCounting array: " + c;
+		assert c[l] == 1 && c[r] == 0
+				: "Pseudoloop bounds error while parsing at [" + l + "," + r + "]\nCounting array: " + c;
 		WeakBond lastBond = bonds.get(bonds.size() - 1);
-		assert lastBond.getRight() == r : "Mismatch among indexes of secondary structure and of "
-				+ "determined loop in WeakBond: (" + l + "," + r + ") vs (" + lastBond.getLeft() + ","
-				+ lastBond.getRight() + ")";
+		assert lastBond.getRight() == r
+				: "Mismatch among indexes of secondary structure and of " + "determined loop in WeakBond: (" + l + ","
+						+ r + ") vs (" + lastBond.getLeft() + "," + lastBond.getRight() + ")";
 
 		// decompose pseudoloop [l,r]:
 
@@ -535,8 +552,8 @@ public class ASPRATree {
 			rp++; // last closing loop has 0 count, but belongs to the loop
 
 			// the new pseudoloop to consider has bounds [lp,rp]
-			assert c[lp] == 1 && c[rp] == 0 : "Determined wrong pseudoloop at [" + lp + "," + rp + "]\nCounting array: "
-					+ c;
+			assert c[lp] == 1 && c[rp] == 0
+					: "Determined wrong pseudoloop at [" + lp + "," + rp + "]\nCounting array: " + c;
 
 			// create the empty node for building the rest of the tree on the left
 			Tree<String> rest = new Tree<String>();
@@ -586,8 +603,8 @@ public class ASPRATree {
 				rp++; // last closing loop has 0 count, but belongs to the loop
 
 				// the new pseudoloop to consider has bounds [l,rp]
-				assert c[l] == 1 && c[rp] == 0 : "Determined wrong pseudoloop at [" + l + "," + rp
-						+ "]\nCounting array: " + c;
+				assert c[l] == 1 && c[rp] == 0
+						: "Determined wrong pseudoloop at [" + l + "," + rp + "]\nCounting array: " + c;
 
 				// create the empty node for building the rest of the tree on the left
 				Tree<String> rest = new Tree<String>();
@@ -629,8 +646,8 @@ public class ASPRATree {
 				int rr = r;
 
 				// the new right pseudoloop to consider has bounds [rl,rr]
-				assert c[rl] == 1 && c[rr] == 0 : "Determined wrong pseudoloop at [" + rl + "," + rr
-						+ "]\nCounting array: " + c;
+				assert c[rl] == 1 && c[rr] == 0
+						: "Determined wrong pseudoloop at [" + rl + "," + rr + "]\nCounting array: " + c;
 
 				// create the node for building the left part
 				Tree<String> left = new Tree<String>();

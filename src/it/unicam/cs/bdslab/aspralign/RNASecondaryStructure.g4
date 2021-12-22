@@ -38,7 +38,9 @@ grammar RNASecondaryStructure;
 
 rna
 :
-	sequence? structure
+	sequence? structure #edbnOrAas
+	| bpseq  #bpseqFormat
+	| ct     #ctFormat
 ;
 
 sequence
@@ -70,11 +72,48 @@ bond
 	'(' INDEX ',' INDEX ')'
 ;
 
+bpseq
+:
+	LINE1BPSEQCT LINE2BPSEQCT LINE3BPSEQCT LINE4BPSEQCT bpseqinfo
+;
+
+bpseqinfo
+:
+	bpseqline bpseqinfo  #bpseqSeq
+	| bpseqline #bpseqLast
+;
+
+bpseqline
+:
+	INDEX IUPAC_CODE (INDEX | ZERO)
+;
+
+ct
+:
+	LINE1BPSEQCT LINE2BPSEQCT LINE3BPSEQCT LINE4BPSEQCT LINE5CT ctinfo 
+;
+
+ctinfo
+:
+	ctline ctinfo  #ctSeq
+	| ctline       #ctLast
+;
+
+ctline
+:
+	INDEX IUPAC_CODE (INDEX | ZERO) (INDEX | ZERO) (INDEX | ZERO) INDEX
+;
+
 // Tokens
 
 INDEX
 :
 	[1-9] [0-9]*
+;
+
+ZERO
+:
+   '0'
 ;
 
 NUCLEOTIDES
@@ -125,6 +164,31 @@ EDBN_CODE
 	| '<'
 	| '>'
 	| [a-zA-Z]
+;
+
+LINE1BPSEQCT
+:
+'Filename' .*? '\r'? '\n'
+;
+
+LINE2BPSEQCT
+:
+'Organism' .*? '\r'? '\n'
+;
+
+LINE3BPSEQCT
+:
+'Accession' .*? '\r'? '\n'
+;
+
+LINE4BPSEQCT
+:
+'Citation' .*? '\r'? '\n'
+;
+
+LINE5CT
+:
+	.*? ('ENERGY' | 'Energy' | 'dG') .*? '\r'? '\n'
 ;
 
 LINE_COMMENT
