@@ -59,6 +59,9 @@ public class RNASecondaryStructure {
 	// one array is sufficient to represent all weak bonds.
 	protected int[] p;
 
+	// Description taken from the file, if any
+	protected String description;
+
 	/**
 	 * Create an empty secondary structure.
 	 */
@@ -67,6 +70,7 @@ public class RNASecondaryStructure {
 		this.size = -1;
 		this.bonds = new ArrayList<WeakBond>();
 		this.p = null;
+		this.description = "";
 	}
 
 	/**
@@ -91,6 +95,13 @@ public class RNASecondaryStructure {
 	}
 
 	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
 	 * Add a bond to this structure.
 	 * 
 	 * @param b the new bond to add
@@ -104,8 +115,8 @@ public class RNASecondaryStructure {
 		// list of bonds
 		for (WeakBond wb : this.bonds)
 			if (b.getLeft() == wb.getLeft())
-				throw new RNAInputFileParserException("Weak Bond left index " + b.getLeft() + " is equal to bond ("
-						+ wb.getLeft() + ", " + wb.getRight() + ") left index");
+				throw new RNAInputFileParserException("Weak Bond " + "left index " + b.getLeft() + " is equal to "
+						+ "bond (" + wb.getLeft() + ", " + wb.getRight() + ") left " + "index");
 			else if (b.getLeft() == wb.getRight())
 				throw new RNAInputFileParserException("Weak Bond left index " + b.getLeft() + " is equal to bond ("
 						+ wb.getLeft() + ", " + wb.getRight() + ") right index");
@@ -182,32 +193,36 @@ public class RNASecondaryStructure {
 			return;
 		// check all the pairs
 		for (WeakBond b : this.bonds) {
-		// base pair check
-		int index1 = b.getLeft() - 1; // adjustment of indexes wrt the zero-starting indexes of strings
-		int index2 = b.getRight() - 1;
-		switch (this.sequence.charAt(index1)) {
+			// base pair check
+			int index1 = b.getLeft() - 1; // adjustment of indexes wrt the zero-starting indexes of strings
+			int index2 = b.getRight() - 1;
+			switch (this.sequence.charAt(index1)) {
 			case 'A':
 				if (this.sequence.charAt(index2) != 'U')
-					throw new RNAInputFileParserException("Base pair not allowed in RNA: " + this.sequence.charAt(index1)
-							+ "-" + this.sequence.charAt(index2) + " at weak bond (" + b.getLeft() + ", " + b.getRight() + ")");
+					throw new RNAInputFileParserException("Base pair not allowed in RNA: "
+							+ this.sequence.charAt(index1) + "-" + this.sequence.charAt(index2) + " at weak bond ("
+							+ b.getLeft() + ", " + b.getRight() + ")");
 				else
 					break;
 			case 'U':
 				if (this.sequence.charAt(index2) != 'A' && this.sequence.charAt(index2) != 'G')
-					throw new RNAInputFileParserException("Base pair not allowed in RNA: " + this.sequence.charAt(index1)
-					+ "-" + this.sequence.charAt(index2) + " at weak bond (" + b.getLeft() + ", " + b.getRight() + ")");
+					throw new RNAInputFileParserException("Base pair not allowed in RNA: "
+							+ this.sequence.charAt(index1) + "-" + this.sequence.charAt(index2) + " at weak bond ("
+							+ b.getLeft() + ", " + b.getRight() + ")");
 				else
 					break;
 			case 'C':
 				if (this.sequence.charAt(index2) != 'G')
-					throw new RNAInputFileParserException("Base pair not allowed in RNA: " + this.sequence.charAt(index1)
-					+ "-" + this.sequence.charAt(index2) + " at weak bond (" + b.getLeft() + ", " + b.getRight() + ")");
+					throw new RNAInputFileParserException("Base pair not allowed in RNA: "
+							+ this.sequence.charAt(index1) + "-" + this.sequence.charAt(index2) + " at weak bond ("
+							+ b.getLeft() + ", " + b.getRight() + ")");
 				else
 					break;
 			case 'G':
 				if (this.sequence.charAt(index2) != 'C' && this.sequence.charAt(index2) != 'U')
-					throw new RNAInputFileParserException("Base pair not allowed in RNA: " + this.sequence.charAt(index1)
-					+ "-" + this.sequence.charAt(index2) + " at weak bond (" + b.getLeft() + ", " + b.getRight() + ")");
+					throw new RNAInputFileParserException("Base pair not allowed in RNA: "
+							+ this.sequence.charAt(index1) + "-" + this.sequence.charAt(index2) + " at weak bond ("
+							+ b.getLeft() + ", " + b.getRight() + ")");
 				else
 					break;
 			}

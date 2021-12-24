@@ -388,5 +388,45 @@ class RNASecondaryStructureFileReaderTest {
 		assertThrows(NoSuchFileException.class,
 				() -> RNASecondaryStructureFileReader.readStructure("test/error-structures/no-file.dp", false));
 	}
+	
+	@Test
+	void testReadStructureBpseqTest() throws IOException {
+		RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/bpseq/test.bpseq",
+				false);
+		assertTrue(s1.getSequence().equals("CCUGAACAG"));
+		System.out.println(s1.getDescription());
+		assertTrue(s1.getDescription().equals("# Filename: test.bpseq\n"
+				+ "# Organism: Some organism\n"
+				+ "# Accession Number: XYZ123\n"
+				+ "# Citation and related information available at http://www.rna.ccbb.utexax.edu"));
+		List<WeakBond> wb = new ArrayList<WeakBond>();
+		wb.add(new WeakBond(3, 8));
+		wb.add(new WeakBond(2, 9));
+		// System.out.println(s1.getBonds());
+		assertTrue(s1.getBonds().equals(wb));		
+	}
+	
+	@Test
+	void testReadStructureCtTest() throws IOException {
+		RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/ct/test.ct.txt",
+				false);
+		assertTrue(s1.getSequence().equals("GCGGAUUUUAAUUCGCA"));
+		System.out.println(s1.getDescription());
+		assertTrue(s1.getDescription().equals("# Filename: test.ct\n"
+				+ "# Organism: Some organism\n"
+				+ "# Accession Number: XYZ123\n"
+				+ "# Citation and related information available at http://www.acme.com\n"
+				+ "# 17 ENERGY =     -17.50    test"));
+		List<WeakBond> wb = new ArrayList<WeakBond>();
+		wb.add(new WeakBond(7, 10));
+		wb.add(new WeakBond(6, 11));
+		wb.add(new WeakBond(5, 12));
+		wb.add(new WeakBond(4, 13));
+		wb.add(new WeakBond(3, 14));
+		wb.add(new WeakBond(2, 15));
+		wb.add(new WeakBond(1, 16));
+		// System.out.println(s1.getBonds());
+		assertTrue(s1.getBonds().equals(wb));		
+	}
 
 }

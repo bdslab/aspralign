@@ -30,174 +30,205 @@
  * @author Luca Tesei
  * 
  */
-grammar RNASecondaryStructure;
+ grammar RNASecondaryStructure;
 
-@header {
+ @header {
 	package it.unicam.cs.bdslab.aspralign;
 }
 
-rna
-:
-	sequence? structure #edbnOrAas
-	| bpseq  #bpseqFormat
-	| ct     #ctFormat
-;
+ rna
+ :
+ 	sequence? structure # edbnOrAasFormat
+ 	| bpseq # bpseqFormat
+ 	| ct # ctFormat
+ ;
 
-sequence
-:
-	NUCLEOTIDES sequence # sequenceContinue
-	| NUCLEOTIDES # sequenceEnd
-;
+ sequence
+ :
+ 	NUCLEOTIDES sequence # sequenceContinue
+ 	| NUCLEOTIDES # sequenceEnd
+ ;
 
-structure
-:
-	edbns # rnaEdbn
-	| bonds # rnaAas
-;
+ structure
+ :
+ 	edbns # rnaEdbn
+ 	| bonds # rnaAas
+ ;
 
-edbns
-:
-	EDBN edbns # edbnsContinue
-	| EDBN # edbnsEnd
-;
+ edbns
+ :
+ 	EDBN edbns # edbnsContinue
+ 	| EDBN # edbnsEnd
+ ;
 
-bonds
-:
-	bond ';' bonds # bondsContinue
-	| bond # bondsEnd
-;
+ bonds
+ :
+ 	bond ';' bonds # bondsContinue
+ 	| bond # bondsEnd
+ ;
 
-bond
-:
-	'(' INDEX ',' INDEX ')'
-;
+ bond
+ :
+ 	'(' INDEX ',' INDEX ')'
+ ;
 
-bpseq
-:
-	LINE1BPSEQCT LINE2BPSEQCT LINE3BPSEQCT LINE4BPSEQCT bpseqinfo
-;
+ bpseq
+ :
+ 	LINE1BPSEQCT LINE2BPSEQCT LINE3BPSEQCT LINE4BPSEQCT bpseqinfo
+ ;
 
-bpseqinfo
-:
-	bpseqline bpseqinfo  #bpseqSeq
-	| bpseqline #bpseqLast
-;
+ bpseqinfo
+ :
+ 	bpseqline bpseqinfo # bpseqSeq
+ 	| bpseqline # bpseqLast
+ ;
 
-bpseqline
-:
-	INDEX IUPAC_CODE (INDEX | ZERO)
-;
+ bpseqline
+ :
+ 	INDEX IUPAC_CODE ZERO # bpseqLineUnpaired
+ 	| INDEX IUPAC_CODE INDEX # bpseqLineBond
+ ;
 
-ct
-:
-	LINE1BPSEQCT LINE2BPSEQCT LINE3BPSEQCT LINE4BPSEQCT LINE5CT ctinfo 
-;
+ ct
+ :
+ 	LINE1BPSEQCT LINE2BPSEQCT LINE3BPSEQCT LINE4BPSEQCT LINE5CT ctinfo
+ ;
 
-ctinfo
-:
-	ctline ctinfo  #ctSeq
-	| ctline       #ctLast
-;
+ ctinfo
+ :
+ 	ctline ctinfo # ctSeq
+ 	| ctline # ctLast
+ ;
 
-ctline
-:
-	INDEX IUPAC_CODE (INDEX | ZERO) (INDEX | ZERO) (INDEX | ZERO) INDEX
-;
+ ctline
+ :
+ 	INDEX IUPAC_CODE
+ 	(
+ 		ZERO
+ 		| INDEX
+ 	)
+ 	(
+ 		ZERO
+ 		| INDEX
+ 	) ZERO INDEX # ctLineUnpaired
+ 	| INDEX IUPAC_CODE
+ 	(
+ 		ZERO
+ 		| INDEX
+ 	)
+ 	(
+ 		ZERO
+ 		| INDEX
+ 	) INDEX INDEX # ctLineBond
+ ;
 
-// Tokens
+ // Tokens
 
-INDEX
-:
-	[1-9] [0-9]*
-;
+ LINE1BPSEQCT
+ :
+ 	'Filename' .*? '\r'? '\n'
+ ;
 
-ZERO
-:
-   '0'
-;
+ LINE2BPSEQCT
+ :
+ 	'Organism' .*? '\r'? '\n'
+ ;
 
-NUCLEOTIDES
-:
-	(
-		IUPAC_CODE
-		| NON_STANDARD_CODE
-	)+
-;
+ LINE3BPSEQCT
+ :
+ 	'Accession' .*? '\r'? '\n'
+ ;
 
-EDBN
-:
-	EDBN_CODE+
-;
+ LINE4BPSEQCT
+ :
+ 	'Citation' .*? '\r'? '\n'
+ ;
 
-IUPAC_CODE
-:
-	[ACGUacguTtRrYysSWwKkMmBbDdHhVvNn-]
-;
+ LINE5CT
+ :
+ 	NONEWLINE*?
+ 	(
+ 		'ENERGY'
+ 		| 'Energy'
+ 		| 'dG'
+ 	) .*? '\r'? '\n'
+ ;
 
-NON_STANDARD_CODE
-:
-	'"'
-	| '?'
-	| ']'
-	| '~'
-	| '['
-	| '_'
-	| '+'
-	| '='
-	| '/'
-	| '4'
-	| '7'
-	| 'P'
-	| 'O'
-	| 'I'
-;
+ fragment
+ NONEWLINE
+ :
+ 	~( '\r' | '\n' )
+ ;
 
-EDBN_CODE
-:
-	'.'
-	| '('
-	| ')'
-	| '['
-	| ']'
-	| '{'
-	| '}'
-	| '<'
-	| '>'
-	| [a-zA-Z]
-;
+ INDEX
+ :
+ 	[1-9] [0-9]*
+ ;
 
-LINE1BPSEQCT
-:
-'Filename' .*? '\r'? '\n'
-;
+ ZERO
+ :
+ 	'0'
+ ;
 
-LINE2BPSEQCT
-:
-'Organism' .*? '\r'? '\n'
-;
+ IUPAC_CODE
+ :
+ 	[ACGUacguTtRrYysSWwKkMmBbDdHhVvNn-]
+ ;
 
-LINE3BPSEQCT
-:
-'Accession' .*? '\r'? '\n'
-;
+ fragment
+ NON_STANDARD_CODE
+ :
+ 	'"'
+ 	| '?'
+ 	| ']'
+ 	| '~'
+ 	| '['
+ 	| '_'
+ 	| '+'
+ 	| '='
+ 	| '/'
+ 	| '4'
+ 	| '7'
+ 	| 'P'
+ 	| 'O'
+ 	| 'I'
+ ;
 
-LINE4BPSEQCT
-:
-'Citation' .*? '\r'? '\n'
-;
+ NUCLEOTIDES
+ :
+ 	(
+ 		IUPAC_CODE
+ 		| NON_STANDARD_CODE
+ 	)+
+ ;
 
-LINE5CT
-:
-	.*? ('ENERGY' | 'Energy' | 'dG') .*? '\r'? '\n'
-;
+ fragment
+ EDBN_CODE
+ :
+ 	'.'
+ 	| '('
+ 	| ')'
+ 	| '['
+ 	| ']'
+ 	| '{'
+ 	| '}'
+ 	| '<'
+ 	| '>'
+ 	| [a-zA-Z]
+ ;
 
-LINE_COMMENT
-:
-	'#' .*? '\r'? '\n' -> skip
-; // Match "#" stuff '\n' 
+ EDBN
+ :
+ 	EDBN_CODE+
+ ;
 
-WS
-:
-	[ \t\r\n]+ -> skip
-; // skip spaces, tabs, newlines
+ LINE_COMMENT
+ :
+ 	'#' .*? '\r'? '\n' -> skip
+ ; // Match "#" stuff '\n' 
+
+ WS
+ :
+ 	[ \t\r\n]+ -> skip
+ ; // skip spaces, tabs, newlines
 

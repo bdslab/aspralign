@@ -43,40 +43,8 @@ public class MainComparator {
 		// Use Apache Commons CLI 1.4
 		// create Options object for Command Line Definition
 		Options options = new Options();
-
-		// define command line options
-		Option o1 = Option.builder("g").desc("Produce the algebraic RNA tree corresponding to the given structure")
-				.longOpt("alg").hasArg().argName("input-file").build();
-		options.addOption(o1);
-		Option o2 = Option.builder("s").desc("Produce the structural RNA tree corresponding to the given structure")
-				.longOpt("struct").hasArg().argName("input-file").build();
-		options.addOption(o2);
-		Option o3 = Option.builder("a").desc("Align two given structures producing alignment tree and distance")
-				.longOpt("align").hasArgs().numberOfArgs(2).argName("input-file1 input-file2").build();
-		options.addOption(o3);
-		Option o4 = Option.builder("o").desc("Output result on the given file instead of standard output")
-				.longOpt("out").hasArg().argName("output-file").build();
-		options.addOption(o4);
-		Option o5 = Option.builder("l").desc("Output in LaTeX format instead of linearised tree").longOpt("latexout")
-				.build();
-		options.addOption(o5);
-		Option o6 = Option.builder("i").desc("Show license and other info").longOpt("info").build();
-		options.addOption(o6);
-		Option o7 = Option.builder("h").desc("Show usage information").longOpt("help").build();
-		options.addOption(o7);
-		Option o9 = Option.builder("c")
-				.desc("Check the presence of only standard Watson-Crick and wobble base pairing (disabled by default)")
-				.longOpt("chkpair").build();
-		options.addOption(o9);
-		Option o10 = Option.builder("d").desc("Output only distance, no alignment tree (works only with option -a)")
-				.longOpt("outdist").build();
-		options.addOption(o10);
-		Option o11 = Option.builder("e").desc("Show current values of edit scores used for alignment")
-				.longOpt("showscores").build();
-		options.addOption(o11);
-		Option o12 = Option.builder("n").desc("Use the specified configuration file instead of the default one")
-				.longOpt("useconffile").hasArg().argName("conf-file").build();
-		options.addOption(o12);
+		
+		defineCommandLineOptions(options);
 
 		// Parse command line
 		HelpFormatter formatter = new HelpFormatter();
@@ -285,5 +253,42 @@ public class MainComparator {
 				CommandLineMessages.USAGE_EXAMPLES + CommandLineMessages.COPYRIGHT + CommandLineMessages.SHORT_NOTICE
 						+ CommandLineMessages.REPORT_TO,
 				true);
+	}
+
+	private static void defineCommandLineOptions(Options options) {
+		// define command line options
+				Option o1 = Option.builder("g").desc("Produce the algebraic RNA tree corresponding to the given structure")
+						.longOpt("alg").hasArg().argName("input-file").build();
+				options.addOption(o1);
+				Option o2 = Option.builder("s").desc("Produce the structural RNA tree corresponding to the given structure")
+						.longOpt("struct").hasArg().argName("input-file").build();
+				options.addOption(o2);
+				Option o3 = Option.builder("a").desc("Align two given structures producing alignment tree and distance")
+						.longOpt("align").hasArgs().numberOfArgs(2).argName("input-file1 input-file2").build();
+				options.addOption(o3);
+				Option o4 = Option.builder("o").desc("Output result on the given file instead of standard output")
+						.longOpt("out").hasArg().argName("output-file").build();
+				options.addOption(o4);
+				Option o5 = Option.builder("l").desc("Output in LaTeX format instead of linearised tree").longOpt("latexout")
+						.build();
+				options.addOption(o5);
+				Option o6 = Option.builder("i").desc("Show license and other info").longOpt("info").build();
+				options.addOption(o6);
+				Option o7 = Option.builder("h").desc("Show usage information").longOpt("help").build();
+				options.addOption(o7);
+				Option o9 = Option.builder("c")
+						.desc("Check the presence of only standard Watson-Crick and wobble base pairing (disabled by default)")
+						.longOpt("chkpair").build();
+				options.addOption(o9);
+				Option o10 = Option.builder("d").desc("Output only distance, no alignment tree (works only with option -a)")
+						.longOpt("outdist").build();
+				options.addOption(o10);
+				Option o11 = Option.builder("e").desc("Show current values of edit scores used for alignment")
+						.longOpt("showscores").build();
+				options.addOption(o11);
+				Option o12 = Option.builder("n").desc("Use the specified configuration file instead of the default one")
+						.longOpt("useconffile").hasArg().argName("conf-file").build();
+				options.addOption(o12);
+		
 	}
 }

@@ -41,11 +41,13 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
 	private RNASecondaryStructure s;
 	private StringBuffer sequenceBuffer;
 	private StringBuffer edbnsBuffer;
+	private StringBuffer descriptionBuffer;
 
 	public RNASecondaryStructureConstructor() {
 		this.s = new RNASecondaryStructure();
 		this.sequenceBuffer = new StringBuffer();
 		this.edbnsBuffer = new StringBuffer();
+		this.descriptionBuffer = new StringBuffer();
 	}
 
 	/**
@@ -86,8 +88,8 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
 				// there are no brackets, check if the string is very short
 				if (edbn.length() >= 5) {
 					// ok, it is not considered edbn, the exception is thrown
-					String m = "Line " + ctx.start.getLine() + " Character " + (ctx.start.getCharPositionInLine() + 1) + ": "
-							+ "unrecognised nucleotide code in " + edbn;
+					String m = "Line " + ctx.start.getLine() + " Character " + (ctx.start.getCharPositionInLine() + 1)
+							+ ": " + "unrecognised nucleotide code in " + edbn;
 					throw new RNAInputFileParserException(m);
 				}
 			}
@@ -110,8 +112,8 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
 				// there are no brackets, check if the string is very short
 				if (edbn.length() >= 5) {
 					// ok, it is not considered edbn, the exception is thrown
-					String m = "Line " + ctx.start.getLine() + " Character " + (ctx.start.getCharPositionInLine() + 1) + ": "
-							+ "unrecognised nucleotide code in " + edbn;
+					String m = "Line " + ctx.start.getLine() + " Character " + (ctx.start.getCharPositionInLine() + 1)
+							+ ": " + "unrecognised nucleotide code in " + edbn;
 					throw new RNAInputFileParserException(m);
 				}
 			}
@@ -238,7 +240,88 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
 	}
 
 	@Override
-	public void exitRna(RnaContext ctx) {
+	public void exitEdbnOrAasFormat(EdbnOrAasFormatContext ctx) {
+		// everything has been added to the structure, finalise it
+		this.s.finalise();
+	}
+
+	@Override
+	public void enterBpseq(BpseqContext ctx) {
+		// save the four lines of description as EDBN file format comments
+		this.descriptionBuffer.append("# " + ctx.LINE1BPSEQCT().getText().trim() + "\n");
+		this.descriptionBuffer.append("# " + ctx.LINE2BPSEQCT().getText().trim() + "\n");
+		this.descriptionBuffer.append("# " + ctx.LINE3BPSEQCT().getText().trim() + "\n");
+		this.descriptionBuffer.append("# " + ctx.LINE4BPSEQCT().getText().trim());
+	}
+
+	@Override
+	public void enterBpseqLineUnpaired(BpseqLineUnpairedContext ctx) {
+		// add the current nucleotide to the sequence
+		this.sequenceBuffer.append(ctx.IUPAC_CODE().getText().trim());
+	}
+
+	@Override
+	public void enterBpseqLineBond(BpseqLineBondContext ctx) {
+		// add the current nucleotide to the sequence
+		this.sequenceBuffer.append(ctx.IUPAC_CODE().getText().trim());
+		// determines the indexes of this bond
+		int left = Integer.parseInt(ctx.INDEX(0).getText());
+		int right = Integer.parseInt(ctx.INDEX(1).getText());
+		if (left < right) {
+			// only add the bond once, when it is first introduced
+			this.s.addBond(new WeakBond(left, right));
+		}
+	}
+
+	@Override
+	public void exitBpseqFormat(BpseqFormatContext ctx) {
+		// assign the whole sequence description to the RNASecondaryStructure
+		this.s.description = this.descriptionBuffer.toString();
+		// assign the whole sequence to the RNASecondaryStructure
+		this.s.sequence = this.sequenceBuffer.toString();
+		// set the size of the structure to the length of the sequence
+		this.s.size = this.s.sequence.length();
+		// everything has been added to the structure, finalise it
+		this.s.finalise();
+	}
+
+	@Override
+	public void enterCt(CtContext ctx) {
+		// save the five lines of description as EDBN file format comments
+		this.descriptionBuffer.append("# " + ctx.LINE1BPSEQCT().getText().trim() + "\n");
+		this.descriptionBuffer.append("# " + ctx.LINE2BPSEQCT().getText().trim() + "\n");
+		this.descriptionBuffer.append("# " + ctx.LINE3BPSEQCT().getText().trim() + "\n");
+		this.descriptionBuffer.append("# " + ctx.LINE4BPSEQCT().getText().trim() + "\n");
+		this.descriptionBuffer.append("# " + ctx.LINE5CT().getText().trim());
+	}
+
+	@Override
+	public void enterCtLineUnpaired(CtLineUnpairedContext ctx) {
+		// add the current nucleotide to the sequence
+		this.sequenceBuffer.append(ctx.IUPAC_CODE().getText().trim());
+	}
+
+	@Override
+	public void enterCtLineBond(CtLineBondContext ctx) {
+		// add the current nucleotide to the sequence
+		this.sequenceBuffer.append(ctx.IUPAC_CODE().getText().trim());
+		// determines the indexes of this bond
+		int left = Integer.parseInt(ctx.INDEX(0).getText());
+		int right = Integer.parseInt(ctx.getChild(4).getText());
+		if (left < right) {
+			// only add the bond once, when it is first introduced
+			this.s.addBond(new WeakBond(left, right));
+		}
+	}
+
+	@Override
+	public void exitCtFormat(CtFormatContext ctx) {
+		// assign the whole sequence description to the RNASecondaryStructure
+		this.s.description = this.descriptionBuffer.toString();
+		// assign the whole sequence to the RNASecondaryStructure
+		this.s.sequence = this.sequenceBuffer.toString();
+		// set the size of the structure to the length of the sequence
+		this.s.size = this.s.sequence.length();
 		// everything has been added to the structure, finalise it
 		this.s.finalise();
 	}
