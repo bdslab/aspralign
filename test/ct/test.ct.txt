@@ -1,5 +1,5 @@
 Filename: test.ct
-Organism: Some organism
+Organism: Some Energy organism
 Accession Number: XYZ123
 Citation and related information available at http://www.acme.com
 17 ENERGY =     -17.50    test

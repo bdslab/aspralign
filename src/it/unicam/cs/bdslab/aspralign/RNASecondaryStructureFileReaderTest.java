@@ -394,7 +394,6 @@ class RNASecondaryStructureFileReaderTest {
 		RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/bpseq/test.bpseq",
 				false);
 		assertTrue(s1.getSequence().equals("CCUGAACAG"));
-		System.out.println(s1.getDescription());
 		assertTrue(s1.getDescription().equals("# Filename: test.bpseq\n"
 				+ "# Organism: Some organism\n"
 				+ "# Accession Number: XYZ123\n"
@@ -411,9 +410,8 @@ class RNASecondaryStructureFileReaderTest {
 		RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/ct/test.ct.txt",
 				false);
 		assertTrue(s1.getSequence().equals("GCGGAUUUUAAUUCGCA"));
-		System.out.println(s1.getDescription());
 		assertTrue(s1.getDescription().equals("# Filename: test.ct\n"
-				+ "# Organism: Some organism\n"
+				+ "# Organism: Some Energy organism\n"
 				+ "# Accession Number: XYZ123\n"
 				+ "# Citation and related information available at http://www.acme.com\n"
 				+ "# 17 ENERGY =     -17.50    test"));

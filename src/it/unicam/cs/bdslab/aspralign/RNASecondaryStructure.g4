@@ -23,9 +23,19 @@
 
 /*
  * ANTLR 4 grammar for reading files containing RNA Secondary Structures
- * in Extended Dot-Bracket Notation Format or in Arc-Annotated Sequence 
- * Format. The sequence of nucleotides is optional: it can be given 
- * only the structure. 
+ * in:
+ * 
+ * Extended Dot-Bracket Notation (EDBN) Format 
+ * 
+ * Arc-Annotated Sequence (AAS) Format. 
+ * 
+ * Bpseq Format
+ * 
+ * Ct Format
+ * 
+ * In case of EDBN or AAS he sequence of nucleotides is optional: the input file may contain only the structure
+ * 
+ * 
  * 
  * @author Luca Tesei
  * 
@@ -225,7 +235,7 @@
  LINE_COMMENT
  :
  	'#' .*? '\r'? '\n' -> skip
- ; // Match "#" stuff '\n' 
+ ; // Match "#" stuff '\n' and skip it
 
  WS
  :

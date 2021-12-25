@@ -4,3 +4,5 @@
 /RNASecondaryStructureLexer.tokens
 /RNASecondaryStructureListener.java
 /RNASecondaryStructureParser.java
+/RNASecondaryStructure.interp
+/RNASecondaryStructureLexer.interp
