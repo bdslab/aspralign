@@ -1,0 +1,8 @@
+Num,FileName,NumberOfNucleotides,NumberOfWeakBonds,IsPseudoknotted,TimeToGenerateStructuralRNATree[ns]
+1,"larger-example-1-aas.txt",61,14,Yes,1850654
+2,"larger-example-2-aas.txt",58,14,Yes,116924
+3,"larger-example-3-aas.txt",61,14,Yes,183219
+4,"running-example-1-aas.txt",18,5,Yes,81236
+5,"running-example-2-aas.txt",20,4,Yes,52542
+6,"running-example-mismatch-1-aas.txt",19,3,Yes,43976
+7,"running-example-mismatch-2-aas.txt",19,3,Yes,46504
