@@ -25,220 +25,221 @@
  * ANTLR 4 grammar for reading files containing RNA Secondary Structures
  * in:
  * 
- * Extended Dot-Bracket Notation (EDBN) Format 
+ * Extended Dot-Bracket Notation (EDBN) Format  - with optional sequence of 
+ *                                                nucleotides
  * 
- * Arc-Annotated Sequence (AAS) Format. 
+ * Arc-Annotated Sequence (AAS) Format - - with optional sequence of nucleotides
  * 
- * Bpseq Format
+ * Bpseq Format - with optional four initial lines
  * 
- * Ct Format
- * 
- * In case of EDBN or AAS he sequence of nucleotides is optional: the input file may contain only the structure
- * 
- * 
+ * Ct Format - with optional four initial lines
  * 
  * @author Luca Tesei
  * 
  */
- grammar RNASecondaryStructure;
+grammar RNASecondaryStructure;
 
- @header {
+@header {
 	package it.unicam.cs.bdslab.aspralign;
 }
 
- rna
- :
- 	sequence? structure # edbnOrAasFormat
- 	| bpseq # bpseqFormat
- 	| ct # ctFormat
- ;
+rna
+:
+	sequence? structure # edbnOrAasFormat
+	| bpseq # bpseqFormat
+	| ct # ctFormat
+;
 
- sequence
- :
- 	NUCLEOTIDES sequence # sequenceContinue
- 	| NUCLEOTIDES # sequenceEnd
- ;
+sequence
+:
+	NUCLEOTIDES sequence # sequenceContinue
+	| NUCLEOTIDES # sequenceEnd
+;
 
- structure
- :
- 	edbns # rnaEdbn
- 	| bonds # rnaAas
- ;
+structure
+:
+	edbns # rnaEdbn
+	| bonds # rnaAas
+;
 
- edbns
- :
- 	EDBN edbns # edbnsContinue
- 	| EDBN # edbnsEnd
- ;
+edbns
+:
+	EDBN edbns # edbnsContinue
+	| EDBN # edbnsEnd
+;
 
- bonds
- :
- 	bond ';' bonds # bondsContinue
- 	| bond # bondsEnd
- ;
+bonds
+:
+	bond ';' bonds # bondsContinue
+	| bond # bondsEnd
+;
 
- bond
- :
- 	'(' INDEX ',' INDEX ')'
- ;
+bond
+:
+	'(' INDEX ',' INDEX ')'
+;
 
- bpseq
- :
- 	LINE1BPSEQCT LINE2BPSEQCT LINE3BPSEQCT LINE4BPSEQCT bpseqinfo
- ;
+bpseq
+:
+	(
+		LINE1BPSEQCT LINE2BPSEQCT LINE3BPSEQCT LINE4BPSEQCT
+	)? bpseqinfo
+;
 
- bpseqinfo
- :
- 	bpseqline bpseqinfo # bpseqSeq
- 	| bpseqline # bpseqLast
- ;
+bpseqinfo
+:
+	bpseqline bpseqinfo # bpseqSeq
+	| bpseqline # bpseqLast
+;
 
- bpseqline
- :
- 	INDEX IUPAC_CODE ZERO # bpseqLineUnpaired
- 	| INDEX IUPAC_CODE INDEX # bpseqLineBond
- ;
+bpseqline
+:
+	INDEX IUPAC_CODE ZERO # bpseqLineUnpaired
+	| INDEX IUPAC_CODE INDEX # bpseqLineBond
+;
 
- ct
- :
- 	LINE1BPSEQCT LINE2BPSEQCT LINE3BPSEQCT LINE4BPSEQCT LINE5CT ctinfo
- ;
+ct
+:
+	(
+		LINE1BPSEQCT LINE2BPSEQCT LINE3BPSEQCT LINE4BPSEQCT
+	)? LINE5CT ctinfo
+;
 
- ctinfo
- :
- 	ctline ctinfo # ctSeq
- 	| ctline # ctLast
- ;
+ctinfo
+:
+	ctline ctinfo # ctSeq
+	| ctline # ctLast
+;
 
- ctline
- :
- 	INDEX IUPAC_CODE
- 	(
- 		ZERO
- 		| INDEX
- 	)
- 	(
- 		ZERO
- 		| INDEX
- 	) ZERO INDEX # ctLineUnpaired
- 	| INDEX IUPAC_CODE
- 	(
- 		ZERO
- 		| INDEX
- 	)
- 	(
- 		ZERO
- 		| INDEX
- 	) INDEX INDEX # ctLineBond
- ;
+ctline
+:
+	INDEX IUPAC_CODE
+	(
+		ZERO
+		| INDEX
+	)
+	(
+		ZERO
+		| INDEX
+	) ZERO INDEX # ctLineUnpaired
+	| INDEX IUPAC_CODE
+	(
+		ZERO
+		| INDEX
+	)
+	(
+		ZERO
+		| INDEX
+	) INDEX INDEX # ctLineBond
+;
 
- // Tokens
+// Tokens
 
- LINE1BPSEQCT
- :
- 	'Filename' .*? '\r'? '\n'
- ;
+LINE1BPSEQCT
+:
+	'Filename' .*? '\r'? '\n'
+;
 
- LINE2BPSEQCT
- :
- 	'Organism' .*? '\r'? '\n'
- ;
+LINE2BPSEQCT
+:
+	'Organism' .*? '\r'? '\n'
+;
 
- LINE3BPSEQCT
- :
- 	'Accession' .*? '\r'? '\n'
- ;
+LINE3BPSEQCT
+:
+	'Accession' .*? '\r'? '\n'
+;
 
- LINE4BPSEQCT
- :
- 	'Citation' .*? '\r'? '\n'
- ;
+LINE4BPSEQCT
+:
+	'Citation' .*? '\r'? '\n'
+;
 
- LINE5CT
- :
- 	NONEWLINE*?
- 	(
- 		'ENERGY'
- 		| 'Energy'
- 		| 'dG'
- 	) .*? '\r'? '\n'
- ;
+LINE5CT
+:
+	NONEWLINE*?
+	(
+		'ENERGY'
+		| 'Energy'
+		| 'dG'
+	) .*? '\r'? '\n'
+;
 
- fragment
- NONEWLINE
- :
- 	~( '\r' | '\n' )
- ;
+fragment
+NONEWLINE
+:
+	~( '\r' | '\n' )
+;
 
- INDEX
- :
- 	[1-9] [0-9]*
- ;
+INDEX
+:
+	[1-9] [0-9]*
+;
 
- ZERO
- :
- 	'0'
- ;
+ZERO
+:
+	'0'
+;
 
- IUPAC_CODE
- :
- 	[ACGUacguTtRrYysSWwKkMmBbDdHhVvNn-]
- ;
+IUPAC_CODE
+:
+	[ACGUacguTtRrYysSWwKkMmBbDdHhVvNn-]
+;
 
- fragment
- NON_STANDARD_CODE
- :
- 	'"'
- 	| '?'
- 	| ']'
- 	| '~'
- 	| '['
- 	| '_'
- 	| '+'
- 	| '='
- 	| '/'
- 	| '4'
- 	| '7'
- 	| 'P'
- 	| 'O'
- 	| 'I'
- ;
+fragment
+NON_STANDARD_CODE
+:
+	'"'
+	| '?'
+	| ']'
+	| '~'
+	| '['
+	| '_'
+	| '+'
+	| '='
+	| '/'
+	| '4'
+	| '7'
+	| 'P'
+	| 'O'
+	| 'I'
+;
 
- NUCLEOTIDES
- :
- 	(
- 		IUPAC_CODE
- 		| NON_STANDARD_CODE
- 	)+
- ;
+NUCLEOTIDES
+:
+	(
+		IUPAC_CODE
+		| NON_STANDARD_CODE
+	)+
+;
 
- fragment
- EDBN_CODE
- :
- 	'.'
- 	| '('
- 	| ')'
- 	| '['
- 	| ']'
- 	| '{'
- 	| '}'
- 	| '<'
- 	| '>'
- 	| [a-zA-Z]
- ;
+fragment
+EDBN_CODE
+:
+	'.'
+	| '('
+	| ')'
+	| '['
+	| ']'
+	| '{'
+	| '}'
+	| '<'
+	| '>'
+	| [a-zA-Z]
+;
 
- EDBN
- :
- 	EDBN_CODE+
- ;
+EDBN
+:
+	EDBN_CODE+
+;
 
- LINE_COMMENT
- :
- 	'#' .*? '\r'? '\n' -> skip
- ; // Match "#" stuff '\n' and skip it
+LINE_COMMENT
+:
+	'#' .*? '\r'? '\n' -> skip
+; // Match "#" stuff '\n' and skip it
 
- WS
- :
- 	[ \t\r\n]+ -> skip
- ; // skip spaces, tabs, newlines
+WS
+:
+	[ \t\r\n]+ -> skip
+; // skip spaces, tabs, newlines
 

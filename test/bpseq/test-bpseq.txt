@@ -1,0 +1,15 @@
+Filename: test.bpseq
+Organism: Some organism
+Accession Number: XYZ123
+Citation and related information available at http://www.rna.ccbb.utexax.edu
+
+1 C 0
+2 C 9
+3 U 8
+4 G 0
+5 A 0
+6 A 0
+7 C 0
+8 A 3
+9 G 2
+

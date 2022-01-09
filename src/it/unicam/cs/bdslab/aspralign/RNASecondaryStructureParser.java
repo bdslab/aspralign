@@ -575,13 +575,13 @@ public class RNASecondaryStructureParser extends Parser {
 	}
 
 	public static class BpseqContext extends ParserRuleContext {
+		public BpseqinfoContext bpseqinfo() {
+			return getRuleContext(BpseqinfoContext.class,0);
+		}
 		public TerminalNode LINE1BPSEQCT() { return getToken(RNASecondaryStructureParser.LINE1BPSEQCT, 0); }
 		public TerminalNode LINE2BPSEQCT() { return getToken(RNASecondaryStructureParser.LINE2BPSEQCT, 0); }
 		public TerminalNode LINE3BPSEQCT() { return getToken(RNASecondaryStructureParser.LINE3BPSEQCT, 0); }
 		public TerminalNode LINE4BPSEQCT() { return getToken(RNASecondaryStructureParser.LINE4BPSEQCT, 0); }
-		public BpseqinfoContext bpseqinfo() {
-			return getRuleContext(BpseqinfoContext.class,0);
-		}
 		public BpseqContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -599,18 +599,27 @@ public class RNASecondaryStructureParser extends Parser {
 	public final BpseqContext bpseq() throws RecognitionException {
 		BpseqContext _localctx = new BpseqContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_bpseq);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(59);
-			match(LINE1BPSEQCT);
-			setState(60);
-			match(LINE2BPSEQCT);
-			setState(61);
-			match(LINE3BPSEQCT);
-			setState(62);
-			match(LINE4BPSEQCT);
 			setState(63);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==LINE1BPSEQCT) {
+				{
+				setState(59);
+				match(LINE1BPSEQCT);
+				setState(60);
+				match(LINE2BPSEQCT);
+				setState(61);
+				match(LINE3BPSEQCT);
+				setState(62);
+				match(LINE4BPSEQCT);
+				}
+			}
+
+			setState(65);
 			bpseqinfo();
 			}
 		}
@@ -672,16 +681,16 @@ public class RNASecondaryStructureParser extends Parser {
 		BpseqinfoContext _localctx = new BpseqinfoContext(_ctx, getState());
 		enterRule(_localctx, 14, RULE_bpseqinfo);
 		try {
-			setState(69);
+			setState(71);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
 			case 1:
 				_localctx = new BpseqSeqContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(65);
+				setState(67);
 				bpseqline();
-				setState(66);
+				setState(68);
 				bpseqinfo();
 				}
 				break;
@@ -689,7 +698,7 @@ public class RNASecondaryStructureParser extends Parser {
 				_localctx = new BpseqLastContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(68);
+				setState(70);
 				bpseqline();
 				}
 				break;
@@ -752,18 +761,18 @@ public class RNASecondaryStructureParser extends Parser {
 		BpseqlineContext _localctx = new BpseqlineContext(_ctx, getState());
 		enterRule(_localctx, 16, RULE_bpseqline);
 		try {
-			setState(77);
+			setState(79);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
 			case 1:
 				_localctx = new BpseqLineUnpairedContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(71);
-				match(INDEX);
-				setState(72);
-				match(IUPAC_CODE);
 				setState(73);
+				match(INDEX);
+				setState(74);
+				match(IUPAC_CODE);
+				setState(75);
 				match(ZERO);
 				}
 				break;
@@ -771,11 +780,11 @@ public class RNASecondaryStructureParser extends Parser {
 				_localctx = new BpseqLineBondContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(74);
-				match(INDEX);
-				setState(75);
-				match(IUPAC_CODE);
 				setState(76);
+				match(INDEX);
+				setState(77);
+				match(IUPAC_CODE);
+				setState(78);
 				match(INDEX);
 				}
 				break;
@@ -793,14 +802,14 @@ public class RNASecondaryStructureParser extends Parser {
 	}
 
 	public static class CtContext extends ParserRuleContext {
-		public TerminalNode LINE1BPSEQCT() { return getToken(RNASecondaryStructureParser.LINE1BPSEQCT, 0); }
-		public TerminalNode LINE2BPSEQCT() { return getToken(RNASecondaryStructureParser.LINE2BPSEQCT, 0); }
-		public TerminalNode LINE3BPSEQCT() { return getToken(RNASecondaryStructureParser.LINE3BPSEQCT, 0); }
-		public TerminalNode LINE4BPSEQCT() { return getToken(RNASecondaryStructureParser.LINE4BPSEQCT, 0); }
 		public TerminalNode LINE5CT() { return getToken(RNASecondaryStructureParser.LINE5CT, 0); }
 		public CtinfoContext ctinfo() {
 			return getRuleContext(CtinfoContext.class,0);
 		}
+		public TerminalNode LINE1BPSEQCT() { return getToken(RNASecondaryStructureParser.LINE1BPSEQCT, 0); }
+		public TerminalNode LINE2BPSEQCT() { return getToken(RNASecondaryStructureParser.LINE2BPSEQCT, 0); }
+		public TerminalNode LINE3BPSEQCT() { return getToken(RNASecondaryStructureParser.LINE3BPSEQCT, 0); }
+		public TerminalNode LINE4BPSEQCT() { return getToken(RNASecondaryStructureParser.LINE4BPSEQCT, 0); }
 		public CtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -818,20 +827,29 @@ public class RNASecondaryStructureParser extends Parser {
 	public final CtContext ct() throws RecognitionException {
 		CtContext _localctx = new CtContext(_ctx, getState());
 		enterRule(_localctx, 18, RULE_ct);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(79);
-			match(LINE1BPSEQCT);
-			setState(80);
-			match(LINE2BPSEQCT);
-			setState(81);
-			match(LINE3BPSEQCT);
-			setState(82);
-			match(LINE4BPSEQCT);
-			setState(83);
+			setState(85);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==LINE1BPSEQCT) {
+				{
+				setState(81);
+				match(LINE1BPSEQCT);
+				setState(82);
+				match(LINE2BPSEQCT);
+				setState(83);
+				match(LINE3BPSEQCT);
+				setState(84);
+				match(LINE4BPSEQCT);
+				}
+			}
+
+			setState(87);
 			match(LINE5CT);
-			setState(84);
+			setState(88);
 			ctinfo();
 			}
 		}
@@ -893,16 +911,16 @@ public class RNASecondaryStructureParser extends Parser {
 		CtinfoContext _localctx = new CtinfoContext(_ctx, getState());
 		enterRule(_localctx, 20, RULE_ctinfo);
 		try {
-			setState(90);
+			setState(94);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
 			case 1:
 				_localctx = new CtSeqContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(86);
+				setState(90);
 				ctline();
-				setState(87);
+				setState(91);
 				ctinfo();
 				}
 				break;
@@ -910,7 +928,7 @@ public class RNASecondaryStructureParser extends Parser {
 				_localctx = new CtLastContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(89);
+				setState(93);
 				ctline();
 				}
 				break;
@@ -984,40 +1002,40 @@ public class RNASecondaryStructureParser extends Parser {
 		enterRule(_localctx, 22, RULE_ctline);
 		int _la;
 		try {
-			setState(104);
+			setState(108);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,11,_ctx) ) {
 			case 1:
 				_localctx = new CtLineUnpairedContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(92);
-				match(INDEX);
-				setState(93);
-				match(IUPAC_CODE);
-				setState(94);
-				_la = _input.LA(1);
-				if ( !(_la==INDEX || _la==ZERO) ) {
-				_errHandler.recoverInline(this);
-				}
-				else {
-					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-					_errHandler.reportMatch(this);
-					consume();
-				}
-				setState(95);
-				_la = _input.LA(1);
-				if ( !(_la==INDEX || _la==ZERO) ) {
-				_errHandler.recoverInline(this);
-				}
-				else {
-					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-					_errHandler.reportMatch(this);
-					consume();
-				}
 				setState(96);
-				match(ZERO);
+				match(INDEX);
 				setState(97);
+				match(IUPAC_CODE);
+				setState(98);
+				_la = _input.LA(1);
+				if ( !(_la==INDEX || _la==ZERO) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(99);
+				_la = _input.LA(1);
+				if ( !(_la==INDEX || _la==ZERO) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(100);
+				match(ZERO);
+				setState(101);
 				match(INDEX);
 				}
 				break;
@@ -1025,33 +1043,33 @@ public class RNASecondaryStructureParser extends Parser {
 				_localctx = new CtLineBondContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(98);
-				match(INDEX);
-				setState(99);
-				match(IUPAC_CODE);
-				setState(100);
-				_la = _input.LA(1);
-				if ( !(_la==INDEX || _la==ZERO) ) {
-				_errHandler.recoverInline(this);
-				}
-				else {
-					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-					_errHandler.reportMatch(this);
-					consume();
-				}
-				setState(101);
-				_la = _input.LA(1);
-				if ( !(_la==INDEX || _la==ZERO) ) {
-				_errHandler.recoverInline(this);
-				}
-				else {
-					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-					_errHandler.reportMatch(this);
-					consume();
-				}
 				setState(102);
 				match(INDEX);
 				setState(103);
+				match(IUPAC_CODE);
+				setState(104);
+				_la = _input.LA(1);
+				if ( !(_la==INDEX || _la==ZERO) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(105);
+				_la = _input.LA(1);
+				if ( !(_la==INDEX || _la==ZERO) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(106);
+				match(INDEX);
+				setState(107);
 				match(INDEX);
 				}
 				break;
@@ -1069,32 +1087,33 @@ public class RNASecondaryStructureParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\22m\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\22q\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
 		"\f\t\f\4\r\t\r\3\2\5\2\34\n\2\3\2\3\2\3\2\5\2!\n\2\3\3\3\3\3\3\5\3&\n"+
 		"\3\3\4\3\4\5\4*\n\4\3\5\3\5\3\5\5\5/\n\5\3\6\3\6\3\6\3\6\3\6\5\6\66\n"+
-		"\6\3\7\3\7\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\b\3\t\3\t\3\t\3\t\5\t"+
-		"H\n\t\3\n\3\n\3\n\3\n\3\n\3\n\5\nP\n\n\3\13\3\13\3\13\3\13\3\13\3\13\3"+
-		"\13\3\f\3\f\3\f\3\f\5\f]\n\f\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3\r\3"+
-		"\r\3\r\5\rk\n\r\3\r\2\2\16\2\4\6\b\n\f\16\20\22\24\26\30\2\3\3\2\f\r\2"+
-		"k\2 \3\2\2\2\4%\3\2\2\2\6)\3\2\2\2\b.\3\2\2\2\n\65\3\2\2\2\f\67\3\2\2"+
-		"\2\16=\3\2\2\2\20G\3\2\2\2\22O\3\2\2\2\24Q\3\2\2\2\26\\\3\2\2\2\30j\3"+
-		"\2\2\2\32\34\5\4\3\2\33\32\3\2\2\2\33\34\3\2\2\2\34\35\3\2\2\2\35!\5\6"+
-		"\4\2\36!\5\16\b\2\37!\5\24\13\2 \33\3\2\2\2 \36\3\2\2\2 \37\3\2\2\2!\3"+
-		"\3\2\2\2\"#\7\17\2\2#&\5\4\3\2$&\7\17\2\2%\"\3\2\2\2%$\3\2\2\2&\5\3\2"+
-		"\2\2\'*\5\b\5\2(*\5\n\6\2)\'\3\2\2\2)(\3\2\2\2*\7\3\2\2\2+,\7\20\2\2,"+
-		"/\5\b\5\2-/\7\20\2\2.+\3\2\2\2.-\3\2\2\2/\t\3\2\2\2\60\61\5\f\7\2\61\62"+
-		"\7\3\2\2\62\63\5\n\6\2\63\66\3\2\2\2\64\66\5\f\7\2\65\60\3\2\2\2\65\64"+
-		"\3\2\2\2\66\13\3\2\2\2\678\7\4\2\289\7\f\2\29:\7\5\2\2:;\7\f\2\2;<\7\6"+
-		"\2\2<\r\3\2\2\2=>\7\7\2\2>?\7\b\2\2?@\7\t\2\2@A\7\n\2\2AB\5\20\t\2B\17"+
-		"\3\2\2\2CD\5\22\n\2DE\5\20\t\2EH\3\2\2\2FH\5\22\n\2GC\3\2\2\2GF\3\2\2"+
-		"\2H\21\3\2\2\2IJ\7\f\2\2JK\7\16\2\2KP\7\r\2\2LM\7\f\2\2MN\7\16\2\2NP\7"+
-		"\f\2\2OI\3\2\2\2OL\3\2\2\2P\23\3\2\2\2QR\7\7\2\2RS\7\b\2\2ST\7\t\2\2T"+
-		"U\7\n\2\2UV\7\13\2\2VW\5\26\f\2W\25\3\2\2\2XY\5\30\r\2YZ\5\26\f\2Z]\3"+
-		"\2\2\2[]\5\30\r\2\\X\3\2\2\2\\[\3\2\2\2]\27\3\2\2\2^_\7\f\2\2_`\7\16\2"+
-		"\2`a\t\2\2\2ab\t\2\2\2bc\7\r\2\2ck\7\f\2\2de\7\f\2\2ef\7\16\2\2fg\t\2"+
-		"\2\2gh\t\2\2\2hi\7\f\2\2ik\7\f\2\2j^\3\2\2\2jd\3\2\2\2k\31\3\2\2\2\f\33"+
-		" %).\65GO\\j";
+		"\6\3\7\3\7\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\5\bB\n\b\3\b\3\b\3\t\3\t\3"+
+		"\t\3\t\5\tJ\n\t\3\n\3\n\3\n\3\n\3\n\3\n\5\nR\n\n\3\13\3\13\3\13\3\13\5"+
+		"\13X\n\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\5\fa\n\f\3\r\3\r\3\r\3\r\3\r"+
+		"\3\r\3\r\3\r\3\r\3\r\3\r\3\r\5\ro\n\r\3\r\2\2\16\2\4\6\b\n\f\16\20\22"+
+		"\24\26\30\2\3\3\2\f\r\2q\2 \3\2\2\2\4%\3\2\2\2\6)\3\2\2\2\b.\3\2\2\2\n"+
+		"\65\3\2\2\2\f\67\3\2\2\2\16A\3\2\2\2\20I\3\2\2\2\22Q\3\2\2\2\24W\3\2\2"+
+		"\2\26`\3\2\2\2\30n\3\2\2\2\32\34\5\4\3\2\33\32\3\2\2\2\33\34\3\2\2\2\34"+
+		"\35\3\2\2\2\35!\5\6\4\2\36!\5\16\b\2\37!\5\24\13\2 \33\3\2\2\2 \36\3\2"+
+		"\2\2 \37\3\2\2\2!\3\3\2\2\2\"#\7\17\2\2#&\5\4\3\2$&\7\17\2\2%\"\3\2\2"+
+		"\2%$\3\2\2\2&\5\3\2\2\2\'*\5\b\5\2(*\5\n\6\2)\'\3\2\2\2)(\3\2\2\2*\7\3"+
+		"\2\2\2+,\7\20\2\2,/\5\b\5\2-/\7\20\2\2.+\3\2\2\2.-\3\2\2\2/\t\3\2\2\2"+
+		"\60\61\5\f\7\2\61\62\7\3\2\2\62\63\5\n\6\2\63\66\3\2\2\2\64\66\5\f\7\2"+
+		"\65\60\3\2\2\2\65\64\3\2\2\2\66\13\3\2\2\2\678\7\4\2\289\7\f\2\29:\7\5"+
+		"\2\2:;\7\f\2\2;<\7\6\2\2<\r\3\2\2\2=>\7\7\2\2>?\7\b\2\2?@\7\t\2\2@B\7"+
+		"\n\2\2A=\3\2\2\2AB\3\2\2\2BC\3\2\2\2CD\5\20\t\2D\17\3\2\2\2EF\5\22\n\2"+
+		"FG\5\20\t\2GJ\3\2\2\2HJ\5\22\n\2IE\3\2\2\2IH\3\2\2\2J\21\3\2\2\2KL\7\f"+
+		"\2\2LM\7\16\2\2MR\7\r\2\2NO\7\f\2\2OP\7\16\2\2PR\7\f\2\2QK\3\2\2\2QN\3"+
+		"\2\2\2R\23\3\2\2\2ST\7\7\2\2TU\7\b\2\2UV\7\t\2\2VX\7\n\2\2WS\3\2\2\2W"+
+		"X\3\2\2\2XY\3\2\2\2YZ\7\13\2\2Z[\5\26\f\2[\25\3\2\2\2\\]\5\30\r\2]^\5"+
+		"\26\f\2^a\3\2\2\2_a\5\30\r\2`\\\3\2\2\2`_\3\2\2\2a\27\3\2\2\2bc\7\f\2"+
+		"\2cd\7\16\2\2de\t\2\2\2ef\t\2\2\2fg\7\r\2\2go\7\f\2\2hi\7\f\2\2ij\7\16"+
+		"\2\2jk\t\2\2\2kl\t\2\2\2lm\7\f\2\2mo\7\f\2\2nb\3\2\2\2nh\3\2\2\2o\31\3"+
+		"\2\2\2\16\33 %).\65AIQW`n";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
