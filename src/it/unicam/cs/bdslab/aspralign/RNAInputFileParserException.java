@@ -31,37 +31,31 @@ package it.unicam.cs.bdslab.aspralign;
  */
 public class RNAInputFileParserException extends RuntimeException {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 4540612561494091099L;
+    private static final long serialVersionUID = 4540612561494091099L;
 
-	/**
-	 * 
-	 */
-	public RNAInputFileParserException() {
-	}
+    public RNAInputFileParserException() {
+    }
 
-	/**
-	 * @param message Description message
-	 */
-	public RNAInputFileParserException(String message) {
-		super(message);
-	}
+    /**
+     * @param message Description message
+     */
+    public RNAInputFileParserException(String message) {
+	super(message);
+    }
 
-	/**
-	 * @param cause Cause of the exception
-	 */
-	public RNAInputFileParserException(Throwable cause) {
-		super(cause);
-	}
+    /**
+     * @param cause Cause of the exception
+     */
+    public RNAInputFileParserException(Throwable cause) {
+	super(cause);
+    }
 
-	/**
-	 * @param message Description message
-	 * @param cause Cause of the exception
-	 */
-	public RNAInputFileParserException(String message, Throwable cause) {
-		super(message, cause);
-	}
+    /**
+     * @param message Description message
+     * @param cause   Cause of the exception
+     */
+    public RNAInputFileParserException(String message, Throwable cause) {
+	super(message, cause);
+    }
 
 }

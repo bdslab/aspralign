@@ -29,8 +29,8 @@ import fr.orsay.lri.varna.models.treealign.Tree;
 
 /**
  * 
- * Functions to translate algebraic RNA trees, structural RNA trees and aligned
- * structural RNA trees into LaTeX and Linearised Tree formats.
+ * Functions to translate algebraic RNA trees, structural RNA trees and
+ * aligned structural RNA trees into LaTeX and Linearised Tree formats.
  * 
  * @author Luca Tesei
  *
@@ -38,7 +38,8 @@ import fr.orsay.lri.varna.models.treealign.Tree;
 public class ASPRATreeOutputter {
 
     /**
-     * Translate an algebraic RNA tree or a structural RNA tree into LaTeX code.
+     * Translate an algebraic RNA tree or a structural RNA tree into LaTeX
+     * code.
      * 
      * @param t the tree
      * @return LaTeX code representing the tree
@@ -47,12 +48,13 @@ public class ASPRATreeOutputter {
 	return "\\documentclass[border=10pt]{standalone} \\usepackage{forest} \\usepackage{amssymb}"
 		+ "\\begin{document} \\begin{forest} for tree={draw, semithick, rounded corners, "
 		+ "font = \\sffamily, top color = white, bottom color = white, grow = south, "
-		+ "s sep = 4mm, l sep = 8mm,} " + recToLatex(t) + "];" + " \\end{forest} " + "\\end{document}";
+		+ "s sep = 4mm, l sep = 8mm,} " + recToLatex(t) + "];"
+		+ " \\end{forest} " + "\\end{document}";
     }
 
     /*
-     * Recursive method to visit an algebraic RNA tree or a structural RNA tree and
-     * generate corresponding LaTeX code.
+     * Recursive method to visit an algebraic RNA tree or a structural RNA
+     * tree and generate corresponding LaTeX code.
      */
     private static String recToLatex(Tree<String> t) {
 	StringBuffer latexTree = new StringBuffer();
@@ -67,8 +69,8 @@ public class ASPRATreeOutputter {
     }
 
     /*
-     * Transform concatenation, crossing and nesting labels into the corresponding
-     * LaTeX math operators. Leave everything else unchanged.
+     * Transform concatenation, crossing and nesting labels into the
+     * corresponding LaTeX math operators. Leave everything else unchanged.
      */
     private static String transformLabel(String label) {
 	String prefix = "(";
@@ -76,11 +78,14 @@ public class ASPRATreeOutputter {
 	    String[] inLabels = label.split(",");
 	    String inLabel = inLabels[0].substring(1, inLabels[0].length());
 	    if (inLabel.equals(Operators.CONCATENATION_LABEL))
-		return "$(" + Operators.CONCATENATION_LABEL_LATEX + "," + inLabels[1] + "$";
+		return "$(" + Operators.CONCATENATION_LABEL_LATEX + ","
+			+ inLabels[1] + "$";
 	    if (inLabel.equals(Operators.CROSSING_LABEL))
-		return "$(" + Operators.CROSSING_LABEL_LATEX + "," + inLabels[1] + "$";
+		return "$(" + Operators.CROSSING_LABEL_LATEX + ","
+			+ inLabels[1] + "$";
 	    if (inLabel.equals(Operators.NESTING_LABEL))
-		return "$(" + Operators.NESTING_LABEL_LATEX + "," + inLabels[1] + "$";
+		return "$(" + Operators.NESTING_LABEL_LATEX + ","
+			+ inLabels[1] + "$";
 	} else {
 	    if (label.equals(Operators.ALGEBRAIC_TREE_ROOT_LABEL))
 		return "$" + Operators.ALGEBRAIC_TREE_ROOT_LABEL_LATEX + "$";
@@ -95,8 +100,8 @@ public class ASPRATreeOutputter {
     }
 
     /**
-     * Linearise an algebraic RNA tree or a structural RNA tree into a string. The
-     * format is ("node-label", [list-of-children]).
+     * Linearise an algebraic RNA tree or a structural RNA tree into a string.
+     * The format is ("node-label", [list-of-children]).
      * 
      * @param t the tree
      * @return string representing the tree
@@ -124,7 +129,8 @@ public class ASPRATreeOutputter {
     }
 
     /**
-     * Translate the alignment tree of two structural RNA trees into LaTeX code.
+     * Translate the alignment tree of two structural RNA trees into LaTeX
+     * code.
      * 
      * @param t the aligned tree
      * @return LaTeX code representing the aligned tree
@@ -133,13 +139,15 @@ public class ASPRATreeOutputter {
 	return "\\documentclass[border=10pt]{standalone} \\usepackage{forest} \\usepackage{amssymb} "
 		+ "\\begin{document} \\begin{forest} for tree={draw, semithick, rounded corners, "
 		+ "font = \\sffamily, top color = white, bottom color = white, grow = south, "
-		+ "s sep = 4mm, l sep = 8mm,} " + recToLatexAligned(t) + "];" + " \\end{forest} \\end{document}";
+		+ "s sep = 4mm, l sep = 8mm,} " + recToLatexAligned(t) + "];"
+		+ " \\end{forest} \\end{document}";
     }
 
     /*
      * 
      */
-    private static String recToLatexAligned(Tree<AlignedNode<String, String>> t) {
+    private static String recToLatexAligned(
+	    Tree<AlignedNode<String, String>> t) {
 	// DFS visit
 	StringBuffer latexTree = new StringBuffer();
 	AlignedNode<String, String> value = t.getValue();
@@ -152,9 +160,11 @@ public class ASPRATreeOutputter {
 	    right = "-";
 	else
 	    right = value.getRightNode().getValue();
-	latexTree.append("[{(" + transformLabel(left) + " , " + transformLabel(right) + ")}");
+	latexTree.append("[{(" + transformLabel(left) + " , "
+		+ transformLabel(right) + ")}");
 	if (t.getChildren().size() > 0) {
-	    List<Tree<AlignedNode<String, String>>> children = t.getChildren();
+	    List<Tree<AlignedNode<String, String>>> children = t
+		    .getChildren();
 	    for (Tree<AlignedNode<String, String>> tp : children)
 		latexTree.append(recToLatexAligned(tp) + "]");
 	}
@@ -163,13 +173,14 @@ public class ASPRATreeOutputter {
 
     /**
      * 
-     * Linearise an alignment tree of two structural RNA trees into a string. The
-     * format is ("node-label", [list-of-children]).
+     * Linearise an alignment tree of two structural RNA trees into a string.
+     * The format is ("node-label", [list-of-children]).
      * 
      * @param t the aligned tree
      * @return string representing the aligned tree
      */
-    public static String treeToStringAligned(Tree<AlignedNode<String, String>> t) {
+    public static String treeToStringAligned(
+	    Tree<AlignedNode<String, String>> t) {
 	// DFS visit
 	StringBuffer stringTree = new StringBuffer("(");
 	AlignedNode<String, String> value = t.getValue();
@@ -185,7 +196,8 @@ public class ASPRATreeOutputter {
 	stringTree.append("\"" + "(" + left + "," + right + ")" + "\"");
 	if (t.getChildren().size() > 0) {
 	    stringTree.append(", [");
-	    List<Tree<AlignedNode<String, String>>> children = t.getChildren();
+	    List<Tree<AlignedNode<String, String>>> children = t
+		    .getChildren();
 	    int i;
 	    for (i = 0; i < children.size() - 1; i++) {
 		Tree<AlignedNode<String, String>> tp = children.get(i);

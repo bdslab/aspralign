@@ -43,8 +43,8 @@ class RNASecondaryStructureFileReaderTest {
 
     @Test
     void testReadStructureRunningExample1() throws IOException {
-	RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/aas/running-example-1-aas.txt",
-		false);
+	RNASecondaryStructure s1 = RNASecondaryStructureFileReader
+		.readStructure("test/aas/running-example-1-aas.txt", false);
 	assertTrue(s1.getSequence().equals("AAGACCUGCACGCUAGUU"));
 	List<WeakBond> wb = new ArrayList<WeakBond>();
 	wb.add(new WeakBond(4, 7));
@@ -55,23 +55,27 @@ class RNASecondaryStructureFileReaderTest {
 	// System.out.println(s1.getBonds());
 	assertTrue(s1.getBonds().equals(wb));
 	RNASecondaryStructure s2 = RNASecondaryStructureFileReader
-		.readStructure("test/aas-no-sequence/running-example-1-aas.txt", false);
+		.readStructure(
+			"test/aas-no-sequence/running-example-1-aas.txt",
+			false);
 	assertTrue(s2.getSequence() == null);
 	assertTrue(s2.getBonds().equals(wb));
-	RNASecondaryStructure s3 = RNASecondaryStructureFileReader.readStructure("test/edbn/running-example-1-dbn.txt",
-		false);
+	RNASecondaryStructure s3 = RNASecondaryStructureFileReader
+		.readStructure("test/edbn/running-example-1-dbn.txt", false);
 	assertTrue(s3.getSequence().equals("AAGACCUGCACGCUAGUU"));
 	assertTrue(s3.getBonds().equals(wb));
 	RNASecondaryStructure s4 = RNASecondaryStructureFileReader
-		.readStructure("test/edbn-no-sequence/running-example-1-dbn.txt", false);
+		.readStructure(
+			"test/edbn-no-sequence/running-example-1-dbn.txt",
+			false);
 	assertTrue(s4.getSequence() == null);
 	assertTrue(s4.getBonds().equals(wb));
     }
 
     @Test
     void testReadStructureRunningExample2() throws IOException {
-	RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/aas/running-example-2-aas.txt",
-		false);
+	RNASecondaryStructure s1 = RNASecondaryStructureFileReader
+		.readStructure("test/aas/running-example-2-aas.txt", false);
 	assertTrue(s1.getSequence().equals("AAGACCUGCACGCUAGUAGU"));
 	List<WeakBond> wb = new ArrayList<WeakBond>();
 	wb.add(new WeakBond(9, 12));
@@ -81,24 +85,30 @@ class RNASecondaryStructureFileReaderTest {
 	// System.out.println(s1.getBonds());
 	assertTrue(s1.getBonds().equals(wb));
 	RNASecondaryStructure s2 = RNASecondaryStructureFileReader
-		.readStructure("test/aas-no-sequence/running-example-2-aas.txt", false);
+		.readStructure(
+			"test/aas-no-sequence/running-example-2-aas.txt",
+			false);
 	assertTrue(s2.getSequence() == null);
 	assertTrue(s2.getBonds().equals(wb));
-	RNASecondaryStructure s3 = RNASecondaryStructureFileReader.readStructure("test/edbn/running-example-2-dbn.txt",
-		false);
+	RNASecondaryStructure s3 = RNASecondaryStructureFileReader
+		.readStructure("test/edbn/running-example-2-dbn.txt", false);
 	assertTrue(s3.getSequence().equals("AAGACCUGCACGCUAGUAGU"));
 	assertTrue(s3.getBonds().equals(wb));
 	RNASecondaryStructure s4 = RNASecondaryStructureFileReader
-		.readStructure("test/edbn-no-sequence/running-example-2-dbn.txt", false);
+		.readStructure(
+			"test/edbn-no-sequence/running-example-2-dbn.txt",
+			false);
 	assertTrue(s4.getSequence() == null);
 	assertTrue(s4.getBonds().equals(wb));
     }
 
     @Test
     void testReadStructureLargerExample1() throws IOException {
-	RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/aas/larger-example-1-aas.txt",
-		false);
-	assertTrue(s1.getSequence().equals("AAGAGCUAUUUCCCUUAAGGGGGCACUAUUGAACUCCAUGAAACCGGAU" + "UUGGCCCCGCGG"));
+	RNASecondaryStructure s1 = RNASecondaryStructureFileReader
+		.readStructure("test/aas/larger-example-1-aas.txt", false);
+	assertTrue(s1.getSequence()
+		.equals("AAGAGCUAUUUCCCUUAAGGGGGCACUAUUGAACUCCAUGAAACCGGAU"
+			+ "UUGGCCCCGCGG"));
 	List<WeakBond> wb = new ArrayList<WeakBond>();
 	wb.add(new WeakBond(4, 7));
 	wb.add(new WeakBond(3, 13));
@@ -117,24 +127,32 @@ class RNASecondaryStructureFileReaderTest {
 	// System.out.println(s1.getBonds());
 	assertTrue(s1.getBonds().equals(wb));
 	RNASecondaryStructure s2 = RNASecondaryStructureFileReader
-		.readStructure("test/aas-no-sequence/larger-example-1-aas.txt", false);
+		.readStructure(
+			"test/aas-no-sequence/larger-example-1-aas.txt",
+			false);
 	assertTrue(s2.getSequence() == null);
 	assertTrue(s2.getBonds().equals(wb));
-	RNASecondaryStructure s3 = RNASecondaryStructureFileReader.readStructure("test/edbn/larger-example-1-dbn.txt",
-		false);
-	assertTrue(s3.getSequence().equals("AAGAGCUAUUUCCCUUAAGGGGGCACUAUUGAACUCCAUGAAACCGGAU" + "UUGGCCCCGCGG"));
+	RNASecondaryStructure s3 = RNASecondaryStructureFileReader
+		.readStructure("test/edbn/larger-example-1-dbn.txt", false);
+	assertTrue(s3.getSequence()
+		.equals("AAGAGCUAUUUCCCUUAAGGGGGCACUAUUGAACUCCAUGAAACCGGAU"
+			+ "UUGGCCCCGCGG"));
 	assertTrue(s3.getBonds().equals(wb));
 	RNASecondaryStructure s4 = RNASecondaryStructureFileReader
-		.readStructure("test/edbn-no-sequence/larger-example-1-dbn.txt", false);
+		.readStructure(
+			"test/edbn-no-sequence/larger-example-1-dbn.txt",
+			false);
 	assertTrue(s4.getSequence() == null);
 	assertTrue(s4.getBonds().equals(wb));
     }
 
     @Test
     void testReadStructureLargerExample2() throws IOException {
-	RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/aas/larger-example-2-aas.txt",
-		false);
-	assertTrue(s1.getSequence().equals("GCACGAUCGCCAAUGGAUUGUCAUUUCUGGGAAUUUGAUGGACCUUGGAA" + "AAUGCAUU"));
+	RNASecondaryStructure s1 = RNASecondaryStructureFileReader
+		.readStructure("test/aas/larger-example-2-aas.txt", false);
+	assertTrue(s1.getSequence()
+		.equals("GCACGAUCGCCAAUGGAUUGUCAUUUCUGGGAAUUUGAUGGACCUUGGAA"
+			+ "AAUGCAUU"));
 	List<WeakBond> wb = new ArrayList<WeakBond>();
 	wb.add(new WeakBond(5, 11));
 	wb.add(new WeakBond(8, 16));
@@ -153,24 +171,32 @@ class RNASecondaryStructureFileReaderTest {
 	// System.out.println(s1.getBonds());
 	assertTrue(s1.getBonds().equals(wb));
 	RNASecondaryStructure s2 = RNASecondaryStructureFileReader
-		.readStructure("test/aas-no-sequence/larger-example-2-aas.txt", false);
+		.readStructure(
+			"test/aas-no-sequence/larger-example-2-aas.txt",
+			false);
 	assertTrue(s2.getSequence() == null);
 	assertTrue(s2.getBonds().equals(wb));
-	RNASecondaryStructure s3 = RNASecondaryStructureFileReader.readStructure("test/edbn/larger-example-2-dbn.txt",
-		false);
-	assertTrue(s3.getSequence().equals("GCACGAUCGCCAAUGGAUUGUCAUUUCUGGGAAUUUGAUGGACCUUGGAA" + "AAUGCAUU"));
+	RNASecondaryStructure s3 = RNASecondaryStructureFileReader
+		.readStructure("test/edbn/larger-example-2-dbn.txt", false);
+	assertTrue(s3.getSequence()
+		.equals("GCACGAUCGCCAAUGGAUUGUCAUUUCUGGGAAUUUGAUGGACCUUGGAA"
+			+ "AAUGCAUU"));
 	assertTrue(s3.getBonds().equals(wb));
 	RNASecondaryStructure s4 = RNASecondaryStructureFileReader
-		.readStructure("test/edbn-no-sequence/larger-example-2-dbn.txt", false);
+		.readStructure(
+			"test/edbn-no-sequence/larger-example-2-dbn.txt",
+			false);
 	assertTrue(s4.getSequence() == null);
 	assertTrue(s4.getBonds().equals(wb));
     }
 
     @Test
     void testReadStructureLargerExample3() throws IOException {
-	RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/aas/larger-example-3-aas.txt",
-		false);
-	assertTrue(s1.getSequence().equals("AAGAGCUAUUUCCCUUAAGGGGGCACUAUUGAACUCCAUGAAACCGGAU" + "UUGGCCCCGCGG"));
+	RNASecondaryStructure s1 = RNASecondaryStructureFileReader
+		.readStructure("test/aas/larger-example-3-aas.txt", false);
+	assertTrue(s1.getSequence()
+		.equals("AAGAGCUAUUUCCCUUAAGGGGGCACUAUUGAACUCCAUGAAACCGGAU"
+			+ "UUGGCCCCGCGG"));
 	List<WeakBond> wb = new ArrayList<WeakBond>();
 	wb.add(new WeakBond(4, 7));
 	wb.add(new WeakBond(3, 13));
@@ -189,15 +215,21 @@ class RNASecondaryStructureFileReaderTest {
 	// System.out.println(s1.getBonds());
 	assertTrue(s1.getBonds().equals(wb));
 	RNASecondaryStructure s2 = RNASecondaryStructureFileReader
-		.readStructure("test/aas-no-sequence/larger-example-3-aas.txt", false);
+		.readStructure(
+			"test/aas-no-sequence/larger-example-3-aas.txt",
+			false);
 	assertTrue(s2.getSequence() == null);
 	assertTrue(s2.getBonds().equals(wb));
-	RNASecondaryStructure s3 = RNASecondaryStructureFileReader.readStructure("test/edbn/larger-example-3-dbn.txt",
-		false);
-	assertTrue(s3.getSequence().equals("AAGAGCUAUUUCCCUUAAGGGGGCACUAUUGAACUCCAUGAAACCGGAU" + "UUGGCCCCGCGG"));
+	RNASecondaryStructure s3 = RNASecondaryStructureFileReader
+		.readStructure("test/edbn/larger-example-3-dbn.txt", false);
+	assertTrue(s3.getSequence()
+		.equals("AAGAGCUAUUUCCCUUAAGGGGGCACUAUUGAACUCCAUGAAACCGGAU"
+			+ "UUGGCCCCGCGG"));
 	assertTrue(s3.getBonds().equals(wb));
 	RNASecondaryStructure s4 = RNASecondaryStructureFileReader
-		.readStructure("test/edbn-no-sequence/larger-example-3-dbn.txt", false);
+		.readStructure(
+			"test/edbn-no-sequence/larger-example-3-dbn.txt",
+			false);
 	assertTrue(s4.getSequence() == null);
 	assertTrue(s4.getBonds().equals(wb));
     }
@@ -205,7 +237,8 @@ class RNASecondaryStructureFileReaderTest {
     @Test
     void testReadStructureRunningMismatchExample1() throws IOException {
 	RNASecondaryStructure s1 = RNASecondaryStructureFileReader
-		.readStructure("test/aas/running-example-mismatch-1-aas.txt", false);
+		.readStructure("test/aas/running-example-mismatch-1-aas.txt",
+			false);
 	assertTrue(s1.getSequence().equals("UGGACGUGCACGUUAGUGG"));
 	List<WeakBond> wb = new ArrayList<WeakBond>();
 	wb.add(new WeakBond(2, 9));
@@ -214,15 +247,20 @@ class RNASecondaryStructureFileReaderTest {
 	// System.out.println(s1.getBonds());
 	assertTrue(s1.getBonds().equals(wb));
 	RNASecondaryStructure s2 = RNASecondaryStructureFileReader
-		.readStructure("test/aas-no-sequence/running-example-mismatch-1-aas.txt", false);
+		.readStructure(
+			"test/aas-no-sequence/running-example-mismatch-1-aas.txt",
+			false);
 	assertTrue(s2.getSequence() == null);
 	assertTrue(s2.getBonds().equals(wb));
 	RNASecondaryStructure s3 = RNASecondaryStructureFileReader
-		.readStructure("test/edbn/running-example-mismatch-1-dbn.txt", false);
+		.readStructure("test/edbn/running-example-mismatch-1-dbn.txt",
+			false);
 	assertTrue(s3.getSequence().equals("UGGACGUGCACGUUAGUGG"));
 	assertTrue(s3.getBonds().equals(wb));
 	RNASecondaryStructure s4 = RNASecondaryStructureFileReader
-		.readStructure("test/edbn-no-sequence/running-example-mismatch-1-dbn.txt", false);
+		.readStructure(
+			"test/edbn-no-sequence/running-example-mismatch-1-dbn.txt",
+			false);
 	assertTrue(s4.getSequence() == null);
 	assertTrue(s4.getBonds().equals(wb));
     }
@@ -230,7 +268,8 @@ class RNASecondaryStructureFileReaderTest {
     @Test
     void testReadStructureRunningMismatchExample2() throws IOException {
 	RNASecondaryStructure s1 = RNASecondaryStructureFileReader
-		.readStructure("test/aas/running-example-mismatch-2-aas.txt", false);
+		.readStructure("test/aas/running-example-mismatch-2-aas.txt",
+			false);
 	assertTrue(s1.getSequence().equals("UGGACGUGCACGUUAGUGG"));
 	List<WeakBond> wb = new ArrayList<WeakBond>();
 	wb.add(new WeakBond(2, 9));
@@ -239,22 +278,28 @@ class RNASecondaryStructureFileReaderTest {
 	// System.out.println(s1.getBonds());
 	assertTrue(s1.getBonds().equals(wb));
 	RNASecondaryStructure s2 = RNASecondaryStructureFileReader
-		.readStructure("test/aas-no-sequence/running-example-mismatch-2-aas.txt", false);
+		.readStructure(
+			"test/aas-no-sequence/running-example-mismatch-2-aas.txt",
+			false);
 	assertTrue(s2.getSequence() == null);
 	assertTrue(s2.getBonds().equals(wb));
 	RNASecondaryStructure s3 = RNASecondaryStructureFileReader
-		.readStructure("test/edbn/running-example-mismatch-2-dbn.txt", false);
+		.readStructure("test/edbn/running-example-mismatch-2-dbn.txt",
+			false);
 	assertTrue(s3.getSequence().equals("UGGACGUGCACGUUAGUGG"));
 	assertTrue(s3.getBonds().equals(wb));
 	RNASecondaryStructure s4 = RNASecondaryStructureFileReader
-		.readStructure("test/edbn-no-sequence/running-example-mismatch-2-dbn.txt", false);
+		.readStructure(
+			"test/edbn-no-sequence/running-example-mismatch-2-dbn.txt",
+			false);
 	assertTrue(s4.getSequence() == null);
 	assertTrue(s4.getBonds().equals(wb));
     }
 
     @Test
     void testReadStructureDB1() throws IOException {
-	RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/edbn/CRW_00808.dp", false);
+	RNASecondaryStructure s1 = RNASecondaryStructureFileReader
+		.readStructure("test/edbn/CRW_00808.dp", false);
 	assertTrue(s1.getSequence()
 		.equals("AAAUAUAAUAAUAAUUAAAUUAUUAUUUUAGAGGAAUUAUAAAAUAUAGA"
 			+ "GAAUAUGAUGUUAGUUCAGACUUAAUACUAUAUAGAGACAUAACACAUGC"
@@ -287,16 +332,18 @@ class RNASecondaryStructureFileReaderTest {
 			+ "GUGAAUAUUAUUAAUUGUUUCGCACUAAUUACUCGUCACGCGUAAAUUAA"
 			+ "AAUAAAUAACAAAAAUAAAUAUUAUAUUAUUAAUCUUUUAUUAUUUAAUA"
 			+ "AUUGUUUUGAUUUUUUAAUUUUAUUUAGUUAUCUGUUUUAUAUUAUUGCG"
-			+ "AAGUCGAAAUACAGUUACUGUAGGGGAACCUGCAGUGGGCUAUAACAAUA" + "CGAUUGGAUASPOM"));
+			+ "AAGUCGAAAUACAGUUACUGUAGGGGAACCUGCAGUGGGCUAUAACAAUA"
+			+ "CGAUUGGAUASPOM"));
 	// System.out.println(s1.getBonds());
-	RNASecondaryStructure s2 = RNASecondaryStructureFileReader.readStructure("test/edbn-no-sequence/CRW_00808.dp",
-		false);
+	RNASecondaryStructure s2 = RNASecondaryStructureFileReader
+		.readStructure("test/edbn-no-sequence/CRW_00808.dp", false);
 	assertTrue(s1.getBonds().equals(s2.getBonds()));
     }
 
     @Test
     void testReadStructureDB2() throws IOException {
-	RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/edbn/PDB_00408.txt", false);
+	RNASecondaryStructure s1 = RNASecondaryStructureFileReader
+		.readStructure("test/edbn/PDB_00408.txt", false);
 	assertTrue(s1.getSequence()
 		.equals("UGGAGAGUUUGAUCCUGGCUCAGGGUGAACGCUGGCGGCGUGCCUAAGAC"
 			+ "AUGCAAGUCGUGCGGGCCGCGGGGUUUUACUCCGUGGUCAGCGGCGGACG"
@@ -327,76 +374,92 @@ class RNASecondaryStructureFileReaderTest {
 			+ "ACCCCAUGAAGCCGGAAUCGCUAGUAAUCGCGGAUCAGCCAUGCCGCGGU"
 			+ "GAAUACGUUCCCGGGCCUUGUACACACCGCCCGUCACGCCAUGGGAGCGG"
 			+ "GCUCUACCCGAAGUCGCCGGGAGCCUACGGGCAGGCGCCGAGGGUAGGGC"
-			+ "CCGUGACUGGGGCGAAGUCGUAACAAGGUAGCUGUACCGGAAGGUGCGGC" + "UGGAUCAcuuUCU"));
+			+ "CCGUGACUGGGGCGAAGUCGUAACAAGGUAGCUGUACCGGAAGGUGCGGC"
+			+ "UGGAUCAcuuUCU"));
 	// System.out.println(s1.getBonds());
-	RNASecondaryStructure s2 = RNASecondaryStructureFileReader.readStructure("test/edbn-no-sequence/PDB_00408.txt",
-		false);
+	RNASecondaryStructure s2 = RNASecondaryStructureFileReader
+		.readStructure("test/edbn-no-sequence/PDB_00408.txt", false);
 	assertTrue(s1.getBonds().equals(s2.getBonds()));
     }
 
     @Test
     void testReadStructureError() throws IOException {
-	Throwable t1 = assertThrows(RNAInputFileParserException.class, () -> RNASecondaryStructureFileReader
-		.readStructure("test/error-structures/CRW_00808_Modified.dp", false));
+	Throwable t1 = assertThrows(RNAInputFileParserException.class,
+		() -> RNASecondaryStructureFileReader.readStructure(
+			"test/error-structures/CRW_00808_Modified.dp",
+			false));
 	System.err.println(
 		"ASPRAlign Test Suite, Expected Exception while loading file \"test/error-structures/CRW_00808_Modified.dp\"");
 	System.err.println(">>> Reported Error: " + t1.getMessage());
 	System.err.println("");
 
-	Throwable t2 = assertThrows(RNAInputFileParserException.class, () -> RNASecondaryStructureFileReader
-		.readStructure("test/error-structures/PDB_00409_Modified.dp", false));
+	Throwable t2 = assertThrows(RNAInputFileParserException.class,
+		() -> RNASecondaryStructureFileReader.readStructure(
+			"test/error-structures/PDB_00409_Modified.dp",
+			false));
 	System.err.println(
 		"ASPRAlign Test Suite, Expected Exception while loading file \"test/error-structures/PDB_00409_Modified.dp\"");
 	System.err.println(">>> Reported Error: " + t2.getMessage());
 	System.err.println("");
 
-	Throwable t3 = assertThrows(RNAInputFileParserException.class, () -> RNASecondaryStructureFileReader
-		.readStructure("test/error-structures/PDB_00585_Modified.dp", false));
+	Throwable t3 = assertThrows(RNAInputFileParserException.class,
+		() -> RNASecondaryStructureFileReader.readStructure(
+			"test/error-structures/PDB_00585_Modified.dp",
+			false));
 	System.err.println(
 		"ASPRAlign Test Suite, Expected Exception while loading file \"test/error-structures/PDB_00585_Modified.dp\"");
 	System.err.println(">>> Reported Error: " + t3.getMessage());
 	System.err.println("");
 
-	Throwable t4 = assertThrows(RNAInputFileParserException.class, () -> RNASecondaryStructureFileReader
-		.readStructure("test/error-structures/PDB_00586_Modified.dp", false));
+	Throwable t4 = assertThrows(RNAInputFileParserException.class,
+		() -> RNASecondaryStructureFileReader.readStructure(
+			"test/error-structures/PDB_00586_Modified.dp",
+			false));
 	System.err.println(
 		"ASPRAlign Test Suite, Expected Exception while loading file \"test/error-structures/PDB_00586_Modified.dp\"");
 	System.err.println(">>> Reported Error: " + t4.getMessage());
 	System.err.println("");
 
-	Throwable t5 = assertThrows(RNAInputFileParserException.class, () -> RNASecondaryStructureFileReader
-		.readStructure("test/error-structures/PDB_00813_Modified.dp", false));
+	Throwable t5 = assertThrows(RNAInputFileParserException.class,
+		() -> RNASecondaryStructureFileReader.readStructure(
+			"test/error-structures/PDB_00813_Modified.dp",
+			false));
 
 	System.err.println(
 		"ASPRAlign Test Suite, Expected Exception while loading file \"test/error-structures/PDB_00813_Modified.dp\"");
 	System.err.println(">>> Reported Error: " + t5.getMessage());
 	System.err.println("");
 
-	Throwable t6 = assertThrows(RNAInputFileParserException.class, () -> RNASecondaryStructureFileReader
-		.readStructure("test/error-structures/PDB_00814_Modified.dp", false));
+	Throwable t6 = assertThrows(RNAInputFileParserException.class,
+		() -> RNASecondaryStructureFileReader.readStructure(
+			"test/error-structures/PDB_00814_Modified.dp",
+			false));
 	System.err.println(
 		"ASPRAlign Test Suite, Expected Exception while loading file \"test/error-structures/PDB_00814_Modified.dp\"");
 	System.err.println(">>> Reported Error: " + t6.getMessage());
 	System.err.println("");
 
-	Throwable t7 = assertThrows(RNAInputFileParserException.class, () -> RNASecondaryStructureFileReader
-		.readStructure("test/error-structures/PDB_00952_Modified.dp", true));
+	Throwable t7 = assertThrows(RNAInputFileParserException.class,
+		() -> RNASecondaryStructureFileReader.readStructure(
+			"test/error-structures/PDB_00952_Modified.dp", true));
 	System.err.println(
 		"ASPRAlign Test Suite, Expected Exception while loading file \"test/error-structures/PDB_00952_Modified.dp\"");
 	System.err.println(">>> Reported Error: " + t7.getMessage());
 	System.err.println("");
 
 	assertThrows(NoSuchFileException.class,
-		() -> RNASecondaryStructureFileReader.readStructure("test/error-structures/no-file.dp", false));
+		() -> RNASecondaryStructureFileReader.readStructure(
+			"test/error-structures/no-file.dp", false));
     }
 
     @Test
     void testReadStructureBpseqTest() throws IOException {
-	RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/bpseq/test-bpseq.txt", false);
+	RNASecondaryStructure s1 = RNASecondaryStructureFileReader
+		.readStructure("test/bpseq/test-bpseq.txt", false);
 	assertTrue(s1.getSequence().equals("CCUGAACAG"));
-	assertTrue(s1.getDescription()
-		.equals("Filename: test.bpseq\n" + "Organism: Some organism\n" + "Accession Number: XYZ123\n"
-			+ "Citation and related information available at http://www.rna.ccbb.utexax.edu"));
+	assertTrue(s1.getDescription().equals("Filename: test.bpseq\n"
+		+ "Organism: Some organism\n" + "Accession Number: XYZ123\n"
+		+ "Citation and related information available at http://www.rna.ccbb.utexax.edu"));
 	List<WeakBond> wb = new ArrayList<WeakBond>();
 	wb.add(new WeakBond(3, 8));
 	wb.add(new WeakBond(2, 9));
@@ -406,12 +469,14 @@ class RNASecondaryStructureFileReaderTest {
 
     @Test
     void testReadStructureCtTest() throws IOException {
-	RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/ct/test-ct.txt", false);
+	RNASecondaryStructure s1 = RNASecondaryStructureFileReader
+		.readStructure("test/ct/test-ct.txt", false);
 	assertTrue(s1.getSequence().equals("GCGGAUUUUAAUUCGCA"));
-	assertTrue(s1.getDescription()
-		.equals("Filename: test.ct\n" + "Organism: Some Energy organism\n" + "Accession Number: XYZ123\n"
-			+ "Citation and related information available at http://www.acme.com\n"
-			+ "17 ENERGY =     -17.50    test"));
+	assertTrue(s1.getDescription().equals("Filename: test.ct\n"
+		+ "Organism: Some Energy organism\n"
+		+ "Accession Number: XYZ123\n"
+		+ "Citation and related information available at http://www.acme.com\n"
+		+ "17 ENERGY =     -17.50    test"));
 	List<WeakBond> wb = new ArrayList<WeakBond>();
 	wb.add(new WeakBond(7, 10));
 	wb.add(new WeakBond(6, 11));
@@ -426,8 +491,8 @@ class RNASecondaryStructureFileReaderTest {
 
     @Test
     void testReadStructureBpseqTestNoHeader() throws IOException {
-	RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/bpseq/test-bpseq-noHeader.txt",
-		false);
+	RNASecondaryStructure s1 = RNASecondaryStructureFileReader
+		.readStructure("test/bpseq/test-bpseq-noHeader.txt", false);
 	assertTrue(s1.getSequence().equals("CCUGAACAG"));
 	assertTrue(s1.getDescription().equals(""));
 	List<WeakBond> wb = new ArrayList<WeakBond>();
@@ -439,9 +504,11 @@ class RNASecondaryStructureFileReaderTest {
 
     @Test
     void testReadStructureCtTestNoHeader() throws IOException {
-	RNASecondaryStructure s1 = RNASecondaryStructureFileReader.readStructure("test/ct/test-ct-noHeader.txt", false);
+	RNASecondaryStructure s1 = RNASecondaryStructureFileReader
+		.readStructure("test/ct/test-ct-noHeader.txt", false);
 	assertTrue(s1.getSequence().equals("GCGGAUUUUAAUUCGCA"));
-	assertTrue(s1.getDescription().equals("17 ENERGY =     -17.50    test"));
+	assertTrue(
+		s1.getDescription().equals("17 ENERGY =     -17.50    test"));
 	List<WeakBond> wb = new ArrayList<WeakBond>();
 	wb.add(new WeakBond(7, 10));
 	wb.add(new WeakBond(6, 11));

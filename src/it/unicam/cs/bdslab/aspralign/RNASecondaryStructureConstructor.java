@@ -51,7 +51,8 @@ import it.unicam.cs.bdslab.aspralign.RNASecondaryStructureParser.SequenceEndCont
  * @author Luca Tesei
  *
  */
-public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseListener {
+public class RNASecondaryStructureConstructor
+	extends RNASecondaryStructureBaseListener {
     private RNASecondaryStructure s;
     private StringBuffer sequenceBuffer;
     private StringBuffer edbnsBuffer;
@@ -73,15 +74,20 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
 
     @Override
     public void enterSequenceContinue(SequenceContinueContext ctx) {
-	// add this line of nucleotides to the already existing sequence because of the
-	// right recursion of the parse tree
+	/*
+	 * add this line of nucleotides to the already existing sequence
+	 * because of the right recursion of the parse tree
+	 */
 	this.sequenceBuffer.append(ctx.NUCLEOTIDES().getText());
     }
 
     @Override
     public void enterSequenceEnd(SequenceEndContext ctx) {
-	// add this line of nucleotides to the already existing sequence because of the
-	// right recursion of the parse tree and the call to the exit method
+	/*
+	 * add this line of nucleotides to the already existing sequence
+	 * because of the right recursion of the parse tree and the call to
+	 * the exit method
+	 */
 	this.sequenceBuffer.append(ctx.NUCLEOTIDES().getText());
 	// assign the whole sequence to the RNASecondaryStructure
 	this.s.sequence = this.sequenceBuffer.toString();
@@ -92,48 +98,60 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
     @Override
     public void enterEdbnsContinue(EdbnsContinueContext ctx) {
 	String edbn = ctx.EDBN().getText();
-	// Control if this part of string has been classified wrongly as EDBN while
-	// originally it was a nucleotide part with non-recognised codes; in this case
-	// throw an exception
+	/*
+	 * Control if this part of string has been classified wrongly as EDBN
+	 * while originally it was a nucleotide part with non-recognised
+	 * codes; in this case throw an exception
+	 */
 	if (edbn.indexOf(".") == -1) {
 	    // there are no dots, check if there is at least one bracket
-	    if (edbn.indexOf("(") == -1 && edbn.indexOf(")") == -1 && edbn.indexOf("[") == -1 && edbn.indexOf("]") == -1
+	    if (edbn.indexOf("(") == -1 && edbn.indexOf(")") == -1
+		    && edbn.indexOf("[") == -1 && edbn.indexOf("]") == -1
 		    && edbn.indexOf("{") == -1 && edbn.indexOf("}") == -1) {
 		// there are no brackets, check if the string is very short
 		if (edbn.length() >= 5) {
 		    // ok, it is not considered edbn, the exception is thrown
-		    String m = "Line " + ctx.start.getLine() + " Character " + (ctx.start.getCharPositionInLine() + 1)
-			    + ": " + "unrecognised nucleotide code in " + edbn;
+		    String m = "Line " + ctx.start.getLine() + " Character "
+			    + (ctx.start.getCharPositionInLine() + 1) + ": "
+			    + "unrecognised nucleotide code in " + edbn;
 		    throw new RNAInputFileParserException(m);
 		}
 	    }
 	}
-	// add this line of edbn to the already existing ones because of the
-	// right recursion of the parse tree
+	/*
+	 * add this line of edbn to the already existing ones because of the
+	 * right recursion of the parse tree
+	 */
 	this.edbnsBuffer.append(edbn);
     }
 
     @Override
     public void enterEdbnsEnd(EdbnsEndContext ctx) {
 	String edbn = ctx.EDBN().getText();
-	// Control if this part of string has been classified wrongly as EDBN while
-	// originally it was a nucleotide part with non-recognised codes; in this case
-	// throw an exception
+	/*
+	 * Control if this part of string has been classified wrongly as EDBN
+	 * while originally it was a nucleotide part with non-recognised
+	 * codes; in this case throw an exception
+	 */
 	if (edbn.indexOf(".") == -1) {
 	    // there are no dots, check if there is at least one bracket
-	    if (edbn.indexOf("(") == -1 && edbn.indexOf(")") == -1 && edbn.indexOf("[") == -1 && edbn.indexOf("]") == -1
+	    if (edbn.indexOf("(") == -1 && edbn.indexOf(")") == -1
+		    && edbn.indexOf("[") == -1 && edbn.indexOf("]") == -1
 		    && edbn.indexOf("{") == -1 && edbn.indexOf("}") == -1) {
 		// there are no brackets, check if the string is very short
 		if (edbn.length() >= 5) {
 		    // ok, it is not considered edbn, the exception is thrown
-		    String m = "Line " + ctx.start.getLine() + " Character " + (ctx.start.getCharPositionInLine() + 1)
-			    + ": " + "unrecognised nucleotide code in " + edbn;
+		    String m = "Line " + ctx.start.getLine() + " Character "
+			    + (ctx.start.getCharPositionInLine() + 1) + ": "
+			    + "unrecognised nucleotide code in " + edbn;
 		    throw new RNAInputFileParserException(m);
 		}
 	    }
 	}
-	// add this line of edbn to the already existing ones because of the
-	// right recursion of the parse tree
+	/*
+	 * add this line of edbn to the already existing ones because of the
+	 * right recursion of the parse tree
+	 */
 	this.edbnsBuffer.append(edbn);
 	// check length of edbns wrt the size of the structure
 	if (this.s.sequence == null)
@@ -141,8 +159,11 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
 	    this.s.size = this.edbnsBuffer.length();
 	else // the structure has a sequence, check if the length are the same
 	if (this.edbnsBuffer.length() != this.s.size)
-	    throw new RNAInputFileParserException("Extended Dot-Bracket Notation Structure is of length "
-		    + this.edbnsBuffer.length() + " while the sequence of nucleotides is of length " + this.s.size);
+	    throw new RNAInputFileParserException(
+		    "Extended Dot-Bracket Notation Structure is of length "
+			    + this.edbnsBuffer.length()
+			    + " while the sequence of nucleotides is of length "
+			    + this.s.size);
 	// parse edbn and create weak bonds in the structure
 	List<WeakBond> bonds = parseEDBN(this.edbnsBuffer.toString());
 	// add all the bonds to the structure
@@ -151,21 +172,24 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
     }
 
     /*
-     * Parse an Extended Dot-Bracket Notation string and transform it into a list of
-     * weak bonds.
+     * Parse an Extended Dot-Bracket Notation string and transform it into a
+     * list of weak bonds.
      * 
-     * @param extendedDotBracketNotation the string of extended dot-bracket notation
-     * to convert
+     * @param extendedDotBracketNotation the string of extended dot-bracket
+     * notation to convert
      * 
      * @return a list of the bonds in the given extended dot-bracket notation
      * 
-     * @throws RNAInputFileParserException if the extended dot-bracket notation
-     * contains errors
+     * @throws RNAInputFileParserException if the extended dot-bracket
+     * notation contains errors
      */
-    private static List<WeakBond> parseEDBN(String extendedDotBracketNotation) {
+    private static List<WeakBond> parseEDBN(
+	    String extendedDotBracketNotation) {
 	List<WeakBond> bonds = new ArrayList<WeakBond>();
-	// Parse the edbn string using stacks to push opening symbols and match them
-	// with closing ones
+	/*
+	 * Parse the edbn string using stacks to push opening symbols and
+	 * match them with closing ones
+	 */
 	HashMap<Character, Stack<Integer>> stacks = new HashMap<>();
 	for (int i = 0; i < extendedDotBracketNotation.length(); i++) {
 	    char c = extendedDotBracketNotation.charAt(i);
@@ -177,9 +201,11 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
 	    }
 	    if (isClosingChar(c)) {
 		Character opening = new Character(getCorrespondingOpening(c));
-		if (stacks.get(opening) == null || stacks.get(opening).isEmpty()) {
+		if (stacks.get(opening) == null
+			|| stacks.get(opening).isEmpty()) {
 		    throw new RNAInputFileParserException(
-			    "Extended dot-bracket notation parsing: closing character at position " + (i + 1)
+			    "Extended dot-bracket notation parsing: closing character at position "
+				    + (i + 1)
 				    + " does not have a corresponding opening character");
 		}
 		int leftPosition = stacks.get(opening).pop().intValue();
@@ -192,8 +218,10 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
 	Set<Character> ks = stacks.keySet();
 	for (Character c : ks)
 	    if (!stacks.get(c).isEmpty()) {
-		String msg = "Extended dot-bracket notation parsing: " + stacks.get(c).size()
-			+ " missing closing occurrence(s) of " + c + " symbol, left opening symbol(s) at position(s) ";
+		String msg = "Extended dot-bracket notation parsing: "
+			+ stacks.get(c).size()
+			+ " missing closing occurrence(s) of " + c
+			+ " symbol, left opening symbol(s) at position(s) ";
 		for (Integer i : stacks.get(c))
 		    msg = msg + (i.intValue() + 1) + " ";
 		throw new RNAInputFileParserException(msg);
@@ -207,7 +235,8 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
      * extended dot-bracket notation string.
      */
     private static boolean isOpeningChar(char c) {
-	return c == '(' || c == '[' || c == '{' || c == '<' || Character.isUpperCase(c);
+	return c == '(' || c == '[' || c == '{' || c == '<'
+		|| Character.isUpperCase(c);
     }
 
     /*
@@ -215,12 +244,13 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
      * extended dot-bracket notation string.
      */
     private static boolean isClosingChar(char c) {
-	return c == ')' || c == ']' || c == '}' || c == '>' || Character.isLowerCase(c);
+	return c == ')' || c == ']' || c == '}' || c == '>'
+		|| Character.isLowerCase(c);
     }
 
     /*
-     * Given a closing character of an extended dot-bracket notation string, returns
-     * the corresponding opening character.
+     * Given a closing character of an extended dot-bracket notation string,
+     * returns the corresponding opening character.
      */
     private static char getCorrespondingOpening(char c) {
 	switch (c) {
@@ -263,10 +293,14 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
     public void enterBpseq(BpseqContext ctx) {
 	if (ctx.LINE1BPSEQCT() != null) {
 	    // save the first four lines of description, if they are present
-	    this.descriptionBuffer.append(ctx.LINE1BPSEQCT().getText().trim() + "\n");
-	    this.descriptionBuffer.append(ctx.LINE2BPSEQCT().getText().trim() + "\n");
-	    this.descriptionBuffer.append(ctx.LINE3BPSEQCT().getText().trim() + "\n");
-	    this.descriptionBuffer.append(ctx.LINE4BPSEQCT().getText().trim());
+	    this.descriptionBuffer
+		    .append(ctx.LINE1BPSEQCT().getText().trim() + "\n");
+	    this.descriptionBuffer
+		    .append(ctx.LINE2BPSEQCT().getText().trim() + "\n");
+	    this.descriptionBuffer
+		    .append(ctx.LINE3BPSEQCT().getText().trim() + "\n");
+	    this.descriptionBuffer
+		    .append(ctx.LINE4BPSEQCT().getText().trim());
 	}
     }
 
@@ -305,10 +339,14 @@ public class RNASecondaryStructureConstructor extends RNASecondaryStructureBaseL
     public void enterCt(CtContext ctx) {
 	if (ctx.LINE1BPSEQCT() != null) {
 	    // save the first four lines, if they are present, of description
-	    this.descriptionBuffer.append(ctx.LINE1BPSEQCT().getText().trim() + "\n");
-	    this.descriptionBuffer.append(ctx.LINE2BPSEQCT().getText().trim() + "\n");
-	    this.descriptionBuffer.append(ctx.LINE3BPSEQCT().getText().trim() + "\n");
-	    this.descriptionBuffer.append(ctx.LINE4BPSEQCT().getText().trim() + "\n");
+	    this.descriptionBuffer
+		    .append(ctx.LINE1BPSEQCT().getText().trim() + "\n");
+	    this.descriptionBuffer
+		    .append(ctx.LINE2BPSEQCT().getText().trim() + "\n");
+	    this.descriptionBuffer
+		    .append(ctx.LINE3BPSEQCT().getText().trim() + "\n");
+	    this.descriptionBuffer
+		    .append(ctx.LINE4BPSEQCT().getText().trim() + "\n");
 	}
 	// save the fifth line of description
 	this.descriptionBuffer.append(ctx.LINE5CT().getText().trim());

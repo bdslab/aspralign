@@ -41,17 +41,20 @@ public class WeakBond implements Comparable<WeakBond> {
      * 
      * @param right right index (starting with 1)
      * 
-     * @throws RNAInputFileParserException if the left position is less than 1 or if
-     *                                     the left position is greater than or
-     *                                     equal to the right position.
+     * @throws RNAInputFileParserException if the left position is less than 1
+     *                                     or if the left position is greater
+     *                                     than or equal to the right
+     *                                     position.
      */
     public WeakBond(int left, int right) throws RNAInputFileParserException {
 	// index checks
 	if (left < 1)
-	    throw new RNAInputFileParserException("Weak Bond: left index: " + left + " less than 1.");
-	if (left >= right)
 	    throw new RNAInputFileParserException(
-		    "Weak Bond: left index: " + left + " greater than or equal to right index: " + right);
+		    "Weak Bond: left index: " + left + " less than 1.");
+	if (left >= right)
+	    throw new RNAInputFileParserException("Weak Bond: left index: "
+		    + left + " greater than or equal to right index: "
+		    + right);
 	// checks passed
 	this.left = left;
 	this.right = right;
@@ -77,14 +80,15 @@ public class WeakBond implements Comparable<WeakBond> {
      * @param wb the WeakBond to check for crossing with this WeakBond
      * @return true if this WeakBond crosses with the WeakBond {@code wb}
      * @throws NullPointerException     if the passed WeakBond is null
-     * @throws IllegalArgumentException if the passed WeakBond is equal to this
-     *                                  WeakBond
+     * @throws IllegalArgumentException if the passed WeakBond is equal to
+     *                                  this WeakBond
      */
     protected boolean crossesWith(WeakBond wb) {
 	if (wb == null)
 	    throw new NullPointerException("Passed Weak Bond was null");
 	if (this.equals(wb))
-	    throw new IllegalArgumentException("Passed Weak Bond was equal to this one");
+	    throw new IllegalArgumentException(
+		    "Passed Weak Bond was equal to this one");
 	if (wb.left < this.left && this.left < wb.right)
 	    return true;
 	if (this.left < wb.left && wb.left < this.right)

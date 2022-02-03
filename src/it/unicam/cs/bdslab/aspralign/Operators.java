@@ -31,15 +31,15 @@ package it.unicam.cs.bdslab.aspralign;
  */
 public interface Operators {
 
-	public static String CONCATENATION_LABEL = "CONC";
-	public static String CROSSING_LABEL = "CROS";
-	public static String NESTING_LABEL = "NEST";
-	public static String ALGEBRAIC_TREE_ROOT_LABEL = "ROOT";
-	public static String HAIRPIN_LABEL = "H";
+    public static String CONCATENATION_LABEL = "CONC";
+    public static String CROSSING_LABEL = "CROS";
+    public static String NESTING_LABEL = "NEST";
+    public static String ALGEBRAIC_TREE_ROOT_LABEL = "ROOT";
+    public static String HAIRPIN_LABEL = "H";
 
-	public static String ALGEBRAIC_TREE_ROOT_LABEL_LATEX = "\\leftrightarrows";
-	public static String CONCATENATION_LABEL_LATEX = "\\odot";
-	public static String CROSSING_LABEL_LATEX = "\\Join";
-	public static String NESTING_LABEL_LATEX = "\\Cap";
+    public static String ALGEBRAIC_TREE_ROOT_LABEL_LATEX = "\\leftrightarrows";
+    public static String CONCATENATION_LABEL_LATEX = "\\odot";
+    public static String CROSSING_LABEL_LATEX = "\\Join";
+    public static String NESTING_LABEL_LATEX = "\\Cap";
 
 }

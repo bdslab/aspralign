@@ -36,7 +36,8 @@ import fr.orsay.lri.varna.models.treealign.TreeAlignLabelDistanceAsymmetric;
  * @author Luca Tesei
  * 
  */
-public class ScoringFunction implements TreeAlignLabelDistanceAsymmetric<String, String> {
+public class ScoringFunction
+	implements TreeAlignLabelDistanceAsymmetric<String, String> {
 
     /**
      * Default name of configuration file.
@@ -57,8 +58,8 @@ public class ScoringFunction implements TreeAlignLabelDistanceAsymmetric<String,
      * Create a scoring function according to the costs specified in the given
      * property file.
      * 
-     * @param propertyFileName the configuration file to be used to load the costs
-     *                         associated to each operation
+     * @param propertyFileName the configuration file to be used to load the
+     *                         costs associated to each operation
      * @throws NullPointerException if the property file name is null
      */
     public ScoringFunction(String propertyFileName) {
@@ -77,67 +78,88 @@ public class ScoringFunction implements TreeAlignLabelDistanceAsymmetric<String,
 	this.propertyFileName = propertyFileName;
 	try (FileInputStream in = new FileInputStream(propertyFileName)) {
 	    props.load(in);
-	    System.err.println("Configuration file " + propertyFileName + " loaded.");
+	    System.err.println(
+		    "Configuration file " + propertyFileName + " loaded.");
 	} catch (FileNotFoundException e1) {
-	    System.err.println("WARNING: Configuration file " + propertyFileName
+	    System.err.println("WARNING: Configuration file "
+		    + propertyFileName
 		    + " not found... usign default configuration values");
 	} catch (IOException e) {
-	    System.err.println("WARNING: Error reading configuration file " + propertyFileName
+	    System.err.println("WARNING: Error reading configuration file "
+		    + propertyFileName
 		    + " ... usign default configuration values");
 	}
 
 	// defaultProps loaded or taken as default
 	try {
-	    this.insertOperatorCost = Double.parseDouble(props.getProperty("INSERT_OPERATOR_COST"));
+	    this.insertOperatorCost = Double
+		    .parseDouble(props.getProperty("INSERT_OPERATOR_COST"));
 	} catch (NumberFormatException e) {
-	    System.err.println("WARNING: configuration value of INSERT_OPERATOR_COST is "
-		    + props.getProperty("INSERT_OPERATOR_COST") + " and cannot be converted to a valid number... "
-		    + "using default value 100.0");
+	    System.err.println(
+		    "WARNING: configuration value of INSERT_OPERATOR_COST is "
+			    + props.getProperty("INSERT_OPERATOR_COST")
+			    + " and cannot be converted to a valid number... "
+			    + "using default value 100.0");
 	    this.insertOperatorCost = 100;
 	}
 
 	try {
-	    this.deleteOperatorCost = Double.parseDouble(props.getProperty("DELETE_OPERATOR_COST"));
+	    this.deleteOperatorCost = Double
+		    .parseDouble(props.getProperty("DELETE_OPERATOR_COST"));
 	} catch (NumberFormatException e) {
-	    System.err.println("WARNING: configuration value of DELETE_OPERATOR_COST is "
-		    + props.getProperty("DELETE_OPERATOR_COST") + " and cannot be converted to a valid number... "
-		    + "using default value 100.0");
+	    System.err.println(
+		    "WARNING: configuration value of DELETE_OPERATOR_COST is "
+			    + props.getProperty("DELETE_OPERATOR_COST")
+			    + " and cannot be converted to a valid number... "
+			    + "using default value 100.0");
 	    this.deleteOperatorCost = 100;
 	}
 
 	try {
-	    this.replaceOperatorCost = Double.parseDouble(props.getProperty("REPLACE_OPERATOR_COST"));
+	    this.replaceOperatorCost = Double
+		    .parseDouble(props.getProperty("REPLACE_OPERATOR_COST"));
 	} catch (NumberFormatException e) {
-	    System.err.println("WARNING: configuration value of REPLACE_OPERATOR_COST is "
-		    + props.getProperty("REPLACE_OPERATOR_COST") + " and cannot be converted to a valid number... "
-		    + "using default value 100.0");
+	    System.err.println(
+		    "WARNING: configuration value of REPLACE_OPERATOR_COST is "
+			    + props.getProperty("REPLACE_OPERATOR_COST")
+			    + " and cannot be converted to a valid number... "
+			    + "using default value 100.0");
 	    this.replaceOperatorCost = 100;
 	}
 
 	try {
-	    this.insertHairpinCost = Double.parseDouble(props.getProperty("INSERT_HAIRPIN_COST"));
+	    this.insertHairpinCost = Double
+		    .parseDouble(props.getProperty("INSERT_HAIRPIN_COST"));
 	} catch (NumberFormatException e) {
 	    System.err.println(
-		    "WARNING: configuration value of INSERT_HAIRPIN_COST is " + props.getProperty("INSERT_HAIRPIN_COST")
-			    + " and cannot be converted to a valid number... " + "using default value 100.0");
+		    "WARNING: configuration value of INSERT_HAIRPIN_COST is "
+			    + props.getProperty("INSERT_HAIRPIN_COST")
+			    + " and cannot be converted to a valid number... "
+			    + "using default value 100.0");
 	    this.insertHairpinCost = 100;
 	}
 
 	try {
-	    this.deleteHairpinCost = Double.parseDouble(props.getProperty("DELETE_HAIRPIN_COST"));
+	    this.deleteHairpinCost = Double
+		    .parseDouble(props.getProperty("DELETE_HAIRPIN_COST"));
 	} catch (NumberFormatException e) {
 	    System.err.println(
-		    "WARNING: configuration value of DELETE_HAIRPIN_COST is " + props.getProperty("DELETE_HAIRPIN_COST")
-			    + " and cannot be converted to a valid number... " + "using default value 100.0");
+		    "WARNING: configuration value of DELETE_HAIRPIN_COST is "
+			    + props.getProperty("DELETE_HAIRPIN_COST")
+			    + " and cannot be converted to a valid number... "
+			    + "using default value 100.0");
 	    this.deleteHairpinCost = 100;
 	}
 
 	try {
-	    this.crossingMismatchCost = Double.parseDouble(props.getProperty("CROSSING_MISMATCH_COST"));
+	    this.crossingMismatchCost = Double
+		    .parseDouble(props.getProperty("CROSSING_MISMATCH_COST"));
 	} catch (NumberFormatException e) {
-	    System.err.println("WARNING: configuration value of CROSSING_MISMATCH_COST is "
-		    + props.getProperty("CROSSING_MISMATCH_COST") + " and cannot be converted to a valid number... "
-		    + "using default value 1.0");
+	    System.err.println(
+		    "WARNING: configuration value of CROSSING_MISMATCH_COST is "
+			    + props.getProperty("CROSSING_MISMATCH_COST")
+			    + " and cannot be converted to a valid number... "
+			    + "using default value 1.0");
 	    this.crossingMismatchCost = 1;
 	}
     }
@@ -209,8 +231,8 @@ public class ScoringFunction implements TreeAlignLabelDistanceAsymmetric<String,
      * (non-Javadoc)
      * 
      * @see
-     * fr.orsay.lri.varna.models.treealign.TreeAlignLabelDistanceAsymmetric#f(java.
-     * lang.Object, java.lang.Object)
+     * fr.orsay.lri.varna.models.treealign.TreeAlignLabelDistanceAsymmetric#f(
+     * java. lang.Object, java.lang.Object)
      */
     @Override
     public double f(String Xvalue, String Yvalue) {
@@ -230,9 +252,11 @@ public class ScoringFunction implements TreeAlignLabelDistanceAsymmetric<String,
 	// (op,op') case
 	if (isOperator(x) && isOperator(y)) {
 	    if (isCrossing(x) && isCrossing(y)) {
-		// matching crossings, the cost is local and proportional to the crossing
+		// matching crossings, the cost is local and proportional to
+		// the crossing
 		// mismatches
-		int numberOfCrossingMismatches = getNumberOfCrossingMismatches(x, y);
+		int numberOfCrossingMismatches = getNumberOfCrossingMismatches(
+			x, y);
 		return this.crossingMismatchCost * numberOfCrossingMismatches;
 	    }
 	    // the operators are not two crossings
@@ -262,7 +286,8 @@ public class ScoringFunction implements TreeAlignLabelDistanceAsymmetric<String,
 	    return this.REPLACE_HAIRPIN_WITH_OPERATOR;
 
 	// unreachable code
-	assert false : "Scoring function unreachable code reached: (" + x + "," + y + ")";
+	assert false : "Scoring function unreachable code reached: (" + x
+		+ "," + y + ")";
 	return 0;
     }
 

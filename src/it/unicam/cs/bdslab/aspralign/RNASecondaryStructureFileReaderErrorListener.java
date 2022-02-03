@@ -26,20 +26,23 @@ import org.antlr.v4.runtime.BaseErrorListener;
 import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.Recognizer;
 
-
 /**
- * Class for transforming ANTLR 4 Syntax Errors into RNAInputFileParserExceptions.
+ * Class for transforming ANTLR 4 Syntax Errors into
+ * RNAInputFileParserExceptions.
  * 
  * @author Luca Tesei
  *
  */
-public class RNASecondaryStructureFileReaderErrorListener extends BaseErrorListener {
+public class RNASecondaryStructureFileReaderErrorListener
+	extends BaseErrorListener {
 
-	@Override
-	public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine,
-			String msg, RecognitionException e) {
-		String m = "Line " + line + " Character " + (charPositionInLine + 1) + ": " + msg;
-		throw new RNAInputFileParserException(m);
-	}
+    @Override
+    public void syntaxError(Recognizer<?, ?> recognizer,
+	    Object offendingSymbol, int line, int charPositionInLine,
+	    String msg, RecognitionException e) {
+	String m = "Line " + line + " Character " + (charPositionInLine + 1)
+		+ ": " + msg;
+	throw new RNAInputFileParserException(m);
+    }
 
 }
