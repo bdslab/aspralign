@@ -89,9 +89,11 @@ public class WeakBond implements Comparable<WeakBond> {
 	if (this.equals(wb))
 	    throw new IllegalArgumentException(
 		    "Passed Weak Bond was equal to this one");
-	if (wb.left < this.left && this.left < wb.right)
+	if (wb.left < this.left && this.left < wb.right
+		&& wb.right < this.right)
 	    return true;
-	if (this.left < wb.left && wb.left < this.right)
+	if (this.left < wb.left && wb.left < this.right
+		&& this.right < wb.right)
 	    return true;
 	return false;
     }

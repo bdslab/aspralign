@@ -160,7 +160,7 @@ public class ASPRATree {
     private void recBuildAlgebraic(Tree<String> ct, int[] c,
 	    ArrayList<Interval> zi, int l, int r) {
 	assert c[l] == 1 && c[r] == 0
-		: "Pseudoloop bounds error while parsing at [" + l + "," + r
+		: "Pseudoloop bonds error while parsing at [" + l + "," + r
 			+ "]\nCounting array: " + c;
 	// decompose pseudoloop [l,r]
 
@@ -214,7 +214,7 @@ public class ASPRATree {
 		rp--;
 	    rp++; // last closing loop has 0 count, but belongs to the loop
 
-	    // the new pseudoloop to consider has bounds [lp,rp]
+	    // the new pseudoloop to consider has bonds [lp,rp]
 	    assert c[lp] == 1 && c[rp] == 0
 		    : "Determined wrong pseudoloop at [" + lp + "," + rp
 			    + "]\nCounting array: " + c;
@@ -270,7 +270,7 @@ public class ASPRATree {
 		rp++; // last closing loop has 0 count, but belongs to the
 		      // loop
 
-		// the new pseudoloop to consider has bounds [l,rp]
+		// the new pseudoloop to consider has bonds [l,rp]
 		assert c[l] == 1 && c[rp] == 0
 			: "Determined wrong pseudoloop at [" + l + "," + rp
 				+ "]\nCounting array: " + c;
@@ -319,7 +319,7 @@ public class ASPRATree {
 		int rl = rmzi.j;
 		int rr = r;
 
-		// the new right pseudoloop to consider has bounds [rl,rr]
+		// the new right pseudoloop to consider has bonds [rl,rr]
 		assert c[rl] == 1 && c[rr] == 0
 			: "Determined wrong pseudoloop at [" + rl + "," + rr
 				+ "]\nCounting array: " + c;
@@ -432,7 +432,7 @@ public class ASPRATree {
 	assert l < r : "Empty pseudoloop while detecting zero intervals at ["
 		+ l + "," + r + "]";
 	assert c[l] == 1 && c[r] == 0
-		: "Pseudoloop bounds error while detecting zero intervals at ["
+		: "Pseudoloop bonds error while detecting zero intervals at ["
 			+ l + "," + r + "]\nCounting array: " + c;
 	assert zi.isEmpty()
 		: "Not empty zero interval list while detecting zero intervals: "
@@ -491,7 +491,9 @@ public class ASPRATree {
 	/*
 	 * create array for counting openings and closings of loops, by
 	 * default it is initialized to zeroes, starts at 1, position 0 not
-	 * used
+	 * used. At every step c[i] counts the number of weak bonds that are
+	 * "above" i in the current diagram representation (in which the
+	 * already processed weak bonds are not considered)
 	 */
 	int[] c = new int[this.secondaryStructure.size + 1];
 
@@ -546,7 +548,7 @@ public class ASPRATree {
 	    int[] c, ArrayList<Interval> zi, int l, int r) {
 	// checks
 	assert c[l] == 1 && c[r] == 0
-		: "Pseudoloop bounds error while parsing at [" + l + "," + r
+		: "Pseudoloop bonds error while parsing at [" + l + "," + r
 			+ "]\nCounting array: " + c;
 	WeakBond lastBond = bonds.get(bonds.size() - 1);
 	assert lastBond.getRight() == r
@@ -596,7 +598,7 @@ public class ASPRATree {
 		rp--;
 	    rp++; // last closing loop has 0 count, but belongs to the loop
 
-	    // the new pseudoloop to consider has bounds [lp,rp]
+	    // the new pseudoloop to consider has bonds [lp,rp]
 	    assert c[lp] == 1 && c[rp] == 0
 		    : "Determined wrong pseudoloop at [" + lp + "," + rp
 			    + "]\nCounting array: " + c;
@@ -622,7 +624,7 @@ public class ASPRATree {
 	    // find zero intervals in the new pseudoloop, if any
 	    detectZeroIntervals(c, zip, lp, rp);
 
-	    // remove last bound from the list of bounds
+	    // remove last bond from the list of bonds
 	    bonds.remove(bonds.size() - 1);
 
 	    // recursive construction of the structural RNA subTree on the
@@ -654,7 +656,7 @@ public class ASPRATree {
 		rp++; // last closing loop has 0 count, but belongs to the
 		      // loop
 
-		// the new pseudoloop to consider has bounds [l,rp]
+		// the new pseudoloop to consider has bonds [l,rp]
 		assert c[l] == 1 && c[rp] == 0
 			: "Determined wrong pseudoloop at [" + l + "," + rp
 				+ "]\nCounting array: " + c;
@@ -681,7 +683,7 @@ public class ASPRATree {
 		// find zero intervals in the new pseudoloop, if any
 		detectZeroIntervals(c, zip, l, rp);
 
-		// remove last bound from the list of bounds
+		// remove last bond from the list of bonds
 		bonds.remove(bonds.size() - 1);
 
 		// recursive construction of the algebraic RNA subTree on the
@@ -703,7 +705,7 @@ public class ASPRATree {
 		int rl = rmzi.j;
 		int rr = r;
 
-		// the new right pseudoloop to consider has bounds [rl,rr]
+		// the new right pseudoloop to consider has bonds [rl,rr]
 		assert c[rl] == 1 && c[rr] == 0
 			: "Determined wrong pseudoloop at [" + rl + "," + rr
 				+ "]\nCounting array: " + c;
