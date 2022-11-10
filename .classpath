@@ -9,6 +9,6 @@
 	<classpathentry kind="lib" path="lib/StatAlign.jar"/>
 	<classpathentry kind="lib" path="lib/commons-cli-1.4.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="lib/antlr-4.7.2-complete.jar"/>
+	<classpathentry kind="lib" path="lib/antlr-4.9.3-complete.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -37,68 +37,69 @@ import fr.orsay.lri.varna.models.treealign.TreeAlignResult;
  */
 public class ASPRAlignResult {
 
-	private final Tree<String> t1;
-	private final Tree<String> t2;
-	private final TreeAlignResult<String, String> result;
-	private final ScoringFunction f;
-	private final double distance;
+    private final Tree<String> t1;
+    private final Tree<String> t2;
+    private final TreeAlignResult<String, String> result;
+    private final ScoringFunction f;
+    private final double distance;
 
-	/**
-	 * Align two structural RNA trees and construct the result.
-	 * 
-	 * @param t1 first structural RNA tree to align
-	 * @param t2 second structural RNA tree to align
-	 * @param f the scoring function to align the trees
-	 * 
-	 * @throws TreeAlignException alignment exception
-	 */
-	public ASPRAlignResult(Tree<String> t1, Tree<String> t2, ScoringFunction f) throws TreeAlignException {
-		this.t1 = t1;
-		this.t2 = t2;
-		this.f = f;
-		TreeAlign<String, String> al = new TreeAlign<String,String>(f);
-		this.result = al.align(t1, t2);
-		this.distance = result.getDistance();
-	}
+    /**
+     * Align two structural RNA trees and construct the result.
+     * 
+     * @param t1 first structural RNA tree to align
+     * @param t2 second structural RNA tree to align
+     * @param f  the scoring function to align the trees
+     * 
+     * @throws TreeAlignException alignment exception
+     */
+    public ASPRAlignResult(Tree<String> t1, Tree<String> t2,
+	    ScoringFunction f) throws TreeAlignException {
+	this.t1 = t1;
+	this.t2 = t2;
+	this.f = f;
+	TreeAlign<String, String> al = new TreeAlign<String, String>(f);
+	this.result = al.align(t1, t2);
+	this.distance = result.getDistance();
+    }
 
-	/**
-	 * @return the first structural RNA tree
-	 */
-	public Tree<String> getT1() {
-		return t1;
-	}
+    /**
+     * @return the first structural RNA tree
+     */
+    public Tree<String> getT1() {
+	return t1;
+    }
 
-	/**
-	 * @return the second structural RNA tree
-	 */
-	public Tree<String> getT2() {
-		return t2;
-	}
-	
-	/**
-	 * @return the scoring function used to align the trees
-	 */
-	public ScoringFunction getScoringFunction() {
-		return this.f;
-	}
+    /**
+     * @return the second structural RNA tree
+     */
+    public Tree<String> getT2() {
+	return t2;
+    }
 
-	/**
-	 * 
-	 * Return the distance of the aligned trees, i.e. the minimum cost of the
-	 * operations to align them.
-	 * 
-	 * @return the distance
-	 */
-	public double getDistance() {
-		return distance;
-	}
+    /**
+     * @return the scoring function used to align the trees
+     */
+    public ScoringFunction getScoringFunction() {
+	return this.f;
+    }
 
-	/**
-	 * 
-	 * @return the alignment of the original structural RNA trees
-	 */
-	public Tree<AlignedNode<String, String>> getAlignedTree() {
-		return this.result.getAlignment();
-	}
+    /**
+     * 
+     * Return the distance of the aligned trees, i.e. the minimum cost of the
+     * operations to align them.
+     * 
+     * @return the distance
+     */
+    public double getDistance() {
+	return distance;
+    }
+
+    /**
+     * 
+     * @return the alignment of the original structural RNA trees
+     */
+    public Tree<AlignedNode<String, String>> getAlignedTree() {
+	return this.result.getAlignment();
+    }
 
 }

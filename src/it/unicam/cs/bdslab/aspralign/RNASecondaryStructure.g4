@@ -23,9 +23,16 @@
 
 /*
  * ANTLR 4 grammar for reading files containing RNA Secondary Structures
- * in Extended Dot-Bracket Notation Format or in Arc-Annotated Sequence 
- * Format. The sequence of nucleotides is optional: it can be given 
- * only the structure. 
+ * in:
+ * 
+ * Extended Dot-Bracket Notation (EDBN) Format  - with optional sequence of 
+ *                                                nucleotides
+ * 
+ * Arc-Annotated Sequence (AAS) Format - - with optional sequence of nucleotides
+ * 
+ * Bpseq Format - with optional four initial lines
+ * 
+ * Ct Format - with optional four initial lines
  * 
  * @author Luca Tesei
  * 
@@ -38,7 +45,9 @@ grammar RNASecondaryStructure;
 
 rna
 :
-	sequence? structure
+	sequence? structure # edbnOrAasFormat
+	| bpseq # bpseqFormat
+	| ct # ctFormat
 ;
 
 sequence
@@ -70,24 +79,106 @@ bond
 	'(' INDEX ',' INDEX ')'
 ;
 
+bpseq
+:
+	(
+		LINE1BPSEQCT LINE2BPSEQCT LINE3BPSEQCT LINE4BPSEQCT
+	)? bpseqinfo
+;
+
+bpseqinfo
+:
+	bpseqline bpseqinfo # bpseqSeq
+	| bpseqline # bpseqLast
+;
+
+bpseqline
+:
+	INDEX IUPAC_CODE ZERO # bpseqLineUnpaired
+	| INDEX IUPAC_CODE INDEX # bpseqLineBond
+;
+
+ct
+:
+	(
+		LINE1BPSEQCT LINE2BPSEQCT LINE3BPSEQCT LINE4BPSEQCT
+	)? LINE5CT ctinfo
+;
+
+ctinfo
+:
+	ctline ctinfo # ctSeq
+	| ctline # ctLast
+;
+
+ctline
+:
+	INDEX IUPAC_CODE
+	(
+		ZERO
+		| INDEX
+	)
+	(
+		ZERO
+		| INDEX
+	) ZERO INDEX # ctLineUnpaired
+	| INDEX IUPAC_CODE
+	(
+		ZERO
+		| INDEX
+	)
+	(
+		ZERO
+		| INDEX
+	) INDEX INDEX # ctLineBond
+;
+
 // Tokens
+
+LINE1BPSEQCT
+:
+	'Filename' .*? '\r'? '\n'
+;
+
+LINE2BPSEQCT
+:
+	'Organism' .*? '\r'? '\n'
+;
+
+LINE3BPSEQCT
+:
+	'Accession' .*? '\r'? '\n'
+;
+
+LINE4BPSEQCT
+:
+	'Citation' .*? '\r'? '\n'
+;
+
+LINE5CT
+:
+	NONEWLINE*?
+	(
+		'ENERGY'
+		| 'Energy'
+		| 'dG'
+	) .*? '\r'? '\n'
+;
+
+fragment
+NONEWLINE
+:
+	~( '\r' | '\n' )
+;
 
 INDEX
 :
 	[1-9] [0-9]*
 ;
 
-NUCLEOTIDES
+ZERO
 :
-	(
-		IUPAC_CODE
-		| NON_STANDARD_CODE
-	)+
-;
-
-EDBN
-:
-	EDBN_CODE+
+	'0'
 ;
 
 IUPAC_CODE
@@ -95,6 +186,7 @@ IUPAC_CODE
 	[ACGUacguTtRrYysSWwKkMmBbDdHhVvNn-]
 ;
 
+fragment
 NON_STANDARD_CODE
 :
 	'"'
@@ -113,6 +205,15 @@ NON_STANDARD_CODE
 	| 'I'
 ;
 
+NUCLEOTIDES
+:
+	(
+		IUPAC_CODE
+		| NON_STANDARD_CODE
+	)+
+;
+
+fragment
 EDBN_CODE
 :
 	'.'
@@ -127,10 +228,15 @@ EDBN_CODE
 	| [a-zA-Z]
 ;
 
+EDBN
+:
+	EDBN_CODE+
+;
+
 LINE_COMMENT
 :
 	'#' .*? '\r'? '\n' -> skip
-; // Match "#" stuff '\n' 
+; // Match "#" stuff '\n' and skip it
 
 WS
 :
