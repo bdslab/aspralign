@@ -1,6 +1,12 @@
 # ASPRAlign Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0] - 2022-12-14
+### Added
+- New input formats: BPSEQ and CT
+
+### Changed
+- Corrected bugs on determine if a structure is pseudo knotted
 
 ## [0.92] - 2020-01-17
 ### Added

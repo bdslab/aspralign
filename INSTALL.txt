@@ -1,12 +1,12 @@
 ***************************************************************************
-ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment - version 0.92
+ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment - version 1.0
 
 INSTALLATION
 ***************************************************************************
 
 Download the zip file of last version of ASPRAlign from folder "download" at
 
-https://github.com/bdslab/aspralign
+https://github.com/bdslab/aspralign/tree/master/download
 
 and put it in any position of your drive. 
 
@@ -19,7 +19,7 @@ ASPRAlign-<VersionNumber> is created containing the following files:
 - ASPRAlign-config-alternative.txt --- alternative ASPRAlign configuration file
 - examples --- folder containing sample input and output files
 - INSTALL.txt --- information on ASPRAlign installation
-- README.txt --- ASPRAlign description and usage information
+- README.md --- ASPRAlign description and usage information
 - COPYING.txt --- copyright information
 - LICENSE --- full GNU GPL Version 3 License
 - CHANGELOG.txt --- information about the evolution of ASPRAlign versions
