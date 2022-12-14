@@ -29,7 +29,7 @@ package it.unicam.cs.bdslab.aspralign;
  *
  */
 public interface CommandLineMessages {
-    public static String VERSION = "0.92";
+    public static String VERSION = "1.0";
 
     public static String LAUNCH_COMMAND = "java -jar ASPRAlign.jar";
     public static String HEADER = "\n\nASPRAling Comparator version "
