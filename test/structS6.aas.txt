@@ -1,0 +1,4 @@
+# Arc Annotated Sequence file without sequence
+# Example structure of the paper "Alignment of RNA Secondary Structures with Arbitrary Pseudoknots using Structural Sequences" by Luca Tesei, Francesca Levi, Michela Quadrini, Emanuela Merelli, 2024. The corresponding structural sequence is [ 1, 3, 5, 7 ].
+
+(1,4); (6,10); (11,15); (17, 21)

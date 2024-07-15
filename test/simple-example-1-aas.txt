@@ -1,0 +1,6 @@
+# Arc Annotated Sequence File
+# Running example 1 of: Michela Quadrini, Luca Tesei, Emanuela Merelli 
+# "An Algebraic Language for RNA Pseudoknots Comparison"
+
+AAGACCUGCACGCUAGUU
+(2,14);(3,13);(4,7);(8,17);(9,12)

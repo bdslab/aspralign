@@ -1,4 +1,5 @@
 ***************************************************************************
+<<<<<<< HEAD
 ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment - version 1.0
 
 INSTALLATION
@@ -31,3 +32,35 @@ For information and installing the Java Runtime Environment see
 http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 See README.txt for usage information
+=======
+SERNAlign - Structural sEquence RNA secondary structure Alignment - version 1.0
+
+INSTALLATION
+***************************************************************************
+
+Download the zip file of last version of SERNAlign from folder "download" at
+
+https://github.com/bdslab/sernalign/tree/master/download
+
+and put it in any position of your drive. 
+
+Unzip the file with the facilities of your operating system. The folder 
+SERNAlign-<VersionNumber> is created containing the following files:
+
+- SERNAlign.jar --- executable jar of the basic SERNAlign comparison
+- SERNAlignWorkbench.jar --- executable jar for the SERNAlign workbench comparator
+- SERNAlign-config.txt --- default SERNAlign configuration file
+- INSTALL.txt --- information on SERNAlign installation
+- README.md --- SERNAlign description and usage information
+- COPYING.txt --- copyright information
+- LICENSE --- full GNU GPL Version 3 License
+- CHANGELOG.txt --- information about the evolution of SERNAlign versions
+
+The executable jar files runs on every Linux, Windows and Mac OS platform
+in which a Java SE Runtime Environment 8 is installed. 
+
+For information and installing the Java Runtime Environment see
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+See README.md for usage information
+>>>>>>> refs/remotes/origin/master

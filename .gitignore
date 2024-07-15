@@ -1,4 +1,21 @@
+<<<<<<< HEAD
 /.DS_Store
 /.classpath
 /build/
 /bin/
+=======
+bin/
+executable-jars/
+tmp/
+.metadata
+.classpath
+.project
+.DS_Store
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.factorypath
+>>>>>>> refs/remotes/origin/master
