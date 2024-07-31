@@ -1,5 +1,4 @@
 ***************************************************************************
-<<<<<<< HEAD
 ASPRAlign - Algebraic Structural Pseudoknot RNA Alignment - version 0.92
 
 COPYING and CREDITS
@@ -30,32 +29,6 @@ The original algorithm for tree alignment comes from the paper:
 T. Jiang, L. Wang, K. Zhang,
 Alignment of trees - an alternative to tree edit,
 Theoret. Comput. Sci. 143 (1995).
-=======
-SERNAlign - Structural sEquence RNA secondary structure Alignment - version 1.0
-
-COPYING and CREDITS
-***************************************************************************
-
-Copyright (C) 2023 Luca Tesei, Francesca Levi, Michela Quadrini, 
-Emanuela Merelli - BioShape and Data Science Lab at the University of 
-Camerino, Italy - http://www.emanuelamerelli.eu/bigdata/
-  
-This file is part of SERNAlign.
- 
-SERNAlign is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-any later version.
- 
-SERNAlign is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
- 
-You should have received a copy of the GNU General Public License
-along with SERNAlign. If not, see <http://www.gnu.org/licenses/>.
-
->>>>>>> refs/remotes/origin/master
 
 ASPRAlign uses Apache Commons CLI library for command line option parsing
 See https://commons.apache.org/proper/commons-cli/

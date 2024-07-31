@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ASPRAlign Changelog
 All notable changes to this project will be documented in this file.
 
@@ -29,10 +28,3 @@ All notable changes to this project will be documented in this file.
 - ASPRAlign Main comparator.
 - ASPRAlign Workbench comparator.
 - ASPRAlign Basic algorithms for algebraic RNA trees and structural RNA trees.
-=======
-# SERNAlign Changelog
-All notable changes to this project will be documented in this file.
-
-## [1.0] - 2024-03-5
-### First Upload on GitHub
->>>>>>> refs/remotes/origin/master

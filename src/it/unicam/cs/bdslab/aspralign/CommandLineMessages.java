@@ -96,35 +96,6 @@ public interface CommandLineMessages {
 	    + "results in file \"cmpr.csv\". Instead of using \"ASPRAling-config.txt\" "
 	    + "default configuration file, use \"my-config.txt\" as configuration file.\n\n";
 
-    public static String LAUNCH_COMMAND_FE = "java -jar ASPRAlignWorkbench.jar";
-    // TODO modificare stringhe _WB
-    public static String HEADER_FE = "\n\nASPRAling Workbench Feature Extraction version "
-	    + VERSION
-	    + " - Read all the RNA secondary structures files in a given "
-	    + "input folder by computing all the features. All the files are expected to be "
-	    + "in one of the supported formats. "
-	    + "The output is given as one "
-	    + "comma-separated values file describing the processed "
-	    + "structures and containing the computed features "
-	    + "for each pair of processed structures. By default the "
-	    + "output file is put in the input folder. Use option -o"
-	    + " file-1 to specifiy a different output file.\n";
-    public static String USAGE_EXAMPLES_FE = "Usage examples:\n\n>"
-	    + LAUNCH_COMMAND_FE
-	    + " -f TestWorkBench1\n\nProcesses all the files in folder "
-	    + "\"TestWorkBench1\". Each file is read as an RNA secondary "
-	    + "structure with arbitrary pseudoknots in one of the supported "
-	    + "formats. Comma-separated values file \"ASPRAlignProcessedStructures.csv\" "
-	    + "is created in the folder "
-	    + "\"TestWorkBench1\". It contains the description of all "
-	    + "the structures that were found and correctly processed."
-	    + LAUNCH_COMMAND_FE + " -f TestWorkBench1 -o "
-	    + "stucts.csv cmpr.csv -n my-config.txt\n\nProcesses all the files "
-	    + "in folder \"TestWorkBench1\" as above but produce the description"
-	    + " of processed structures in file \"structs.csv\" and comparison "
-	    + "results in file \"cmpr.csv\". Instead of using \"ASPRAling-config.txt\" "
-	    + "default configuration file, use \"my-config.txt\" as configuration file.\n\n";
-
     public static String COPYRIGHT = "ASPRAling Copyright (C) 2020 Michela Quadrini, Luca Tesei, "
 	    + "Emanuela Merelli - BioShape and Data Science Lab at the University of Camerino,"
 	    + " Italy - http://www.emanuelamerelli.eu/bigdata/\n\n";
